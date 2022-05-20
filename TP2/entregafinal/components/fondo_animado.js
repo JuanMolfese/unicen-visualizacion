@@ -1,11 +1,11 @@
-import styles from '../styles/Fondo_animado.css'
+import styles from '../styles/fondo_animado.module.css'
 
 export function Fondo_animado(){
     return (
         <>
-        <div className='bg'></div>
-        <div className='bg bg2'></div>
-        <div className='bg bg3'></div>        
+            <div className={styles.bg}></div>
+            <div className={styles.bg, styles.bg2}></div>
+            <div className={styles.bg, styles.bg3}></div>        
         </>
     )
     }
