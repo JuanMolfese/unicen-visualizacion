@@ -5,15 +5,12 @@ import Logo from './logo';
 
 export function Navbar(){
   return (
-
-    <nav>
+    <nav className={styles.navbar}>
       <FaBars className={styles.navbarIcon}/>
-      {/*<Image src="/favicon.ico" alt="logo" width={50} height={50} />*/}
-      <Logo></Logo>
-      <Image src="/logo.png" alt="logo CM Games" width={42} height={46}/>
-      <FaUserAlt />
+      <Logo className={styles.navbar.module.logo}></Logo>
+      <Image className={styles.logo} src="/logo.svg" alt="logo CM Games" width={42} height={46}/>
+      <FaUserAlt className={styles.navbarIcon} />
     </nav>
-
   )
 }
 export default Navbar;
