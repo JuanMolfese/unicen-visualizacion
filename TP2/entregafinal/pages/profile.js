@@ -1,13 +1,16 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import styles from "../styles/Profile.module.css";
+import { FaWindowClose } from "react-icons/fa";
+import Link from "next/link";
 
 export function Profile(){
     return (
-        <>
-        <Navbar></Navbar>
-        <h4>fede@crespi.com</h4>
-        <Footer></Footer>
-        </>
+        <div className={styles.container}>
+            <Link href="/">
+                <FaWindowClose className={styles.iconClose}/>
+            </Link>
+        </div>
     )
 }
 
