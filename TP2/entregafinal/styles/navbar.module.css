@@ -26,3 +26,7 @@
 .invisible {
   visibility: hidden;
 }
+
+.back{
+  color: var(--color-Primary-D2);
+}
