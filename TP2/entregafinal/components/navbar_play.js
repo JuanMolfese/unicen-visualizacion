@@ -1,19 +1,20 @@
 import styles from '../styles/navbar.module.css';
 import Logo from './logo';
 import Link from 'next/link';
-import {TiArrowBackx} from 'react-icons';
+import { FaReply } from "react-icons/fa";
+import Router from 'next/router'
 
 export function Navbar_play(){
 
   return (
     <nav className={styles.navbar}>
-      <Link href="/">
-        {/* <a><TiArrowBackx/></a> */}
-        <a>Volver</a>
-      </Link>
+      
+       <a><FaReply onClick={() => Router.back()} className={styles.navbarIcon}/></a> 
+              
       <Link href="/">
         <a><Logo fill="#7C007C"/></a>
-      </Link>      
+      </Link>  
+      <div></div>    
     </nav>
   )
 }
