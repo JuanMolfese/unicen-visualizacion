@@ -7,14 +7,12 @@ import Link from "next/link";
 export function Profile(){
     return (
         <>
-            <Navbar></Navbar>
             <div className={styles.container}>
                 
                 <Link href="/">
                     <FaWindowClose className={styles.iconClose}/>
                 </Link>
             </div>
-            <Footer></Footer>
         </>
     )
 }

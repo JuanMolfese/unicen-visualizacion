@@ -7,19 +7,14 @@ import ModalMenu from './ModalMenu';
 
 export function Navbar(){
 
-
-
   return (
     <>
       <nav className={styles.navbar}>
-   {/*      <Link href="/">
-          <a><FaBars className={styles.navbarIcon}/></a>
-        </Link> */}
         <ModalMenu></ModalMenu>
         <Link href="/">
           <a><Logo fill="#7C007C"/></a>
         </Link>      
-        <Link href="/profile">
+        <Link href="/register">
           <a><FaUserAlt className={styles.navbarIcon}/>  </a>
         </Link> 
       </nav>
