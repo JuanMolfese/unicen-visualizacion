@@ -8,9 +8,9 @@ export function Navbar(){
 
   return (
     <nav className={styles.navbar}>
-      
-      <FaBars className={styles.navbarIcon}/>
-     
+      <Link href="/">
+        <FaBars className={styles.navbarIcon}/>
+      </Link>
       <Link href="/">
         <a><Logo fill="#7C007C"/></a>
       </Link>      
