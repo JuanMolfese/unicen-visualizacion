@@ -38,7 +38,7 @@ export default function ListGames({games}) {
                   <p >{game.title}</p>
                   <div >
                     <div >
-                      <Link href="/[id]" as={`/${game.id}`}>
+                      <Link href="/game/[id]" as={`/game/${game.id}`}>
                         <a>Ver</a>
                       </Link>
                     </div>
