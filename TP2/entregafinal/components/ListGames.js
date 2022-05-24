@@ -31,6 +31,7 @@ export default function ListGames({games}) {
         <div>
           {games.map(game => (
             //<CardGame key={game.id} game={game} />
+            //<CardGame></CardGame>
             <div key={game.id}>
               <div >
                 <img src={game.thumbnail} alt="Card image cap" />

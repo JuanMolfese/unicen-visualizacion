@@ -52,7 +52,9 @@ export default function Page({game}) {
         </div>
         <img src={game.thumbnail} width="100%"/>
         <p className={styles.descriptionGame}>{game.description}</p>
-        <button className={styles.btnPlay}>¡ Jugar !</button>
+        <Link href="/play_game">
+          <a><button className={styles.btnPlay}>¡ Jugar !</button></a>
+        </Link>      
       </div>
     </div>
   );

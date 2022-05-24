@@ -20,9 +20,7 @@ export default function Home({games}) {
       <ListGames games={games}></ListGames>
       <Footer></Footer>
     </>
-  )
-
-  
+  )  
 }
 
 export const getServerSideProps = async () => {
