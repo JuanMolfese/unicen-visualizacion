@@ -1,0 +1,94 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.logo {
+  grid-column: 2/3;
+  margin: auto;
+}
+
+.btnClose {
+  grid-column: 3/3;
+}
+
+.iconClose{  
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 0px;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  margin: auto;
+  margin-right: 25px;
+}
+
+.iconClose:hover {
+  cursor: pointer;
+  background-color: var(--color-Tertiary-D2);
+}
+
+.contentTitle {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formRegister {
+  margin-top: 30px;
+  display: flex;
+  margin-left: 25px;
+  flex-direction: column;
+}
+
+.inputEmail{
+  width: 80%;
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+.inputPass {
+  width: 70%;
+  font-size: large;
+}
+
+.contentSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnSubmit {
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  background-color: var(--color-Tertiary);
+  border: 0;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+}
+
+.btnSubmit:hover {
+  cursor: pointer;
+  background-color: var(--color-Tertiary-D2);
+}
+
+.subtitle {
+  color: var(--color-Primary-D2);
+  font-weight: bold;
+  width: 250px;
+}

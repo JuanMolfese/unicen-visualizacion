@@ -1,5 +1,5 @@
 import styles from '../styles/ModalMenu.module.css'
-import {FaBars, FaWindowClose, FaTimes} from 'react-icons/fa';
+import {FaBars, FaTimes} from 'react-icons/fa';
 
 
 export default function ModalMenu(){

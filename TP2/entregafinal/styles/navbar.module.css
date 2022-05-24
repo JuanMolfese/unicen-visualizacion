@@ -24,6 +24,11 @@
   border-color: var(--color-Primary-D2);
 }
 
+.navbarIcon:hover{
+  background-color: var(--color-Tertiary-D2);
+  cursor: pointer;
+}
+
 .invisible {
   visibility: hidden;
 }
