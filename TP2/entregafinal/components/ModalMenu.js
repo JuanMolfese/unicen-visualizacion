@@ -13,10 +13,6 @@ export default function ModalMenu({genres}){
     document.querySelector("#hamburger").style.display = 'none';
   } 
 
-  genres.genres.forEach(genre => {
-    console.log(genre);
-  });
-
   return (
     <>
       <FaBars className={styles.navbarIcon} onClick={openModal}/>
@@ -33,11 +29,10 @@ export default function ModalMenu({genres}){
           <a href="/">Todos los juegos</a>
         </div>
         <h4>Categorias</h4>
-        <div>
-        {genres.genres.forEach(genre => {
-          <a>{genre}</a>
-          })
-        }
+        <div className={styles.genres}>
+          {genres.genres.map(genre => (
+            <a href={`/genre/${genre}`}>{genre}</a>
+          ))}
         </div>
       </div>
     </>
