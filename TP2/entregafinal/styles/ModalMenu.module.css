@@ -8,6 +8,7 @@
   z-index: 1;
   display: none;
   animation: fadeInLeft 0.7s;
+  padding-left: 25px;
 }
 
 .navbarIcon{
@@ -63,6 +64,18 @@
 
 .categories {
   margin-top: 25px;
+}
+
+.genres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.genres a{
+  margin-top: 10px;
 }
 
 @keyframes fadeInLeft {
