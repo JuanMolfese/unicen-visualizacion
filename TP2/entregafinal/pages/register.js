@@ -2,7 +2,7 @@ import Fondo_animado from "../components/fondo_animado";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import styles from '../styles/Register.module.css'
-import Logo from "../components/logo";
+import Logo from "../components/Logo";
 
 export default function register(){
   return (

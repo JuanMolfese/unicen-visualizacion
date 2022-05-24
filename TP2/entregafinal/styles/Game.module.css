@@ -1,0 +1,95 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-top: 15px;
+}
+
+.iconBack {
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--color-Primary-D2);
+  /* margin-right: 10px; */
+  padding: 5px;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  border-color: var(--color-Primary-D2);
+  margin-left: 15px;
+}
+
+.iconBack:hover{
+  background-color: var(--color-Tertiary-D2);
+  cursor: pointer;
+  border-color: var(--color-Tertiary-D2);
+}
+
+.logo {
+  margin: auto;
+}
+
+.headerGame {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.contentGame {
+  margin: 15px;
+  text-align: center;
+}
+
+.path {
+  font-size: small;
+  text-align: start;
+}
+
+.path a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.titleGame {
+  color: var(--color-Primary-D2);
+  text-align: center;
+  font-size: 30px;
+}
+
+.buttonsGame {
+  text-align: end;
+  margin-right: 15px;
+}
+
+.iconShare, .iconLike {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.iconShare:hover, .iconLike:hover {
+  cursor: pointer;
+}
+
+.descriptionGame {
+  text-align: justify;
+  display: -webkit-box;
+  max-width: 95%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btnPlay {
+  background-color: var(--color-Secondary-D2);
+  font-size: xx-large;
+  color: var(--color-bg-app-LIGHT);
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+}

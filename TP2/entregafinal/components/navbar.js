@@ -1,7 +1,7 @@
 import {FaBars, FaUserAlt} from 'react-icons/fa';
 import Image from 'next/image';
 import styles from '../styles/navbar.module.css';
-import Logo from './logo';
+import Logo from './Logo';
 import Link from 'next/link';
 import ModalMenu from './ModalMenu';
 
