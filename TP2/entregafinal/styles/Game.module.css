@@ -31,7 +31,7 @@
 
 .headerGame {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
   align-items: center;
 }
 
@@ -52,7 +52,7 @@
 
 .titleGame {
   color: var(--color-Primary-D2);
-  text-align: center;
+  text-align: start;
   font-size: 30px;
 }
 
@@ -85,11 +85,11 @@
 
 .btnPlay {
   background-color: var(--color-Secondary-D2);
-  font-size: xx-large;
+  font-size: 20px;
   color: var(--color-bg-app-LIGHT);
-  padding: 8px;
+  padding: 20px;
   width: 200px;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.70);
 }

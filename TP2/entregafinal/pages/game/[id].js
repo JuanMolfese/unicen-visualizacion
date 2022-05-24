@@ -50,7 +50,7 @@ export default function Page({game}) {
             <FaHeart className={styles.iconLike}/>
           </div>
         </div>
-        <img src={game.thumbnail} width='450px' height='250px' />
+        <img src={game.thumbnail} width="100%"/>
         <p className={styles.descriptionGame}>{game.description}</p>
         <button className={styles.btnPlay}>¡ Jugar !</button>
       </div>
