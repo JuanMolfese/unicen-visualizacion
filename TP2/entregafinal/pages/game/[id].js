@@ -10,6 +10,13 @@ export default function Page({game}) {
       setLoading(false);
     }, 2000);
   }, []);
+
+
+  if (loading) {
+    return (
+      <Spinner></Spinner>
+    );
+  }
    
   if (game.status == 0){
     return (
@@ -17,11 +24,6 @@ export default function Page({game}) {
     );
   }
 
-  if (loading) {
-    return (
-      <Spinner></Spinner>
-    );
-  }
 
   return (
     <div>
