@@ -1,5 +1,5 @@
 import styles from '../styles/navbar.module.css';
-import Logo from './logo';
+import Logo from './Logo';
 import Link from 'next/link';
 import { FaReply } from "react-icons/fa";
 import Router from 'next/router'

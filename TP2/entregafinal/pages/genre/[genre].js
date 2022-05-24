@@ -1,3 +1,5 @@
+import Check from "../../components/check";
+import Footer from "../../components/footer";
 import ListGames from "../../components/ListGames";
 import Navbar from "../../components/navbar";
 
@@ -12,7 +14,7 @@ export default function Genre({games, category, all}){
 
   if (!games.length){
     return (
-      <p>No se encontraron juegos para la categoria: {category} </p>
+      <Check msj='No existen juegos para el genero' category={category} genres={genres} type='info'></Check>
     )
   }
 
@@ -20,8 +22,10 @@ export default function Genre({games, category, all}){
     <>
       <Navbar genres={genres}></Navbar>
       <div>
+        <h2>Juegos con categoria: {category}</h2>
         <ListGames games={games}></ListGames>
       </div>
+      <Footer></Footer>
     </>
   );
 }
