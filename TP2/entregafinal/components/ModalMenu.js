@@ -3,7 +3,7 @@ import {FaBars, FaSearch, FaTimes} from 'react-icons/fa';
 import Logo from './Logo';
 
 
-export default function ModalMenu(){
+export default function ModalMenu({genres}){
 
   function openModal(){
     document.querySelector("#hamburger").style.display = 'block';
@@ -11,7 +11,11 @@ export default function ModalMenu(){
 
   function closeModal(){
     document.querySelector("#hamburger").style.display = 'none';
-  }
+  } 
+
+  genres.genres.forEach(genre => {
+    console.log(genre);
+  });
 
   return (
     <>
@@ -29,7 +33,12 @@ export default function ModalMenu(){
           <a href="/">Todos los juegos</a>
         </div>
         <h4>Categorias</h4>
-       
+        <div>
+        {genres.genres.forEach(genre => {
+          <a>{genre}</a>
+          })
+        }
+        </div>
       </div>
     </>
   );

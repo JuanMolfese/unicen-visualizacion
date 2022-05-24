@@ -7,10 +7,16 @@ import { Footer } from '../components/footer'
 import ListGames from '../components/ListGames'
 
 export default function Home({games}) {
+  const genres = [];
+  games.forEach(game => {
+    if (!genres.includes(game.genre)){
+      genres.push(game.genre);
+    }
+  });
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar genres={genres}></Navbar>
       <ListGames games={games}></ListGames>
       <Footer></Footer>
     </>

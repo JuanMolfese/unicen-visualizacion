@@ -5,12 +5,12 @@ import Logo from './Logo';
 import Link from 'next/link';
 import ModalMenu from './ModalMenu';
 
-export function Navbar(){
+export function Navbar(genres){
 
   return (
     <>
       <nav className={styles.navbar}>
-        <ModalMenu></ModalMenu>
+        <ModalMenu genres={genres}></ModalMenu>
         <Link href="/">
           <a><Logo /></a>
         </Link>      
