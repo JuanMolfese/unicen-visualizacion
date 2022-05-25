@@ -1,4 +1,5 @@
 import Fondo_3D from "../components/Fondo_3D";
+import Fondo_animado from "../components/fondo_animado";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import styles from '../styles/Register.module.css'
@@ -7,9 +8,11 @@ import Logo from "../components/Logo";
 export default function Login(){
     return(
     <>
-        <Fondo_3D></Fondo_3D>
-        
         <div className={styles.container}>
+            <Fondo_animado/>
+            <div className={styles.tres_d}>
+                <Fondo_3D/>
+            </div>
             <div className={styles.header}>
             <Logo className={styles.logo}/>
             <Link href="/" className={styles.btnClose}>
@@ -18,11 +21,11 @@ export default function Login(){
             </div>
             
             <div className={styles.contentTitle}>
-                <h2>Inicia Sesion</h2>
+                <h2 className={styles.titulo}>Inicia Sesion</h2>
                 <p className={styles.subtitle}>Disfruta de los mejores juegos!</p>
             </div>
             <form action="/" className={styles.formRegister}>
-                <label for="email">Email:</label>
+                <label for="email" className={styles.labels}>Email:</label>
                 <input
                     type="email"
                     id="email"
@@ -30,7 +33,7 @@ export default function Login(){
                     className={styles.inputEmail}
                     placeholder="Ingrese su correo electronico"
                 />
-                <label for="pswrd">Password:</label>
+                <label for="pswrd" className={styles.labels}>Password:</label>
                 <input
                     type="password"
                     id="pswrd"

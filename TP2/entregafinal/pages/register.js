@@ -9,7 +9,9 @@ export default function register(){
   return (
     <>     
       <div className={styles.container}>
-        <Fondo_animado/>
+        <div className={styles.capaBlur}>
+          <Fondo_animado/>
+        </div> 
         <div className={styles.tres_d}>
           <Fondo_3D/>
         </div>
