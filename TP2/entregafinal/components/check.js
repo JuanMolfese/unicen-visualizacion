@@ -9,7 +9,7 @@ export default function Check({msj, category, genres, type}) {
       <div>
         {type === 'info' ? <FaInfo></FaInfo> : <p>X</p>}
         <p>{msj} <span>{category}</span></p>
-      </div>
+      </div>   
       <Footer></Footer>
     </>
   );
