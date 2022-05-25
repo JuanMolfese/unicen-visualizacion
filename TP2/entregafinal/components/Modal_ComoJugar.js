@@ -21,7 +21,9 @@ export default function Modal_ComoJugar(){
         <div className={styles.container_detalle_como_jugar}>
             <span className={styles.titulo_como_jugar}>Como Jugar al Pacman ?</span>
             <br/><br/>
-            <span>Con las flechas del teclado mueve al personaje</span>
+            <span>Si jugas desde una PC: Usa las flechas del teclado para mover al personaje.</span>
+            <br/><br/>
+            <span>Si jugas desde un Smartphone: Desliza el dedo sobre la pantalla para mover al personaje</span>
         </div> 
       </div>
     </>

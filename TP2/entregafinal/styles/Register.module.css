@@ -4,6 +4,17 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.capaBlur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  filter: blur(10px);
 }
 
 .header {
@@ -37,6 +48,9 @@
   background-color: var(--color-Tertiary-D2);
 }
 
+.titulo{
+  margin-bottom: 0px;
+}
 .contentTitle {
   width: 100%;
   text-align: center;
@@ -47,19 +61,25 @@
 }
 
 .formRegister {
-  margin-top: 30px;
+  margin-top: 0px;
   display: flex;
-  margin-left: 25px;
+  /* margin-left: 25px; */
   flex-direction: column;
+}
+
+.labels{
+  margin-left: 10%;
 }
 
 .inputEmail{
   width: 80%;
+  margin-left: 10%;
   font-size: large;
   margin-bottom: 15px;
 }
 
 .inputPass {
+  margin-left: 10%;
   width: 70%;
   font-size: large;
 }
@@ -72,13 +92,14 @@
 
 .btnSubmit {
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 150px;
-  height: 30px;
+  height: 40px;
   background-color: var(--color-Tertiary);
   border: 0;
   padding: 5px;
   font-weight: bold;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
 }
 
@@ -90,12 +111,12 @@
 .btnInicioSesion {
   margin-top: 20px;
   width: 150px;
-  height: 30px;
-  background-color: var(--color-Secondary-D2);
+  height: 40px;
+  background-color: var(--color-Secondary);
   border: 0;
   padding: 5px;
   font-weight: bold;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
 }
 
@@ -103,4 +124,12 @@
   color: var(--color-Primary-D2);
   font-weight: bold;
   width: 250px;
+}
+
+.tres_d{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 25px;
 }

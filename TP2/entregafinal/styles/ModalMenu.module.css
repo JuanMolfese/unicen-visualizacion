@@ -82,7 +82,7 @@
 .container_comoJugar {
   background-color: var(--color-GREY);
   width: 94%;
-  height: 40%;
+  height: 45%;
   position: absolute;
   top: 1%;
   left: 3%;
@@ -97,8 +97,7 @@
   width: 92%;
   margin-left: 4%;
   padding: 10px 25px;
-  height: 70%;
-  
+  height: 75%;  
   border-radius: 10px;
 }
 
