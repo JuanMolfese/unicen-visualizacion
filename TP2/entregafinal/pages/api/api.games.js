@@ -8,7 +8,7 @@ export default function handler(req, res) {
   {
   "id": 1,
   "title": "Dauntless",
-  "thumbnail": "https://www.freetogame.com/g/1/thumbnail.jpg",
+  "thumbnail": "./gamesImg/1.jpg",
   "short_description": "A free-to-play, co-op action RPG with gameplay similar to Monster Hunter.",
   "game_url": "https://www.freetogame.com/open/dauntless",
   "genre": "MMORPG",
@@ -16,7 +16,7 @@ export default function handler(req, res) {
   "publisher": "Phoenix Labs",
   "developer": "Phoenix Labs, Iron Galaxy",
   "release_date": "2019-05-21",
-  "freetogame_profile_url": "https://www.freetogame.com/dauntless"
+  "freetogame_profile_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
   },
   {
   "id": 2,
