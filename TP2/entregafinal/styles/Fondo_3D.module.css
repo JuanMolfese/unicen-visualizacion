@@ -8,10 +8,10 @@
 /* ಠ_ಠ */
 
 .stage {
-  height: 180px;
-  width: 300px;
+  height: 120px;
+  width: 200px;
   margin: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;
@@ -31,7 +31,7 @@
 }
 
 .layer:after {
-  font: 100px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+  font: 50px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
   content: "CM\a Games!";
   white-space: pre;
   text-align: center;

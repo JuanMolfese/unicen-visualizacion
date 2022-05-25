@@ -3,13 +3,16 @@ import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import styles from '../styles/Register.module.css'
 import Logo from "../components/Logo";
+import Fondo_3D from "../components/Fondo_3D";
 
 export default function register(){
   return (
-    <>
-      <Fondo_animado/>
-      
+    <>     
       <div className={styles.container}>
+        <Fondo_animado/>
+        <div className={styles.tres_d}>
+          <Fondo_3D/>
+        </div>
         <div className={styles.header}>
           <Logo className={styles.logo}/>
           <Link href="/" className={styles.btnClose}>
@@ -18,12 +21,12 @@ export default function register(){
         </div>
         
         <div className={styles.contentTitle}>
-          <h2>Registrate</h2>
+          <h2 className={styles.titulo}>Registrate</h2>
           <p className={styles.subtitle}>Crea tu lista de juegos preferidos registrandote</p>
         </div>
         
         <form action="/" className={styles.formRegister}>
-          <label for="email">Email:</label>
+          <label for="email" className={styles.labels}>Email:</label>
           <input
             type="email"
             id="email"
@@ -31,7 +34,7 @@ export default function register(){
             className={styles.inputEmail}
             placeholder="Ingrese su correo electronico"
           />
-          <label for="pswrd">Password:</label>
+          <label for="pswrd" className={styles.labels}>Password:</label>
           <input
             type="password"
             id="pswrd"
@@ -53,17 +56,17 @@ export default function register(){
           <div className={styles.contentSubmit}>
             <button type="submit" className={styles.btnSubmit}>Registrarme</button>
           </div>
-          
-          <div className={styles.contentTitle}>
-            <h2>Ya estas registrado ?</h2>
-          </div>
-          <Link href="/login">
-            <div className={styles.contentSubmit}>
-              <a><button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button></a>
-            </div>
-          </Link>
-
         </form>
+        <div className={styles.contentTitle}>
+            <h2 className={styles.titulo}>Ya estas registrado ?</h2>
+          </div>
+          
+        <div className={styles.contentSubmit}>
+          <Link href="/login">
+            <a><button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button></a>
+          </Link>
+        </div>
+          
       </div>
     </>
   )
