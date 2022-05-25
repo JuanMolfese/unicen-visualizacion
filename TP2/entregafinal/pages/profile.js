@@ -4,6 +4,7 @@ import styles from "../styles/Profile.module.css";
 import { FaWindowClose } from "react-icons/fa";
 import Link from "next/link";
 
+
 export function Profile(){
     return (
         <>
@@ -11,7 +12,7 @@ export function Profile(){
                 
                 <Link href="/">
                     <FaWindowClose className={styles.iconClose}/>
-                </Link>
+                </Link>                
             </div>
         </>
     )
