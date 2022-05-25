@@ -8,7 +8,7 @@ export default function handler(req, res) {
   {
   "id": 1,
   "title": "Dauntless",
-  "thumbnail": "./gamesImg/1.jpg",
+  "thumbnail": "/gamesImg/1.jpg",
   "short_description": "A free-to-play, co-op action RPG with gameplay similar to Monster Hunter.",
   "game_url": "https://www.freetogame.com/open/dauntless",
   "genre": "MMORPG",

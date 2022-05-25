@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import Router from 'next/router';
 import Modal_ComoJugar from './Modal_ComoJugar';
 
-export function NavBar_inGame(){
+export function Navbar_inGame(){
     return(
     <nav className={styles.navbar_transparent}>
         <div>
@@ -20,8 +20,5 @@ export function NavBar_inGame(){
             <FaTimes className={styles.navbarIcon} onClick={() => Router.back()}/>
         </div>   
    </nav>
-
-
-
     )
 }
