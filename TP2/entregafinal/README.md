@@ -1,4 +1,4 @@
-## Trabajo realizado con frame work Next.Js y deplyado en: https://unicen-visualizacion.vercel.app/
+## Trabajo realizado con frame work Next.Js y deployado en: https://unicen-visualizacion.vercel.app/
 
 
 
