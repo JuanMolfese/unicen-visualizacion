@@ -38,7 +38,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 .logo {
@@ -47,10 +47,11 @@
 }
 
 .iconClose{  
-  width: 30px;
-  height: 30px;
+  grid-column: 3/3;
+  width: 32px;
+  height: 32px;
   margin: auto;
-  margin-right: 25px;
+  margin-right: 0px;
   border-radius: 5px;
   padding: 0px;
   border: 1px solid;
@@ -78,6 +79,34 @@
   margin-top: 10px;
 }
 
+.container_comoJugar {
+  background-color: var(--color-GREY);
+  width: 94%;
+  height: 40%;
+  position: absolute;
+  top: 1%;
+  left: 3%;
+  z-index: 1;
+  display: none;
+  animation: fadeInTop 0.5s; 
+  border-radius: 10px;
+}
+
+.container_detalle_como_jugar{
+  background-color: var(--color-bg-app-LIGHT);
+  width: 92%;
+  margin-left: 4%;
+  padding: 10px 25px;
+  height: 70%;
+  
+  border-radius: 10px;
+}
+
+.titulo_como_jugar{
+  margin: 0px;
+  font-weight: bolder;
+}
+
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -86,5 +115,16 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }

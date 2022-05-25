@@ -32,3 +32,32 @@
 .invisible {
   visibility: hidden;
 }
+
+.navbar_transparent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;  
+  padding: 10px 25px;
+}
+
+ .icon_navbar_transparent{
+  align-self: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+  /* margin-right: 10px; */
+  padding: 5px;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  border-color: var(--color-Primary-D2);
+} 
+
+.div_mid_navbar_transparent{
+  display: flex;
+  justify-content: center;
+}
+
+.div_end_navbar_transparent{
+  display: flex;
+  justify-content: flex-end;
+}

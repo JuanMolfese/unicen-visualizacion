@@ -2,7 +2,6 @@ import styles from '../styles/ModalMenu.module.css'
 import {FaBars, FaSearch, FaTimes} from 'react-icons/fa';
 import Logo from './Logo';
 
-
 export default function ModalMenu({genres}){
 
   function openModal(){
