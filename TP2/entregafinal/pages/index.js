@@ -5,8 +5,24 @@ import Link from 'next/link'
 import { Navbar } from '../components/navbar'
 import { Footer } from '../components/Footer'
 import ListGames from '../components/ListGames'
+import {getSession} from 'next-auth/react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Home({games, genres}) {
+
+/*   const [user, setUser]=useState(null)
+
+  useEffect(()=>{
+    (async() => {
+      const session = await getSession()
+      setUser(session.user)
+    })();
+  },[]
+  ) */
+
+
+
   return (
     <>
       <Navbar genres={genres}></Navbar>
