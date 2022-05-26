@@ -29,7 +29,7 @@ export default function ListGames({games}) {
       </div> */}
       <div>
         <div>
-          {games.map(game => (
+          {games.games.map(game => (
             //<CardGame key={game.id} game={game} />
             //<CardGame></CardGame>
             <div key={game.id}>
