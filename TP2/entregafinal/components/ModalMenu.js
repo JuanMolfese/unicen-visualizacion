@@ -1,6 +1,7 @@
 import styles from '../styles/ModalMenu.module.css'
 import {FaBars, FaSearch, FaTimes} from 'react-icons/fa';
 import Logo from './Logo';
+import Link from 'next/link';
 
 export default function ModalMenu({genres}){
 
@@ -28,11 +29,18 @@ export default function ModalMenu({genres}){
           <a href="/">Todos los juegos</a>
         </div>
         <h4>Categorias</h4>
-        <div className={styles.genres}>
-          {genres.genres.map(genre => (
-            <a href={`/genre/${genre}`}>{genre}</a>
-          ))}
-        </div>
+        <ul className={styles.genres}>
+         {genres.genres.categories.length ? 
+          genres.genres.categories.map(genre => (
+            <li key={genre.id}>
+              <Link href={`/genre/${genre.name}`} as={`/genre/${genre.id}`}>
+                <a>{genre.name}</a>
+              </Link>
+            </li>
+          ))
+          : null}
+         
+        </ul>
       </div>
     </>
   );
