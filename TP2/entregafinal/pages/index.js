@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { Navbar } from '../components/navbar'
-import { Footer } from '../components/footer'
+import { Footer } from '../components/Footer'
 import ListGames from '../components/ListGames'
 
 export default function Home({games, genres}) {

@@ -1,4 +1,4 @@
-import { Navbar_inGame } from "../components/Navbar_inGame";
+import { Navbar_inGame } from "../components/NavBar_inGame";
 import Footer from "../components/Footer";
 
 export function PlayGame(){
