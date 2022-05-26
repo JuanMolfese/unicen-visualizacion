@@ -21,12 +21,10 @@ export default function ListGames({games}) {
 
   return (
     <>
-      <div className={styles.gameContainer}>
-        
+      <div className={styles.gameContainer}>        
           {games.map(game => (
             <GameCard key={game.id} game={game} />
-          ))}
-        
+          ))}        
       </div>
     </>
   );
