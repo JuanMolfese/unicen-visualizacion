@@ -33,8 +33,8 @@ export default function ModalMenu({genres}){
          {genres.genres.length ? 
           genres.genres.map(genre => (
             <li key={genre.id}>
-              <Link href={`/genre/${genre.name}`} as={`/genre/${genre.id}`}>
-                <a>{genre.name}</a>
+              <Link href={`/genre/${genre.name}`} as={`/genre/${genre.name}`}>
+                <a onClick={closeModal}>{genre.name}</a>
               </Link>
             </li>
           ))

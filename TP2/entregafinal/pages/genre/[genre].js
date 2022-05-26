@@ -25,7 +25,7 @@ export default function Genre({games, category, genres}){
 
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`https://www.freetogame.com/api/games?category=${context.params.genre}`);
+  const res = await fetch(`http://localhost:3000/api/categories/${context.params.genre}`);
   const games = await res.json();
   const resGenres = await fetch('http://localhost:3000/api/categories');
   const genres = await resGenres.json();
