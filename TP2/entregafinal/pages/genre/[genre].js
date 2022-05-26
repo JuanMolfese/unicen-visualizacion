@@ -2,6 +2,7 @@ import Check from "../../components/check";
 import Footer from "../../components/Footer";
 import ListGames from "../../components/ListGames";
 import Navbar from "../../components/navbar";
+import styles from "../../styles/GameCard.module.css";
 
 export default function Genre({games, category, genres}){
 
@@ -15,7 +16,7 @@ export default function Genre({games, category, genres}){
     <>
       <Navbar genres={genres}></Navbar>
       <div>
-        <h2>Juegos con categoria: {category}</h2>
+        <h3 className={styles.listGameForCategory}>Juegos con categoria: {category}</h3>
         <ListGames games={games}></ListGames>
       </div>
       <Footer></Footer>

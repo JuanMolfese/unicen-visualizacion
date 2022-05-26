@@ -1,6 +1,8 @@
 .gameContainer{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
     
 }
 
@@ -11,6 +13,7 @@
     height: 150px;
     margin: 20px;
     border-radius: 5px;
+    
 }
 
 .img{
@@ -19,4 +22,8 @@
 
 .gameTitle{
     margin: 5px 4px;
+}
+
+.listGameForCategory{
+    margin: 25px 25px;
 }
