@@ -61,7 +61,8 @@ export default function Page({game}) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`https://www.freetogame.com/api/game?id=${context.params.id}`);
+  /* const res = await fetch(`https://www.freetogame.com/api/game?id=${context.params.id}`); */
+  const res = await fetch(`http://localhost:3000/api/games/${context.params.id}`)
   const game = await res.json();
   return {
     props: {

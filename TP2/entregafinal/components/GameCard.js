@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/GameCard.module.css';
+import Link from 'next/link';
 
 /* Donde se consuma esta, importar: 
 import styles from '../styles/GameCard.module.css';
@@ -15,10 +16,11 @@ luego pondria:
 */
 
 export default function GameCard({ game }){
+    
     return(
-        <section className={styles.card}>
-            <Link href="../pages/game/{game.id}">
-                <a><Image src={`/${game.thumbnail}`} width="200" height="200"/></a>
+        <section className={styles.card}>s
+            <Link href="/games/[id]" as={`/games/${game.id}`}>
+                <a><img src={game.thumbnail} width="200" height="200"/></a>
             </Link>
             <div>
                 <h4>{game.title}</h4>                

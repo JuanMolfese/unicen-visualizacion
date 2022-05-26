@@ -1,26 +1,30 @@
 [
   {
     "id": 1,
-    "name": "Action"
+    "name": "MMORPG"
   },
   {
     "id": 2,
-    "name": "Adventure"
+    "name": "Accion"
   },
   {
     "id": 3,
-    "name": "Casual"
+    "name": "Disparos"
   },
   {
     "id": 4,
-    "name": "Indie"
+    "name": "Aventuras"
   },
   {
     "id": 5,
-    "name": "Massively Multiplayer"
+    "name": "Arcade"
   },
   {
     "id": 6,
-    "name": "Racing"
+    "name": "Deportes"
+  },
+  {
+    "id": 7,
+    "name": "Plataformas"
   }
 ]
