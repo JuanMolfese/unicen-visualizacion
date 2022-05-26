@@ -56,7 +56,9 @@ export default function register(){
               Y NO debe aparecer la lista de favoritos ya q es un nuevo usuario */}
           
           <div className={styles.contentSubmit}>
-            <button type="submit" className={styles.btnSubmit}>Registrarme</button>
+            <Link href="/register_acepted">
+              <button type="submit" className={styles.btnSubmit}>Registrarme</button>
+            </Link>
           </div>
         </form>
         <div className={styles.contentTitle}>
