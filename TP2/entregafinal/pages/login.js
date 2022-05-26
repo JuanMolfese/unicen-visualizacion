@@ -7,6 +7,9 @@ import Logo from "../components/Logo";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Login(){
+    
+    const { data: session } = useSession()
+    
     return(
     <>
         <div className={styles.container}>
@@ -57,6 +60,21 @@ export default function Login(){
                 <Link href="/"> 
                     <div className={styles.contentSubmit}>
                         <button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
+                    </div>
+                </Link>
+
+
+
+                <Link href="/api/auth/signin/github">
+                    <div className={styles.contentSubmit}>
+                        <button type="submit" className={styles.btnInicioGit}>Iniciar con GitHub</button>
+                    </div>
+                </Link>
+                
+                
+                <Link href="/api/auth/signout">
+                    <div className={styles.contentSubmit}>
+                        <button type="submit" className={styles.btnInicioGit}>Cerrar Sesion GitHub</button>
                     </div>
                 </Link>
 

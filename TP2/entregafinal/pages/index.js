@@ -8,18 +8,27 @@ import ListGames from '../components/ListGames'
 import {getSession} from 'next-auth/react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Home({games, genres}) {
 
 /*   const [user, setUser]=useState(null)
+     const router = useRouter()
+  
+      if(status === 'loading'){
+        return <p>Cargando</p>  //ACA PUEDE IR EL SPINNER QUE ARMASTE
+      }
+      if(status === 'unauthenticated'){
+        router.push('/login')
+      }
 
-  useEffect(()=>{
-    (async() => {
-      const session = await getSession()
-      setUser(session.user)
-    })();
-  },[]
-  ) */
+      useEffect(()=>{
+        (async() => {
+          const session = await getSession()
+          setUser(session.user)
+        })();
+      },[]
+    ) */
 
 
 
