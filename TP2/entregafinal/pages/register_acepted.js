@@ -23,7 +23,7 @@ export default function Register_acepted(){
         </div>
         <div className={styles.contentSubmit}>
           <Link href="/">
-            <a><button type="submit" className={styles.btnInicioSesion}>A Jugar</button></a>
+            <a><button type="submit" className={styles.btnInicioSesion}>A Jugar !</button></a>
           </Link>
         </div>          
       </div>
