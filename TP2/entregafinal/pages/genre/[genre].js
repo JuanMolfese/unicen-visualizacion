@@ -1,3 +1,4 @@
+import Advertising from "../../components/advertising";
 import Check from "../../components/check";
 import Footer from "../../components/Footer";
 import ListGames from "../../components/ListGames";
@@ -19,6 +20,7 @@ export default function Genre({games, category, genres}){
         <h3 className={styles.listGameForCategory}>Juegos con categoria: {category}</h3>
         <ListGames games={games}></ListGames>
       </div>
+      <Advertising></Advertising>
       <Footer></Footer>
     </>
   );

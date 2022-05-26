@@ -9,6 +9,7 @@ import {getSession} from 'next-auth/react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Advertising from '../components/advertising'
 
 export default function Home({games, genres}) {
 
@@ -36,6 +37,7 @@ export default function Home({games, genres}) {
     <>
       <Navbar genres={genres}></Navbar>
       <ListGames games={games}></ListGames>
+      <Advertising></Advertising>
       <Footer></Footer>
     </>
   )  
