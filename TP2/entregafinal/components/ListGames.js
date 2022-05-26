@@ -2,6 +2,7 @@ import Link from "next/link";
 import GameCard from "./GameCard";
 import { useState, useEffect } from "react";
 import Spinner from "./spinner";
+import styles from "../styles/GameCard.module.css"
 
 export default function ListGames({games}) {
 
@@ -21,7 +22,7 @@ export default function ListGames({games}) {
   return (
     <>
       <div>
-        <div>
+        <div className={styles.gameContainer}>
           {games.map(game => (
             <GameCard key={game.id} game={game} />
           ))}

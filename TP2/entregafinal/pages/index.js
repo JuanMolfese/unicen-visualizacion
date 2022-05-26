@@ -16,7 +16,7 @@ export default function Home({games, genres}) {
      const router = useRouter()
   
       if(status === 'loading'){
-        return <p>Cargando</p>  //ACA PUEDE IR EL SPINNER QUE ARMASTE
+        return <p>Cargando</p>  
       }
       if(status === 'unauthenticated'){
         router.push('/login')
