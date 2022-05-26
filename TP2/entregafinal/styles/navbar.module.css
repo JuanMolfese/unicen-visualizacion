@@ -17,11 +17,11 @@
   width: 37px;
   height: 37px;
   border-radius: 5px;
-  /* margin-right: 10px; */
   padding: 5px;
   border: 1px solid;
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
   border-color: var(--color-Primary-D2);
+  color: var(--color-Primary-D2);
 }
 
 .navbarIcon:hover{
