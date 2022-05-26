@@ -49,7 +49,9 @@ export default function Login(){
                     placeholder="Ingrese la contraseña deseada"
                     title="La contraseña puede ser números (0 to 9) o letras (a to z)."
                 />
-
+                <div className={styles.infoPass}>
+                    <span>Contraseña de al menos 8 numeros y letras.</span>
+                </div>    
 
                 {/* TODO Aca vamos al home pero con user logueado
                 Significa poner avatar del usuario (con opcion de log off)
@@ -67,16 +69,16 @@ export default function Login(){
 
                 <Link href="/api/auth/signin/github">
                     <div className={styles.contentSubmit}>
-                        <button type="submit" className={styles.btnInicioGit}>Iniciar con GitHub</button>
+                        <button type="submit" className={styles.btnInicioGit}>Inicio con GitHub</button>
                     </div>
                 </Link>
                 
                 
-                <Link href="/api/auth/signout">
+                {/* <Link href="/api/auth/signout">
                     <div className={styles.contentSubmit}>
                         <button type="submit" className={styles.btnInicioGit}>Cerrar Sesion GitHub</button>
                     </div>
-                </Link>
+                </Link> */}
 
                  {/*export default function Component() {
                     const { data: session } = useSession()
