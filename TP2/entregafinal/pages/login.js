@@ -2,8 +2,9 @@ import Fondo_3D from "../components/Fondo_3D";
 import Fondo_animado from "../components/fondo_animado";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
-import styles from '../styles/Register.module.css'
+import styles from '../styles/Register.module.css';
 import Logo from "../components/Logo";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Login(){
     return(
@@ -58,6 +59,24 @@ export default function Login(){
                         <button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
                     </div>
                 </Link>
+
+                 {/*export default function Component() {
+                    const { data: session } = useSession()
+                    if (session) {
+                        return (
+                        <>
+                            Logueado como {session.user.email} <br />
+                            <button onClick={() => signOut()}>Desloguear</button>
+                        </>
+                        )
+                    }
+                    return (
+                        <>
+                        No estas logueado <br />
+                        <button onClick={() => signIn()}>Loguear</button>
+                        </>
+                    )
+                    } */}  
 
             </form>
         </div>
