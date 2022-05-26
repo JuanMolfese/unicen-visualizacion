@@ -30,8 +30,8 @@ export default function ModalMenu({genres}){
         </div>
         <h4>Categorias</h4>
         <ul className={styles.genres}>
-         {genres.genres.categories.length ? 
-          genres.genres.categories.map(genre => (
+         {genres.genres.length ? 
+          genres.genres.map(genre => (
             <li key={genre.id}>
               <Link href={`/genre/${genre.name}`} as={`/genre/${genre.id}`}>
                 <a>{genre.name}</a>

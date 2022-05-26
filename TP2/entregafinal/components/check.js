@@ -1,5 +1,5 @@
 import { FaInfo } from "react-icons/fa";
-import Footer from "./footer";
+import Footer from "./Footer";
 import Navbar from "./navbar";
 
 export default function Check({msj, category, genres, type}) {
