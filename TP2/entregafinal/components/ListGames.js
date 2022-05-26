@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import Spinner from "./spinner";
 
 export default function ListGames({games}) {
-/*   if (!games) return (
-    <p>cargando...</p>
-  ); */
 
   const [loading, setLoading] = useState(true);
 

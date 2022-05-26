@@ -18,7 +18,7 @@ luego pondria:
 export default function GameCard({ game }){
     
     return(
-        <section className={styles.card}>s
+        <section className={styles.card}>
             <Link href="/games/[id]" as={`/games/${game.id}`}>
                 <a><img src={game.thumbnail} width="200" height="200"/></a>
             </Link>
