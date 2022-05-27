@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
   return <SessionProvider>
         <Head >
           <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
+          <title>CM Games</title>
         </Head>
           <Component {...pageProps} />
         </SessionProvider>  
