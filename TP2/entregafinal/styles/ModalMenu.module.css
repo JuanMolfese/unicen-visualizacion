@@ -8,7 +8,7 @@
   z-index: 1;
   display: none;
   animation: fadeInLeft 0.7s;
-  padding-left: 25px;
+  padding-left: 25px; 
 }
 
 .navbarIcon{
@@ -55,29 +55,78 @@
   margin-right: 0px;
   border-radius: 5px;
   padding: 0px;
+  color: var(--color-Primary-D2);
   border: 1px solid;
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
 }
+
+.search{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.inputSearch{
+  height: 35px;
+  width: 70%;
+  border-radius: 5px;
+  border-color: var(--color-Primary-D2);
+  border-style: solid;
+}
+
+.iconSearch{
+ margin-left: 15px;
+ color: var(--color-Primary-D2); 
+}
+
 
 .iconClose:hover {
   cursor: pointer;
   background-color: var(--color-Tertiary-D2);
 }
 
+
+.allGames{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;  
+  font-size: large;
+  font-weight: bold; 
+  color: var(--color-Primary-D2)
+}
+
 .categories {
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;  
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: larger;
+
 }
 
 .genres {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 25px;
-  margin-left: 20px;
+  align-items: center;
+  margin-top: 20px;  
+  
 }
 
-.genres a{
-  margin-top: 10px;
+.genres ul{
+ color: var(--color-Primary-D2);
+ margin-top: 20px;
+ padding-left: 0px;
+ text-align: center; 
+}
+.genres li{
+  padding: 16px;
+  font-weight:bolder;
+  list-style: none;
+  width: 100%;
 }
 
 .container_comoJugar {

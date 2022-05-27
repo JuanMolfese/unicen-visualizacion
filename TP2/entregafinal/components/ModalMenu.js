@@ -25,22 +25,27 @@ export default function ModalMenu({genres}){
           <input placeholder="Buscar ..." type="text" className={styles.inputSearch}></input>
           <FaSearch className={styles.iconSearch}></FaSearch>
         </div>
-        <div className={styles.categories}>
+        <div className={styles.allGames}>
           <a href="/">Todos los juegos</a>
         </div>
-        <h4>Categorias</h4>
-        <ul className={styles.genres}>
-         {genres.genres.length ? 
-          genres.genres.map(genre => (
-            <li key={genre.id}>
-              <Link href={`/genre/${genre.name}`} as={`/genre/${genre.name}`}>
-                <a onClick={closeModal}>{genre.name}</a>
-              </Link>
-            </li>
-          ))
-          : null}
-         
-        </ul>
+        <div className={styles.genres}>
+          <div className={styles.categories}>
+            <span>Categorias</span>
+          </div>
+
+          <ul>
+          {genres.genres.length ? 
+            genres.genres.map(genre => (
+              <li key={genre.id}>
+                <Link href={`/genre/${genre.name}`} as={`/genre/${genre.name}`}>
+                  <a onClick={closeModal}>{genre.name}</a>
+                </Link>
+              </li>
+            ))
+            : null}
+          
+          </ul>
+        </div>
       </div>
     </>
   );
