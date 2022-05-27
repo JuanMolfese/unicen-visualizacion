@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FaHeart, FaShareAlt } from "react-icons/fa";
 import Check from "../../components/check";
 import ListGames from "../../components/ListGames";
+import NextJsCarousel from '../../components/Carousel'
 
 export default function Page({game}) {
   const [loading, setLoading] = useState(true);
@@ -76,6 +77,9 @@ export default function Page({game}) {
         <Link href="/play_game">
           <a><button className={styles.btnPlay}>¡ Jugar !</button></a>
         </Link>      
+      </div>
+      <div className={styles.carousel}>
+        <NextJsCarousel></NextJsCarousel>
       </div>
       {games ?
           <div>

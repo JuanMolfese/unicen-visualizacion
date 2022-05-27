@@ -11,6 +11,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Advertising from '../components/advertising'
 
+
 export default function Home({games, genres}) {
 
 /*   const [user, setUser]=useState(null)

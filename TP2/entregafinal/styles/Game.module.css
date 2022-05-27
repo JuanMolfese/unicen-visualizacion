@@ -104,6 +104,12 @@
   border-radius: 10px;
 }
 
+.carousel{
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
 .similarGamesTitle{
   margin-bottom: -25px;
   font-weight: bold;
