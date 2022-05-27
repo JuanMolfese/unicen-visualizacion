@@ -90,16 +90,17 @@
 
 .allGames{
   display: flex;
-  justify-content: center;
-  margin-top: 60px;  
+  justify-content: start;
   font-size: large;
+  margin-top: 60px;
+  margin-left: 30px;  
   font-weight: bold; 
   color: var(--color-Primary-D2)
 }
 
 .categories {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   margin-top: 20px;  
   font-weight: bold;
   letter-spacing: 4px;
@@ -110,20 +111,19 @@
 .genres {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;  
-  
+  margin-left: 30px;  
 }
 
 .genres ul{
  color: var(--color-Primary-D2);
  margin-top: 20px;
  padding-left: 0px;
- text-align: center; 
+ text-align: start; 
 }
 .genres li{
-  padding: 16px;
+  padding-bottom: 30px;
   font-weight:bolder;
   list-style: none;
   width: 100%;
