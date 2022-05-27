@@ -13,6 +13,11 @@ export default function ModalMenu({genres}){
     document.querySelector("#hamburger").style.display = 'none';
   } 
 
+  function searchGames(){
+    let search = document.querySelector("#search").value;
+    window.location.replace(`/games?search=${search}`);
+  }
+
   return (
     <>
       <FaBars className={styles.navbarIcon} onClick={openModal}/>
@@ -22,10 +27,8 @@ export default function ModalMenu({genres}){
           <FaTimes className={styles.iconClose} onClick={closeModal}/>
         </div> 
         <div className={styles.search}>
-          <input placeholder="disparos" type="text" className={styles.inputSearch}></input>
-          <Link href={`/genre/Disparos`}>
-            <FaSearch className={styles.iconSearch} onClick={closeModal}></FaSearch>
-          </Link>
+          <input id="search" placeholder="disparos" type="text" className={styles.inputSearch}></input>
+          <FaSearch className={styles.iconSearch} onClick={searchGames}></FaSearch>
         </div>
         <div className={styles.allGames}>
           <a href="/">Todos los juegos</a>
