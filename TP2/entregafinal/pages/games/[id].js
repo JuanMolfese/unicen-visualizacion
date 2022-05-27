@@ -15,7 +15,11 @@ export default function Page({game}) {
 
   useEffect(() => {
     const ok = [] 
-    fetch(`https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/${game.genre}`)
+    fetch(`https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/${game.genre}`, {
+        method: 'GET',
+        headers: new Headers({ 'Content-type': 'application/json'}),
+        mode: 'no-cors'
+      })
       .then(res => res.json())
       .then(json =>
       // Guarda posts en estado
