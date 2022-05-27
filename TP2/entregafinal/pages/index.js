@@ -46,9 +46,9 @@ export default function Home({games, genres}) {
 
 export const getServerSideProps = async () => {
   
-  const res = await fetch('http://localhost:3000/api/games');
+  const res = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/games');
   const games = await res.json();
-  const resGenres = await fetch('http://localhost:3000/api/categories');
+  const resGenres = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/categories');
   const genres = await resGenres.json();
   return {
     props: {
