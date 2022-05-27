@@ -55,12 +55,11 @@
 .titleGame {
   color: var(--color-Primary-D2);
   text-align: start;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .buttonsGame {
-  text-align: end;
-  margin-right: 15px;
+  text-align: end;  
 }
 
 .iconShare, .iconLike {

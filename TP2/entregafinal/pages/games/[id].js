@@ -67,7 +67,7 @@ export default function Page({game}) {
             <FaHeart className={styles.iconLike}/>
           </div>
         </div>
-        <iframe className={styles.imgGame} width="100%" height="315" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p className={styles.descriptionGame}>{game.short_description}</p>
         <Link href="/play_game">
           <a><button className={styles.btnPlay}>¡ Jugar !</button></a>
