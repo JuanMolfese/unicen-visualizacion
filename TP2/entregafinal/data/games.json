@@ -10,7 +10,8 @@
     "publisher": "Phoenix Labs",
     "developer": "Phoenix Labs, Iron Galaxy",
     "release_date": "2019-05-21",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Nuevos"
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "publisher": "Wargaming",
     "developer": "Wargaming",
     "release_date": "2011-04-12",
-    "video_url": "https://www.youtube.com/embed/1DOTO7hM1cs"
+    "video_url": "https://www.youtube.com/embed/1DOTO7hM1cs",
+    "subcategory": "Nuevos"
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "publisher": "Digital Extremes",
     "developer": "Digital Extremes",
     "release_date": "2013-03-25",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/cDjYG_6J10E",
+    "subcategory": "Nuevos"
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "publisher": "Gaijin Distribution KFT",
     "developer": "Darkflow Software",
     "release_date": "2019-12-12",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Recomendados"
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "publisher": "Targem",
     "developer": "Gaijin",
     "release_date": "2017-05-30",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Recomendados"
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "publisher": "NCSoft",
     "developer": "NCSoft",
     "release_date": "2016-01-19",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Recomendados"
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "publisher": "My.com (Mail.ru Group)",
     "developer": "Obsidian Entertainment",
     "release_date": "2015-10-08",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Jugados"
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "publisher": "Trion Worlds",
     "developer": "Trion Worlds",
     "release_date": "2015-07-09",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Jugados"
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "publisher": "Wargaming",
     "developer": "Wargaming",
     "release_date": "2015-07-02",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": "Jugados"
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "publisher": "Kakao Games",
     "developer": "XL Games",
     "release_date": "2014-09-04",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "publisher": "Perfect World Entertainment",
     "developer": "Cryptic Studios",
     "release_date": "2013-12-06",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@
     "publisher": "Gaijin Entertainment",
     "developer": "Gaijin Entertainment",
     "release_date": "2013-08-15",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 13,
@@ -166,7 +178,8 @@
     "publisher": "NCsoft",
     "developer": "ArenaNet",
     "release_date": "2012-08-28",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 14,
@@ -179,7 +192,8 @@
     "publisher": "Perfect World Entertainment",
     "developer": " Cryptic Studios",
     "release_date": "2010-02-02",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 15,
@@ -192,7 +206,8 @@
     "publisher": "Neowiz Games",
     "developer": "SmileGate",
     "release_date": "2007-05-03",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 16,
@@ -205,7 +220,8 @@
     "publisher": "Roblox Corporation",
     "developer": "Roblox Corporation",
     "release_date": "2006-12-22",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 17,
@@ -218,7 +234,8 @@
     "publisher": "MindArk",
     "developer": "MindArk",
     "release_date": "2003-01-30",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 18,
@@ -231,7 +248,8 @@
     "publisher": "Linden Lab",
     "developer": "Linden Lab",
     "release_date": "2003-06-23",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 19,
@@ -244,7 +262,8 @@
     "publisher": "Betadwarf",
     "developer": "Betadwarf",
     "release_date": "2019-05-24",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 20,
@@ -257,7 +276,8 @@
     "publisher": "1047 Games",
     "developer": "1047 Games",
     "release_date": "2019-05-22",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 21,
@@ -270,7 +290,8 @@
     "publisher": "Bungie",
     "developer": "Bungie",
     "release_date": "2019-10-01",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 22,
@@ -283,7 +304,8 @@
     "publisher": "Juvty Worlds Ltd.",
     "developer": "Juvty Worlds Ltd.",
     "release_date": "2017-12-18",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 23,
@@ -296,7 +318,8 @@
     "publisher": "Electronic Arts",
     "developer": "Electronic Arts",
     "release_date": "2019-02-04",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 24,
@@ -309,7 +332,8 @@
     "publisher": "Valve",
     "developer": "Valve, Hidden Path Entertainment",
     "release_date": "2012-08-21",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 25,
@@ -322,7 +346,8 @@
     "publisher": "Neowiz",
     "developer": "Neowiz Bless Studio",
     "release_date": "2018-05-30",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 26,
@@ -335,7 +360,8 @@
     "publisher": "Nexon",
     "developer": "Wizet",
     "release_date": "2018-10-10",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 28,
@@ -348,7 +374,8 @@
     "publisher": " MercurySteam Entertainment",
     "developer": "MercurySteam",
     "release_date": "2018-09-22",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 29,
@@ -361,7 +388,8 @@
     "publisher": "Tencent Games",
     "developer": "Tencent Games",
     "release_date": "2018-09-19",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 30,
@@ -374,7 +402,8 @@
     "publisher": "Bethesda Softworks",
     "developer": "id Software",
     "release_date": "2017-08-22",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 31,
@@ -387,7 +416,8 @@
     "publisher": "Pegnio Ltd",
     "developer": "Pegnio Ltd",
     "release_date": "2018-06-27",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 32,
@@ -400,7 +430,8 @@
     "publisher": "IDC/Games",
     "developer": "Insel Games",
     "release_date": "2017-12-14",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 33,
@@ -413,7 +444,8 @@
     "publisher": "Mojang AB",
     "developer": "Mojang AB",
     "release_date": "2018-06-21",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 35,
@@ -426,7 +458,8 @@
     "publisher": "Trion Worlds ",
     "developer": "Trion Worlds ",
     "release_date": "2018-06-12",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 36,
@@ -439,7 +472,8 @@
     "publisher": "Hi-Rez Studios",
     "developer": "Hi-Rez Studios",
     "release_date": "2018-06-05",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 37,
@@ -452,7 +486,8 @@
     "publisher": "Hong Kong Netease Interactive Entertainment Limited",
     "developer": "Hong Kong Netease Interactive Entertainment Limited",
     "release_date": "2017-04-20",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 39,
@@ -465,7 +500,8 @@
     "publisher": "Scavengers Studio",
     "developer": "Scavengers Studio",
     "release_date": "2020-01-14",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   },
   {
     "id": 40,
@@ -478,6 +514,7 @@
     "publisher": "Frogsong Studios AB",
     "developer": "Frogsong Studios AB",
     "release_date": "2018-03-13",
-    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc"
+    "video_url": "https://www.youtube.com/embed/M6FjLGqB-uc",
+    "subcategory": ""
   }
 ]
