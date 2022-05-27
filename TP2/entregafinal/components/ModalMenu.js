@@ -27,7 +27,7 @@ export default function ModalMenu({genres}){
           <FaTimes className={styles.iconClose} onClick={closeModal}/>
         </div> 
         <div className={styles.search}>
-          <input id="search" placeholder="disparos" type="text" className={styles.inputSearch}></input>
+          <input id="search" placeholder="Ingrese nombre o categoria del juego a buscar" type="text" className={styles.inputSearch}></input>
           <FaSearch className={styles.iconSearch} onClick={searchGames}></FaSearch>
         </div>
         <div className={styles.allGames}>

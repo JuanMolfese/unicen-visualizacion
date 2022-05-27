@@ -37,7 +37,8 @@ export default function Games({games, genres, search}) {
       <Navbar genres={genres}></Navbar>
       <div>
         <h3 className={styles.listGameForCategory}>Resultados de la busqueda: {search}</h3>
-        <ListGames games={games}></ListGames>
+        {games.length ? <ListGames games={games}></ListGames> : <p> No hay juegos que coincidan con tu busqueda </p>}
+        
       </div>
       <Footer></Footer>
     </>
