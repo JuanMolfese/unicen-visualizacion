@@ -8,7 +8,7 @@
   z-index: 1;
   display: none;
   animation: fadeInLeft 0.7s;
-  padding-left: 25px; 
+  
 }
 
 .navbarIcon{
@@ -61,11 +61,12 @@
 }
 
 .search{
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  background-color: var(--color-bg-app-LIGHT);
 }
 
 .inputSearch{
@@ -74,11 +75,18 @@
   border-radius: 5px;
   border-color: var(--color-Primary-D2);
   border-style: solid;
+  padding: 10px;
+  
 }
 
 .iconSearch{
  margin-left: 15px;
  color: var(--color-Primary-D2); 
+ border: var(--color-Primary-D2) 1px solid;
+ border-radius: 5px;
+ width: 35px;
+ height: 35px;
+ padding: 5px;
 }
 
 
@@ -92,7 +100,7 @@
   display: flex;
   justify-content: start;
   font-size: large;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-left: 30px;  
   font-weight: bold; 
   color: var(--color-Primary-D2)

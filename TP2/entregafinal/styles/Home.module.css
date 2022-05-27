@@ -108,6 +108,10 @@
   margin-left: 0.5rem;
 }
 
+.listGameForCategory{
+  margin: 25px 25px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
