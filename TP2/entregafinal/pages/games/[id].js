@@ -16,7 +16,7 @@ export default function Page({game}) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    const ok = [] 
+    const ok = [];
     fetch(`https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/${game.genre}`, {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json'}),
