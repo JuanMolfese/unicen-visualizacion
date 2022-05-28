@@ -112,6 +112,11 @@
   margin: 25px 25px;
 }
 
+.noExistGameTitle{
+  font-size: 15px;
+  margin-left: 25px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

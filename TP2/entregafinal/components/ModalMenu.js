@@ -26,9 +26,12 @@ export default function ModalMenu({genres}){
           <Logo className={styles.logo}/>
           <FaTimes className={styles.iconClose} onClick={closeModal}/>
         </div> 
-        <div className={styles.search}>
-          <input id="search" autoComplete="off" placeholder="Buscar por nombre o categoria" type="text" maxLength={15} className={styles.inputSearch}></input>
-          <FaSearch className={styles.iconSearch} onClick={searchGames}></FaSearch>
+        <div className={styles.searchContainer}>
+          <div className={styles.search}>
+            <input id="search" autoComplete="off" placeholder="Buscar ..." type="text" maxLength={15} className={styles.inputSearch}></input>
+            <FaSearch className={styles.iconSearch} onClick={searchGames}></FaSearch>
+          </div>
+          <span className={styles.search_aclaration}> Busca por nombre o categoria</span>
         </div>
         <div className={styles.allGames}>
           <a href="/">Todos los juegos</a>

@@ -47,7 +47,9 @@ export default function Page({game}) {
    
   if (!game){
     return (
-      <Check msj='Ese juego no existe' type='info'></Check>
+      <div className={styles.noExistGameTitle}>
+        <Check msj='Ese juego no existe' type='info'></Check>
+      </div>
     )
   }
 
