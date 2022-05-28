@@ -10,6 +10,7 @@ import Check from "../../components/check";
 import ListGames from "../../components/ListGames";
 import NextJsCarousel from '../../components/Carousel';
 import Like from '../../components/Like';
+import Share_button from "../../components/Share_button";
 
 export default function Page({game}) {
   const [loading, setLoading] = useState(true);
@@ -71,8 +72,8 @@ export default function Page({game}) {
         <div className={styles.headerGame}>
           <h2 className={styles.titleGame}>{game.title}</h2>
           <div className={styles.buttonsGame}>
-            <FaShareAlt className={styles.iconShare}/>
-            {/* <FaHeart className={styles.iconLike}/> */}
+            <Share_button></Share_button>
+            {/* <FaShareAlt className={styles.iconShare}/> */}
             <Like></Like>
           </div>
         </div>
