@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--color-GREY);
+  background-color: var(--color-Tertiary);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -60,13 +60,21 @@
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
 }
 
-.search{
+.searchContainer{
   height: 70px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  background-color: var(--color-GREY);  
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search{  
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  background-color: var(--color-DARK);  
+  
 }
 
 .inputSearch{
@@ -89,6 +97,10 @@
  padding: 5px;
 }
 
+.search_aclaration{
+margin-left: 15%;
+font-size: small;
+}
 
 .iconClose:hover {
   cursor: pointer;

@@ -120,3 +120,8 @@
   font-size: 20px;
   color: var(--color-Primary-D2);
 }
+
+.noExistGameTitle{
+  font-size: 20px;
+  margin-left: 25px;
+}

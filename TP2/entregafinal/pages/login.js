@@ -71,11 +71,11 @@ export default function Login(){
 
 
 
-                <Link href="/api/auth/signin/github">
+                {/* <Link href="/api/auth/signin/github">
                     <div className={styles.contentSubmit}>
                         <button type="submit" className={styles.btnInicioGit}>Inicio con GitHub</button>
                     </div>
-                </Link>
+                </Link> */}
                 
                 
                 {/* <Link href="/api/auth/signout">
