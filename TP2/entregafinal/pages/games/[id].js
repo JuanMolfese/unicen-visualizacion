@@ -8,7 +8,8 @@ import Link from "next/link";
 import { FaHeart, FaShareAlt } from "react-icons/fa";
 import Check from "../../components/check";
 import ListGames from "../../components/ListGames";
-import NextJsCarousel from '../../components/Carousel'
+import NextJsCarousel from '../../components/Carousel';
+import Like from '../../components/Like';
 
 export default function Page({game}) {
   const [loading, setLoading] = useState(true);
@@ -71,7 +72,8 @@ export default function Page({game}) {
           <h2 className={styles.titleGame}>{game.title}</h2>
           <div className={styles.buttonsGame}>
             <FaShareAlt className={styles.iconShare}/>
-            <FaHeart className={styles.iconLike}/>
+            {/* <FaHeart className={styles.iconLike}/> */}
+            <Like></Like>
           </div>
         </div>
         <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -59,16 +59,27 @@
 }
 
 .buttonsGame {
-  text-align: end;  
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.iconShare, .iconLike {
+.iconShare {
   width: 30px;
   height: 30px;
   margin-right: 20px;
   box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
   padding: 5px;
   border-radius: 5px;
+}
+
+.iconLike{
+  width: 30px;
+  height: 30px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .iconShare:hover, .iconLike:hover {
