@@ -42,9 +42,97 @@
   align-items: center;
 }
 
+.profile_image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
 .profile_image p {
   font-size: 20px;
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.passwordOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+  color: blue
+}
+
+.passwordOption p{
+  display: flex;
+}
+
+.passwordOption p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.passwordOption button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10%;
+  border: none;
+  background-color: var(--color-Secondary-D2);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formPass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+  border: 1px solid var(--color-Primary);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  display: none;
+}
+
+.formPass input {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.favoritos_content {
+  background-color: var(--color-GREY);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.favoritos_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px 0 10px;
+}
+
+.iconTrash {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: red;
+  margin-right: 0;
+  padding: 5px;
+  background-color: var(--color-Tertiary);
+}
+
+.iconTrash:hover{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
 }
 
 @keyframes fadeInRight {
