@@ -1,23 +1,50 @@
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: darkgray;
   width: 100%;
   height: 100%;
  /*  animation: fadeInRight 2s; */
   z-index: 1;
 }
 
+.logout {
+  display: flex;
+  justify-content: end;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
 .iconClose{
-  position: absolute;
-  top: 25px;
-  right: 25px;
   width: 30px;
   height: 30px;
-  background-color: darkgray;
   border-radius: 10%;
   cursor: pointer;
+  color: red;
+  margin-right: 0;
+}
+
+.iconClose:hover{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.profile_image {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile_image p {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 @keyframes fadeInRight {
