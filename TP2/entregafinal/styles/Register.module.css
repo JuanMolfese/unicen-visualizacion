@@ -81,20 +81,23 @@
 .inputEmail{
   width: 80%;
   margin-left: 10%;
-  font-size: medium;
+  font-size: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
   height: 35px;
   border-color: transparent;
+  padding-left: 15px;
 }
 
 .inputPass {
   margin-left: 10%;
   width: 70%;
-  font-size: medium;
+  font-size: 15px;
   border-radius: 5px;
   height: 35px;
   border-color: transparent;
+  padding-left: 15px;
+  
 }
 
 .contentSubmit {
@@ -139,6 +142,24 @@
   border-radius: 5px;
   box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
   color: var(--color-DARK);
+}
+
+
+.yaRegistrado{
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: var(--color-DARK);
+  margin-bottom: 5px;
+}
+
+
+.linkInicioSesion {
+  color: var(--color-bg-app-LIGHT);
+  font-size: large;
+  text-decoration: underline;
+  border: var(--color-DARK) solid 2px;
+  padding: 2px 8px;
+  border-radius: 5px;
 }
 
 .subtitle {

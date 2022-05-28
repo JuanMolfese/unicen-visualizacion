@@ -38,6 +38,8 @@ export default function Login(){
                     name="email"
                     className={styles.inputEmail}
                     placeholder="Ingrese su correo electronico"
+                    autoComplete="off"
+                    maxLength={28}
                 />
                 <label for="pswrd" className={styles.labels}>Password:</label>
                 <input
@@ -48,6 +50,8 @@ export default function Login(){
                     className={styles.inputPass}
                     placeholder="Ingrese la contraseña deseada"
                     title="La contraseña puede ser números (0 to 9) o letras (a to z)."
+                    autoComplete="off"
+                    maxLength={20}
                 />
                 <div className={styles.infoPass}>
                     <span>Contraseña de al menos 8 numeros y letras.</span>
@@ -67,11 +71,11 @@ export default function Login(){
 
 
 
-                {/* <Link href="/api/auth/signin/github">
+                <Link href="/api/auth/signin/github">
                     <div className={styles.contentSubmit}>
                         <button type="submit" className={styles.btnInicioGit}>Inicio con GitHub</button>
                     </div>
-                </Link> */}
+                </Link>
                 
                 
                 {/* <Link href="/api/auth/signout">

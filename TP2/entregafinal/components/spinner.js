@@ -1,9 +1,11 @@
+import styles from '../styles/Game.module.css';
+
 export default function Spinner() {
   return (
     <>
       <div className="content">
       <div className="html-spinner"></div>
-      <p>Cargando...</p>
+      <p className={styles.spinner}>Cargando...</p>
       </div>
 
       <style jsx>{`
@@ -15,7 +17,7 @@ export default function Spinner() {
           justify-content: center;
           align-items: center;
           text-align: center;
-          margin-top: 25px;
+          margin-top: 40%;
         }
 
         .html-spinner {

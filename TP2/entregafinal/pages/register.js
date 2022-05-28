@@ -24,7 +24,7 @@ export default function register(){
         
         <div className={styles.contentTitle}>
           <h2 className={styles.titulo}>Registrate</h2>
-          <p className={styles.subtitle}>Crea tu lista de juegos preferidos registrandote</p>
+          <p className={styles.subtitle}>Crea tu lista de juegos preferidos</p>
         </div>
         
         <form action="/" className={styles.formRegister}>
@@ -35,6 +35,8 @@ export default function register(){
             name="email"
             className={styles.inputEmail}
             placeholder="Ingrese su correo electronico"
+            autoComplete="off"
+            maxLength={28}
           />
           <label for="pswrd" className={styles.labels}>Password:</label>
           <input
@@ -45,7 +47,13 @@ export default function register(){
             className={styles.inputPass}
             placeholder="Ingrese la contraseña deseada"
             title="La contraseña puede ser números (0 to 9) o letras (a to z)."
+            autoComplete="off"
+            maxLength={15}
           />
+           <div className={styles.infoPass}>
+              <span>Contraseña de al menos 8 numeros y letras.</span>
+           </div>    
+
            {/* ver : para animacion felicitaciones por el registrado
            https://codepen.io/l2zeo/pen/ZEBLepW
 
@@ -61,16 +69,16 @@ export default function register(){
             </Link>
           </div>
         </form>
+          
         <div className={styles.contentTitle}>
-            <h2 className={styles.titulo}>Ya estas registrado ?</h2>
+          <h4 className={styles.yaRegistrado}>Ya estas registrado ?</h4>
+          <div className={styles.contentSubmit}>
+            <Link href="/login">
+              <a className={styles.linkInicioSesion}>Iniciar Sesion</a>
+            </Link>
           </div>
-          
-        <div className={styles.contentSubmit}>
-          <Link href="/login">
-            <a><button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button></a>
-          </Link>
         </div>
-          
+
       </div>
     </>
   )
