@@ -12,7 +12,7 @@ import { useRouter } from 'next/router'
 import Advertising from '../components/advertising'
 
 
-export default function Home({games, genres}) {
+export default function Home({games, genres, promotion}) {
 
 /*   const [user, setUser]=useState(null)
      const router = useRouter()
@@ -37,6 +37,13 @@ export default function Home({games, genres}) {
   return (
     <>
       <Navbar genres={genres}></Navbar>
+      <Link href="/games/[id]" as={`/games/${promotion.id}`}>
+        <section className={styles.card}>
+          <h6>Juego promocionado</h6>
+          <img src={promotion.thumbnail} width="500px" height="auto"/>
+          <h4 className={styles.gameTitle}>{promotion.title}</h4>                
+        </section>
+      </Link>
       <ListGames games={games}></ListGames>
       <Advertising></Advertising>
       <Footer></Footer>
@@ -57,6 +64,7 @@ export const getServerSideProps = async () => {
       // props that you want to pass to the page
       games: games,
       genres: genres,
+      promotion: games[18],
     },
   };
 }

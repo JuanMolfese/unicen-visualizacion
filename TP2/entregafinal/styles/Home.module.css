@@ -74,15 +74,19 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
+  margin: 1rem 4rem 1rem 4rem;
+  padding: .5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: center; 
+  animation: border-animation 1s infinite;
 }
 
 .card:hover,
@@ -90,6 +94,7 @@
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
+  cursor: pointer;
 }
 
 .card h2 {
@@ -101,6 +106,10 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.card img {
+  border-radius: 2%;
 }
 
 .logo {
@@ -121,5 +130,18 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+
+@keyframes border-animation {
+  0% {
+    border-color: #eaeaea;
+  }
+  50% {
+    border-color: #0070f3;
+  }
+  100% {
+    border-color: #eaeaea;
   }
 }
