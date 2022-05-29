@@ -5,8 +5,10 @@
     justify-content: center;
     margin-bottom: 80px;
     margin-top: 25px;
+    
 }
 
 .img{
     margin: 0px;
+    border-radius: 5px;
 }

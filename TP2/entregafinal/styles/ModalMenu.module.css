@@ -140,8 +140,7 @@ font-size: small;
   /* align-items: flex-start; */
   margin-top: 20px;  
   margin-left: 30px;
-  margin-right: 30px;  
-  background-color: var(--color-GREY);
+  margin-right: 30px;   
   border-radius: 10px;
 }
 
