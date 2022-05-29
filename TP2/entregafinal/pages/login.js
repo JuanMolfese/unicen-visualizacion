@@ -5,12 +5,20 @@ import { FaTimes } from "react-icons/fa";
 import styles from '../styles/Register.module.css';
 import Logo from "../components/Logo";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Login(){
     
     const { data: session } = useSession()
-    
-    console.log(session)    
+    const router = useRouter();
+
+    useEffect(() => {
+        if (session) {
+        router.push("/")
+        }
+    }, [session])
+  
     return(
     <>
         <div className={styles.container}>

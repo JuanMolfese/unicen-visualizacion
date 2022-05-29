@@ -4,8 +4,25 @@ import { FaTimes } from "react-icons/fa";
 import styles from '../styles/Register.module.css'
 import Logo from "../components/Logo";
 import Fondo_3D from "../components/Fondo_3D";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useEffect } from "react";
+import { Router, useRouter } from "next/router";
 
 export default function register(){
+
+  const { data: session } = useSession()
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session) {
+      router.push("/")
+    }
+  }, [session])
+  
+  if(session){
+    return(<></>)
+  }
+
   return (
     <>     
       <div className={styles.container}>
@@ -64,9 +81,9 @@ export default function register(){
               Y NO debe aparecer la lista de favoritos ya q es un nuevo usuario */}
           
           <div className={styles.contentSubmit}>
-            <Link href="/register_acepted">
-              <button type="submit" className={styles.btnSubmit}>Registrarme</button>
-            </Link>
+            {/* <Link href="/register_acepted"> */}
+              <button onClick={() => signIn('github')}type="submit" className={styles.btnSubmit}>Registrarme</button>
+            {/* </Link> */}
           </div>
         </form>
           

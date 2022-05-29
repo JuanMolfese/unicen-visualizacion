@@ -5,10 +5,19 @@ import {FiLogOut} from 'react-icons/fi'
 import { BiDownArrow, BiUpArrow, BiTrash } from "react-icons/bi";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 export default function Profile({genres, favs}){
 
     const router = useRouter();
+    const { data: session } = useSession()
+   
+    useEffect(() => {
+        if (session === null) {
+        router.push("/")
+        }
+    }, [session])
 
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
@@ -21,20 +30,14 @@ export default function Profile({genres, favs}){
             document.getElementById("up").style.display = 'block';
             document.getElementById("down").style.display = 'none';
         }
-    }
-
-    function cerrarSesion(){
-        router.push("/");
-        signOut('github');
-    }
-
+    }   
 
     return (
         <>
             <Navbar genres={genres}></Navbar>
             <div className={styles.container}>
                 <div className={styles.logout}>
-                    <FiLogOut onClick={() => cerrarSesion()}
+                    <FiLogOut onClick={() => signOut('github')}
                     className={styles.iconClose}/>
                 </div>
                 <div className={styles.profile}>
