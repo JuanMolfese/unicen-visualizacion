@@ -10,6 +10,7 @@ export default function Login(){
     
     const { data: session } = useSession()
     
+    console.log(session)    
     return(
     <>
         <div className={styles.container}>
@@ -63,44 +64,29 @@ export default function Login(){
                 Y debe aparecer la lista de favoritos (supongamos que es un usuario ya 
                 creado por lo que posee un par de favoritos) */}
 
-                <Link href="/"> 
+                {/* <Link href="/"> 
                     <div className={styles.contentSubmit}>
                         <button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
                     </div>
-                </Link>
-
-
-
-                {/* 
-                    <div className={styles.contentSubmit}>
-                        <button onClick={() => signIn('github')} className={styles.btnInicioGit}>Inicio con GitHub</button>
-                    </div>
-                */}
-                
-                
-                {/* <Link href="/api/auth/signout">
-                    <div className={styles.contentSubmit}>
-                        <button type="submit" className={styles.btnInicioGit}>Cerrar Sesion GitHub</button>
-                    </div>
                 </Link> */}
 
-                 {/*export default function Component() {
-                    const { data: session } = useSession()
-                    if (session) {
-                        return (
-                        <>
-                            Logueado como {session.user.email} <br />
-                            <button onClick={() => signOut()}>Desloguear</button>
-                        </>
+{/* 
+                {session && <a href="#" onClick={handleSignout} className="btn-signin">Sign out</a>  } 
+                {!session && <a href="#" onClick={handleSignin}  className="btn-signin">Sign in</a>  }
+ */}            
+                {(session) ? (
+                        (  
+                        <div className={styles.contentSubmit}>
+                            <button onClick={() => signOut('github')} type="submit" className={styles.btnInicioSesion}>Cerrar Sesion</button>
+                        </div>
                         )
-                    }
-                    return (
-                        <>
-                        No estas logueado <br />
-                        <button onClick={() => signIn()}>Loguear</button>
-                        </>
-                    )
-                    } */}  
+                        ) : (                        
+                        (    
+                        <div className={styles.contentSubmit}>
+                            <button onClick={() => signIn('github')} type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
+                        </div>
+                        ))
+                }            
 
             </form>
         </div>

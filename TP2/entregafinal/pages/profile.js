@@ -3,8 +3,12 @@ import Link from "next/link";
 import Navbar from "../components/navbar";
 import {FiLogOut} from 'react-icons/fi'
 import { BiDownArrow, BiUpArrow, BiTrash } from "react-icons/bi";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Profile({genres, favs}){
+
+    const router = useRouter();
 
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
@@ -19,14 +23,19 @@ export default function Profile({genres, favs}){
         }
     }
 
+    function cerrarSesion(){
+        router.push("/");
+        signOut('github');
+    }
+
+
     return (
         <>
             <Navbar genres={genres}></Navbar>
             <div className={styles.container}>
                 <div className={styles.logout}>
-                    <Link href="/">
-                        <FiLogOut className={styles.iconClose}/>
-                    </Link>                
+                    <FiLogOut onClick={() => cerrarSesion()}
+                    className={styles.iconClose}/>
                 </div>
                 <div className={styles.profile}>
                     <div className={styles.profile_image}>
