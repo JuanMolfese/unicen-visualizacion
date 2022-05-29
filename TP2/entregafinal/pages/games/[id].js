@@ -73,7 +73,6 @@ export default function Page({game}) {
           <h2 className={styles.titleGame}>{game.title}</h2>
           <div className={styles.buttonsGame}>
             <Share_button></Share_button>
-            {/* <FaShareAlt className={styles.iconShare}/> */}
             <Like></Like>
           </div>
         </div>

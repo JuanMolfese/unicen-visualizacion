@@ -1,4 +1,5 @@
 import {FaShareAlt, FaWhatsapp, FaRegCopy, FaTwitter} from 'react-icons/fa';
+import styles from '../styles/Game.module.css';
 
 export default function Share_button(){
   return (
@@ -6,8 +7,10 @@ export default function Share_button(){
     <div className="content">
       <input type="checkbox" id="click"/>
       <label for="click" className="share-btn">
-        <FaShareAlt/>
-        <a href="#"><span><FaWhatsapp/></span></a>
+        <div className={styles.iconShare}>
+          <FaShareAlt/>
+        </div>
+        <a href="https://api.whatsapp.com/send?text= Mira que buen juego !!"><span><FaWhatsapp/></span></a>
         <a href="#"><span><FaRegCopy/></span></a>
         <a href="#"><span><FaTwitter/></span></a>
       </label>
@@ -74,14 +77,12 @@ export default function Share_button(){
       #click:checked ~ .share-btn a:nth-child(2) span{
         bottom: 0px;
         right: 80px;
-        background: #1da1f2;
-        border-color: #0e9af1;
+        background: #075E54;        
       }
       #click:checked ~ .share-btn a:nth-child(3) span{
         bottom: 65px;
         right: 65px;
-        background: #e1306c;
-        border-color: #df2060;
+        background: #e1306c;        
       }
       .share-btn a:nth-child(3) span{
         transition-delay: 0.2s;
@@ -89,8 +90,7 @@ export default function Share_button(){
       #click:checked ~ .share-btn a:nth-child(4) span{
         bottom: 80px;
         right: 0px;
-        background: #ff0000;
-        border-color: #e60000;
+        background: #1DA1F2;        
       }
       .share-btn a:nth-child(4) span{
         transition-delay: 0.4s;
