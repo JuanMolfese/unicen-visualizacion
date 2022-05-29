@@ -74,12 +74,12 @@
 }
 
 .card {
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 5% 5%;
   padding: .5rem;
   text-align: left;
-  color: inherit;
+  background-color: #e9e9e0;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 2px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   display: flex;
@@ -126,6 +126,14 @@
   margin-left: 25px;
 }
 
+.juegoPromocionado{
+  margin: 5px;
+  color: var(--color-Dark);
+}
+
+.gameTitle{
+  margin: 5px;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -139,7 +147,7 @@
     border-color: #eaeaea;
   }
   50% {
-    border-color: var(--color-Primary);
+    border-color: var(--color-Tertiary-D2);
   }
   100% {
     border-color: #eaeaea;

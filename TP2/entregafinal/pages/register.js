@@ -70,16 +70,7 @@ export default function register(){
            <div className={styles.infoPass}>
               <span>Contraseña de al menos 8 numeros y letras.</span>
            </div>    
-
-           {/* ver : para animacion felicitaciones por el registrado
-           https://codepen.io/l2zeo/pen/ZEBLepW
-
-              Luego dentro de la pantalla o modal de felicitaciones el boton 
-              A Jugar ! redireccionaria a al home pero con user logueado
-              Significa poner avatar del usuario (con opcion de log off)
-              Ese boton habilita nuevo menu de edicion del usuario.
-              Y NO debe aparecer la lista de favoritos ya q es un nuevo usuario */}
-          
+                     
           <div className={styles.contentSubmit}>
             {/* <Link href="/register_acepted"> */}
               <button onClick={() => signIn('github')}type="submit" className={styles.btnSubmit}>Registrarme</button>
