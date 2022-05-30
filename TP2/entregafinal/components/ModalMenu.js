@@ -23,7 +23,7 @@ export default function ModalMenu({genres}){
       <FaBars className={styles.navbarIcon} onClick={openModal}/>
       <div id="hamburger" className={styles.container}>
         <div className={styles.navbar_transparent}>
-          <Logo className={styles.logo}/>
+          <Logo onClick={closeModal} className={styles.logo}/>
           <FaTimes className={styles.iconClose} onClick={closeModal}/>
         </div> 
         <div className={styles.searchContainer}>

@@ -1,7 +1,8 @@
 import {FaShareAlt, FaWhatsapp, FaRegCopy, FaTwitter} from 'react-icons/fa';
 import styles from '../styles/Game.module.css';
 
-export default function Share_button(){
+export default function Share_button({game}){
+
   return (
     <>
     <div className="content">
@@ -10,9 +11,9 @@ export default function Share_button(){
         <div className={styles.iconShare}>
           <FaShareAlt/>
         </div>
-        <a href="https://api.whatsapp.com/send?text= Mira que buen juego !!"><span><FaWhatsapp/></span></a>
+        <a href={`https://api.whatsapp.com/send?text= Mira que buen juego !! https://unicen-visualizacion-juanmolfese.vercel.app/games/${game.id}`} target="_blank" ><span><FaWhatsapp/></span></a>
         <a href="#"><span><FaRegCopy/></span></a>
-        <a href="#"><span><FaTwitter/></span></a>
+        {/* <a href="#"><span><FaTwitter/></span></a> */}
       </label>
     </div>
 

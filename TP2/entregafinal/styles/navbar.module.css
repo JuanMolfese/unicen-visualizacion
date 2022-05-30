@@ -73,3 +73,17 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.menuIn {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+   .menuModal {
+     display: none;
+   }
+
+   .menuIn {
+     display: block;
+   }
+}

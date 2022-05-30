@@ -21,7 +21,7 @@ export default function Page({game}) {
     fetch(`https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/${game.genre}`, {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json'}),
-        mode: 'no-cors'
+        mode: 'no-cors',
       })
       .then(res => res.json())
       .then(json =>
@@ -72,7 +72,7 @@ export default function Page({game}) {
         <div className={styles.headerGame}>
           <h2 className={styles.titleGame}>{game.title}</h2>
           <div className={styles.buttonsGame}>
-            <Share_button></Share_button>
+            <Share_button game={game}></Share_button>
             <Like></Like>
           </div>
         </div>
