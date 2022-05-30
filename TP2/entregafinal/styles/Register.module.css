@@ -144,6 +144,10 @@
   color: var(--color-DARK);
 }
 
+.btnInicioSesion:hover {
+  cursor: pointer;
+}
+
 
 .yaRegistrado{
   letter-spacing: 3px;

@@ -19,7 +19,7 @@
 .card:hover {
     cursor: pointer;
     filter: contrast(2);
-    zoom: 105%;
+    zoom: 101%;
 }
 
 .img{

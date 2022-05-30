@@ -23,6 +23,11 @@ export default function register(){
     return(<></>)
   }
 
+  function iniciarSesion(e){
+    e.preventDefault();
+    signIn('github', {callbackUrl:'https://unicen-visualizacion-juanmolfese.vercel.app'})
+  }
+
   return (
     <>     
       <div className={styles.container}>
@@ -73,7 +78,7 @@ export default function register(){
                      
           <div className={styles.contentSubmit}>
             {/* <Link href="/register_acepted"> */}
-              <button onClick={() => signIn('github', {callbackUrl:'https://unicen-visualizacion-juanmolfese.vercel.app'})}type="submit" className={styles.btnSubmit}>Registrarme</button>
+              <button onClick={iniciarSesion} type="submit" className={styles.btnSubmit}>Registrarme</button>
             {/* </Link> */}
           </div>
         </form>
