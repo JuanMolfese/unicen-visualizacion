@@ -4,8 +4,11 @@ import styles from '../styles/navbar.module.css';
 import Logo from './Logo';
 import Link from 'next/link';
 import ModalMenu from './ModalMenu';
+import { useSession } from 'next-auth/react';
 
 export function Navbar(genres){
+
+  const { data: session } = useSession();
 
   return (
     <>
@@ -13,10 +16,15 @@ export function Navbar(genres){
         <ModalMenu genres={genres}></ModalMenu>
         <Link href="/">
           <a><Logo /></a>
-        </Link>      
-        <Link href="/register">
+        </Link>     
+        {(session) ?
+        <Link href="/profile">
+          <img src={session.user.image} width={37} height={37} className={styles.imgProfile}></img>
+        </Link>
+        :<Link href="/register">
           <a><FaUserAlt className={styles.navbarIcon}/>  </a>
         </Link> 
+        }
       </nav>
       
     </>

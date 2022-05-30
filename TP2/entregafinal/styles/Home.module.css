@@ -12,6 +12,14 @@
   align-items: center;
 }
 
+.groupGame {
+  margin: 10px 0px 0px 25px;
+}
+
+.listFav {
+  margin-bottom: 25px;
+}
+
 .footer {
   display: flex;
   flex: 1;

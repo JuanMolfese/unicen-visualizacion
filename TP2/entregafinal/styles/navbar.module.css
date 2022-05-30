@@ -29,6 +29,18 @@
   cursor: pointer;
 }
 
+.imgProfile {
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+}
+
+.imgProfile:hover {
+  cursor: pointer;
+  /* filter: blur(1px); */
+  filter:contrast(2)
+}
+
+
 .invisible {
   visibility: hidden;
 }

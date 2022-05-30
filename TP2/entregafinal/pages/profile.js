@@ -7,6 +7,7 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
+import Spinner from "../components/spinner";
 
 export default function Profile({genres, favs}){
 
@@ -18,6 +19,10 @@ export default function Profile({genres, favs}){
         router.push("/")
         }
     }, [session])
+
+    if (!session) {
+        return (<Spinner></Spinner>);
+    }
 
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
@@ -42,8 +47,8 @@ export default function Profile({genres, favs}){
                 </div>
                 <div className={styles.profile}>
                     <div className={styles.profile_image}>
-                        <img width={50} height={50} src="https://avatars3.githubusercontent.com/u/56955891?s=460&u=f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8&v=4" alt="profile"/>
-                        <p>juanmolfese@gmail.com</p>
+                        <img width={50} height={50} src={session.user.image} alt="profile"/>
+                        <p>{session.user.email}</p>
                     </div>
                     <div className={styles.passwordOption}>
                         <p onClick={mostrarFormulario}>Cambiar contraseña <span><BiDownArrow id="down"/> <BiUpArrow id="up" display="none"/></span> </p>

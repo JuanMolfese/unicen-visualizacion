@@ -5,14 +5,16 @@ import Link from 'next/link'
 import { Navbar } from '../components/navbar'
 import { Footer } from '../components/Footer'
 import ListGames from '../components/ListGames'
-import {getSession} from 'next-auth/react'
+import {getSession, useSession} from 'next-auth/react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Advertising from '../components/advertising'
 
 
-export default function Home({games, genres, promotion}) {
+export default function Home({games, genres, promotion, favs}) {
+
+  const { data: session } = useSession();
 
   return (
     <>
@@ -24,6 +26,14 @@ export default function Home({games, genres, promotion}) {
           <h4 className={styles.gameTitle}>{promotion.title}</h4>                
         </section>
       </Link>
+      {(session) ?
+        <div className={styles.listFav}>
+          <h3 className={styles.groupGame}>Tus Favoritos</h3>
+          <ListGames games={favs}></ListGames>
+        </div>
+        : null
+      }
+      <h3 className={styles.groupGame}>Todos los juegos</h3>
       <ListGames games={games}></ListGames>
       <Advertising></Advertising>
       <Footer></Footer>
@@ -38,12 +48,15 @@ export const getServerSideProps = async () => {
   const games = await res.json();
   const resGenres = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/categories');
   const genres = await resGenres.json();
+  const fav = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/Accion');
+  const favs = await fav.json();
   return {
     props: {
       title: 'Games',
       // props that you want to pass to the page
       games: games,
       genres: genres,
+      favs: favs,
       promotion: games[18],
     },
   };
