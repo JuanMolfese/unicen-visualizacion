@@ -109,6 +109,11 @@
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.70);
+  animation: headShake 0.5s infinite;
+}
+
+.btnPlay:hover{
+  cursor: pointer;
 }
 
 .imgGame {
@@ -136,4 +141,25 @@
 .noExistGameTitle{
   font-size: 20px;
   margin-left: 25px;
+}
+
+@keyframes headShake {
+  0% {
+    transform: translateX(0);
+  }
+  6.5% {
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+  18.5% {
+    transform: translateX(5px) rotateY(7deg);
+  }
+  31.5% {
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+  43.5% {
+    transform: translateX(2px) rotateY(3deg);
+  }
+  50% {
+    transform: translateX(0);
+  }
 }
