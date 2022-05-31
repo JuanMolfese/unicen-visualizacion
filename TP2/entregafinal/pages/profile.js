@@ -4,15 +4,17 @@ import Navbar from "../components/navbar";
 import {FiLogOut} from 'react-icons/fi';
 /* import {FaPowerOffv} from 'react-icons/fa'; */
 import { BiDownArrow, BiUpArrow, BiTrash } from "react-icons/bi";
+import { FaCheckCircle } from "react-icons/fa"
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "../components/spinner";
 import ModalDeleteGame from "../components/ModalDeleteGame";
 
 export default function Profile({genres, favs}){
 
+    const [message, setMessage] = useState('');
     const router = useRouter();
     const { data: session } = useSession()
    
@@ -25,7 +27,7 @@ export default function Profile({genres, favs}){
     if (!session) {
         return (<Spinner></Spinner>);
     } 
- 
+  
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
         if (display == 'flex'){
@@ -37,7 +39,24 @@ export default function Profile({genres, favs}){
             document.getElementById("up").style.display = 'block';
             document.getElementById("down").style.display = 'none';
         }
-    }   
+    }  
+
+    function openAvisoOlvi(){
+        setMessage(`Se te envio un correo electronico a ${session.user.email} para reestablecer tu contraseña`);
+        //setMessage(`Se te envio un correo electronico a [...] para reestablecer tu contraseña`);
+        document.querySelector("#aviso").style.display = 'block';
+    }
+
+    function openAviso(e){
+        e.preventDefault()
+        setMessage('La contraseña ha sido cambiada correctamente');
+        document.querySelector("#aviso").style.display = 'block';
+        mostrarFormulario();
+    }
+    
+    function closeAviso(){
+        document.querySelector("#aviso").style.display = 'none';
+    }
 
 
     return (
@@ -59,9 +78,9 @@ export default function Profile({genres, favs}){
                             <input type="password" placeholder="Contraseña actual"/>
                             <input type="password" placeholder="Nueva contraseña"/>
                             <input type="password" placeholder="Confirmar contraseña"/>
-                            <button>Cambiar</button>
+                            <button onClick={openAviso}>Cambiar</button>
                         </form>
-                        <p>Olvide mi contraseña</p>
+                        <a onClick={openAvisoOlvi}><p>Olvide mi contraseña</p></a>
                     </div>
                     <div className={styles.favoritos}>
                         <h2>Tus Favoritos</h2>
@@ -76,7 +95,13 @@ export default function Profile({genres, favs}){
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div id="aviso" className={styles.aviso}>
+                <div className={styles.contentAviso}>
+                    <FaCheckCircle className={styles.iconCheck}/>
+                    <p>{message}</p>
+                    <button className={styles.btnGenial} onClick={closeAviso}>OK</button>
+                </div>
             </div>
         </>
     )
