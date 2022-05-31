@@ -2,7 +2,7 @@ import styles from "../styles/Profile.module.css";
 import Link from "next/link";
 import Navbar from "../components/navbar";
 import {FiLogOut} from 'react-icons/fi';
-import {FaPowerOffv} from 'react-icons/fa';
+/* import {FaPowerOffv} from 'react-icons/fa'; */
 import { BiDownArrow, BiUpArrow, BiTrash } from "react-icons/bi";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -43,8 +43,8 @@ export default function Profile({genres, favs}){
             <Navbar genres={genres}></Navbar>
             <div className={styles.container}>
                 <div className={styles.logout}>
-                   {/* <FiLogOut onClick={()=> signOut('github')} className={styles.iconClose}/>*/}
-                    <FaPowerOffv onClick={()=> signOut('github')} className={styles.iconClose}/>    
+                    <FiLogOut onClick={()=> signOut('github')} className={styles.iconClose}/>
+                    {/* <FaPowerOffv onClick={()=> signOut('github')} className={styles.iconClose}/>     */}
                 </div>
                 
                 <div className={styles.profile}>
