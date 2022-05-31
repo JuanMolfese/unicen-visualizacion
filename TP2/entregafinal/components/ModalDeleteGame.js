@@ -1,4 +1,5 @@
 import styles from '../styles/ModalDeleteGame.module.css'
+import { BiTrash } from "react-icons/bi";
 
 export default function ModalDeleteGame(){
 
