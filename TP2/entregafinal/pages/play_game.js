@@ -6,7 +6,7 @@ export function PlayGame(){
         <>
             <Navbar_inGame></Navbar_inGame>
             <img src="/pacman.gif" width="100%" height="500px"></img>                   
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
     )
 }

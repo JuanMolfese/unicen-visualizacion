@@ -13,8 +13,9 @@ import Like from '../../components/Like';
 import Share_button from "../../components/Share_button";
 import BtnsLikes from "../../components/BtnsLikes";
 import ButtonPlay from "../../components/ButtonPlay";
+import Navbar from "../../components/navbar";
 
-export default function Page({game}) {
+export default function Page({game, genres}) {
   const [loading, setLoading] = useState(true);
   const [games, setGames] = useState([]);
 
@@ -59,18 +60,14 @@ export default function Page({game}) {
 
   return (
     <div className={styles.content}>
-      <div className={styles.header}>
-        <IoReturnDownBackOutline className={styles.iconBack} onClick={() => Router.back()}></IoReturnDownBackOutline>
-        <Link href="/">
-          <a className={styles.logo}><Logo></Logo></a>
-        </Link>
-      </div>
+      <Navbar genres={genres}/>
       <div className={styles.contentGame}>
         <p className={styles.path}>Categoria:  
           <Link href={`/genre/${game.genre}`} as={`/genre/${game.genre}`}>
             <a>{game.genre}</a>
           </Link>
         </p>
+        {/* <IoReturnDownBackOutline className={styles.iconBack} onClick={() => Router.back()}></IoReturnDownBackOutline> */}
         <div className={styles.headerGame}>
           <h2 className={styles.titleGame}>{game.title}</h2>
           <div className={styles.buttonsGame}>
@@ -101,13 +98,16 @@ export default function Page({game}) {
 
 export async function getServerSideProps(context) {
   /* const res = await fetch(`https://www.freetogame.com/api/game?id=${context.params.id}`); */
+  const resCategories = await fetch(`https://unicen-visualizacion.vercel.app/api/categories`);
+  const categories = await resCategories.json();
   const res = await fetch(`https://unicen-visualizacion.vercel.app/api/games/${context.params.id}`)
   const game = await res.json();
   return {
     props: {
       title: 'Games',
       // props that you want to pass to the page
-      game: game
+      game: game,
+      genres: categories,
     },
   };
 }
