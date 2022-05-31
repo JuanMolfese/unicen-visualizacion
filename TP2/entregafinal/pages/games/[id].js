@@ -12,6 +12,7 @@ import NextJsCarousel from '../../components/Carousel';
 import Like from '../../components/Like';
 import Share_button from "../../components/Share_button";
 import BtnsLikes from "../../components/BtnsLikes";
+import ButtonPlay from "../../components/ButtonPlay";
 
 export default function Page({game}) {
   const [loading, setLoading] = useState(true);
@@ -81,7 +82,8 @@ export default function Page({game}) {
         <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p className={styles.descriptionGame}>{game.short_description}</p>
         <Link href="/play_game">
-          <a><button className={styles.btnPlay}>¡ Jugar ahora !</button></a>
+          {/* <a><button className={styles.btnPlay}>¡ Jugar ahora !</button></a> */}
+          <ButtonPlay/>
         </Link>      
       </div>
       <div className={styles.carousel}>
