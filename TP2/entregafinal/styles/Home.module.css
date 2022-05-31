@@ -164,7 +164,8 @@
 
 @media only screen and (min-width: 768px) {
   .card img{
-    max-height: 350px;
+    max-height: 50vh;
+    max-width: 50vw;
   }
 
   .card {

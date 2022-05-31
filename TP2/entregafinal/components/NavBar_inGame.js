@@ -7,7 +7,7 @@ import Modal_ComoJugar from './Modal_ComoJugar';
 
 export function Navbar_inGame(){
     return(
-    <nav className={styles.navbar_transparent}>
+    <nav className={styles.navbar}>
         <div>
             <Modal_ComoJugar></Modal_ComoJugar>
         </div>
