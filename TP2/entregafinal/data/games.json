@@ -516,5 +516,19 @@
     "release_date": "2018-03-13",
     "video_url": "https://www.youtube.com/embed/W4-PYn83K6g",
     "subcategory": ""
+  },
+  {
+    "id": 41,
+    "title": "Fortnite",
+    "thumbnail": "https://www.freetogame.com/g/42/thumbnail.jpg",
+    "short_description": "Uno de los juegos mas divertidos del momento. Free y multiplayer. Accion pura para disfrutar con otros jugadores",
+    "game_url": "https://www.freetogame.com/open/spellsworn",
+    "genre": "Accion",
+    "platform": "PC (Windows)",
+    "publisher": "Frogsong Studios AB",
+    "developer": "Frogsong Studios AB",
+    "release_date": "2018-03-13",
+    "video_url": "https://www.youtube.com/embed/cv7YRnV_WFI",
+    "subcategory": ""
   }
 ]
