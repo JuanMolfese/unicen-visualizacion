@@ -1,7 +1,7 @@
 export default function ButtonPlay(){
   return (
     <>
-      <a href="#">
+      <a>
         <span></span>
         <span></span>
         <span></span>

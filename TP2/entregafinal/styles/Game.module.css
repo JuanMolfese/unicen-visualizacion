@@ -143,6 +143,10 @@
   margin-left: 25px;
 }
 
+.buttonPlay {
+  color: var(--color-Primary-D2);
+}
+
 @keyframes headShake {
   0% {
     transform: translateX(0);
