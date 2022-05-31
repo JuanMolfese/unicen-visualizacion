@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import Spinner from "../components/spinner";
+import ModalDeleteGame from "../components/ModalDeleteGame";
 
 export default function Profile({genres, favs}){
 
@@ -68,7 +69,8 @@ export default function Profile({genres, favs}){
                         {favs.map((fav) => (
                             <div className={styles.favoritos_item}>
                                 <p>{fav.title}</p>
-                                <BiTrash className={styles.iconTrash}/>
+                                {/* <BiTrash className={styles.iconTrash}/> */}
+                                <ModalDeleteGame></ModalDeleteGame>
                             </div>
                         ))}
                         </div>
