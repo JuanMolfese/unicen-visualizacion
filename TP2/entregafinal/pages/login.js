@@ -18,6 +18,11 @@ export default function Login(){
         router.push("/")
         }
     }, [session])
+
+    function iniciarSesion(e){
+        e.preventDefault();
+        signIn('github', {callbackUrl:'https://unicen-visualizacion-juanmolfese.vercel.app'})
+      }
   
     return(
     <>
@@ -91,7 +96,7 @@ export default function Login(){
                         ) : (                        
                         (    
                         <div className={styles.contentSubmit}>
-                            <button onClick={() => signIn('github')} type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
+                            <button onClick={iniciarSesion} type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
                         </div>
                         ))
                 }            
