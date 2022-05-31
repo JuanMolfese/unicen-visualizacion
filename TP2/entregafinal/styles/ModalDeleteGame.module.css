@@ -10,6 +10,15 @@
   animation: fadeInLeft 0.7s;
 }
 
+.contentInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .iconTrash {
   width: 30px;
@@ -31,8 +40,7 @@
 .buttonCancel, .buttonDelete {
     margin-top: 40px;
     width: 150px;
-    height: 40px;
-    background-color: var(--color-Secondary);
+    height: 30px;
     border: 0;
     padding: 5px;
     font-family: Roboto;
@@ -41,4 +49,23 @@
     border-radius: 5px;
     box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
     color: var(--color-DARK);
+}
+
+.buttonCancel {
+  background-color: var(--color-Tertiary);
+}
+
+.buttonDelete {
+  background-color: var(--color-RED);
+  color: var(--color-bg-app-LIGHT);
+}
+
+.buttonCancel, .buttonDelete:hover {
+  cursor: pointer;
+}
+
+.iconInfo {
+  width: 80px;
+  height: 80px;
+  color: var(--color-Tertiary)
 }

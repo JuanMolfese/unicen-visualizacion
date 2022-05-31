@@ -25,7 +25,7 @@ export default function Profile({genres, favs}){
     if (!session) {
         return (<Spinner></Spinner>);
     }
-
+ 
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
         if (display == 'flex'){
@@ -45,7 +45,6 @@ export default function Profile({genres, favs}){
             <div className={styles.container}>
                 <div className={styles.logout}>
                     <FiLogOut onClick={()=> signOut('github')} className={styles.iconClose}/>
-                    {/* <FaPowerOffv onClick={()=> signOut('github')} className={styles.iconClose}/>     */}
                 </div>
                 
                 <div className={styles.profile}>
