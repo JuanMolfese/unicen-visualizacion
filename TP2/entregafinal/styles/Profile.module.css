@@ -55,6 +55,11 @@
   text-decoration: underline;
 }
 
+.profile_email{
+  font-size: medium;
+}
+
+
 .passwordOption {
   display: flex;
   flex-direction: column;

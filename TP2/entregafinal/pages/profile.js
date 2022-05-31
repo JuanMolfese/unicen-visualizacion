@@ -69,15 +69,15 @@ export default function Profile({genres, favs}){
                 
                 <div className={styles.profile}>
                     <div className={styles.profile_image}>
-                        <img width={50} height={50} src={session.user.image} alt="profile"/>
-                        <p>{session.user.email}</p>
+                        <img width={40} height={40} src={session.user.image} alt="profile"/>
+                        <p className={styles.profile_email}>{session.user.email}</p>
                     </div>
                     <div className={styles.passwordOption}>
                         <p onClick={mostrarFormulario}>Cambiar contraseña <span><BiDownArrow id="down"/> <BiUpArrow id="up" display="none"/></span> </p>
                         <form id="formulario" className={styles.formPass}>
-                            <input type="password" placeholder="Contraseña actual"/>
-                            <input type="password" placeholder="Nueva contraseña"/>
-                            <input type="password" placeholder="Confirmar contraseña"/>
+                            <input type="password" placeholder="Contraseña actual" maxLength={20}/>
+                            <input type="password" placeholder="Nueva contraseña" autoComplete="off" maxLength={20}/>
+                            <input type="password" placeholder="Confirmar contraseña" autoComplete="off" maxLength={20}/>
                             <button onClick={openAviso}>Cambiar</button>
                         </form>
                         <a onClick={openAvisoOlvi}><p>Olvide mi contraseña</p></a>
