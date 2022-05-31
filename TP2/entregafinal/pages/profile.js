@@ -24,7 +24,7 @@ export default function Profile({genres, favs}){
 
     if (!session) {
         return (<Spinner></Spinner>);
-    }
+    } 
  
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
@@ -38,6 +38,7 @@ export default function Profile({genres, favs}){
             document.getElementById("down").style.display = 'none';
         }
     }   
+
 
     return (
         <>

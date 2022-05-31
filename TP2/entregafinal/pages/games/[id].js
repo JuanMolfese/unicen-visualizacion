@@ -11,6 +11,7 @@ import ListGames from "../../components/ListGames";
 import NextJsCarousel from '../../components/Carousel';
 import Like from '../../components/Like';
 import Share_button from "../../components/Share_button";
+import BtnsLikes from "../../components/BtnsLikes";
 
 export default function Page({game}) {
   const [loading, setLoading] = useState(true);
@@ -74,6 +75,7 @@ export default function Page({game}) {
           <div className={styles.buttonsGame}>
             <Share_button game={game}></Share_button>
             <Like></Like>
+            {/* <BtnsLikes/> */}
           </div>
         </div>
         <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
