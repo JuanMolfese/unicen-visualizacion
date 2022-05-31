@@ -57,7 +57,7 @@ export default function Page({game}) {
   }
 
   return (
-    <div className={styles.contentGame}>
+    <div className={styles.content}>
       <div className={styles.header}>
         <IoReturnDownBackOutline className={styles.iconBack} onClick={() => Router.back()}></IoReturnDownBackOutline>
         <Link href="/">
