@@ -33,3 +33,18 @@
 .listGameForCategory{
     margin: 25px 25px;
 }
+
+.customSelect {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right: 25px;
+    height: 30px;
+}
+
+.customSelect select {
+    border-radius: 10%;
+    background-color: var(--color-GREY);
+    font-size: 1rem;
+    width: 150px;
+}

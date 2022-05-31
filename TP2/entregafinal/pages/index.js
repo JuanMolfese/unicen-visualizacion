@@ -57,7 +57,7 @@ export const getServerSideProps = async () => {
       games: games,
       genres: genres,
       favs: favs,
-      promotion: games[18],
+      promotion: games[40],
     },
   };
 }
