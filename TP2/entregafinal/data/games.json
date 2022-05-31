@@ -16,7 +16,7 @@
   {
     "id": 2,
     "title": "World of Tanks",
-    "thumbnail": "https://www.freetogame.com/g/2/thumbnail.jpg",
+    "thumbnail": "/gamesImg/2.jpg",
     "short_description": "Excelente juego de accion para jugar con amigos!",
     "game_url": "https://www.freetogame.com/open/world-of-tanks",
     "genre": "Accion",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "title": "Warframe",
-    "thumbnail": "https://www.freetogame.com/g/3/thumbnail.jpg",
+    "thumbnail": "/gamesImg/3.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando zombies",
     "game_url": "https://www.freetogame.com/open/warframe",
     "genre": "Disparos",
@@ -44,7 +44,7 @@
   {
     "id": 4,
     "title": "CRSED: F.O.A.D.",
-    "thumbnail": "https://www.freetogame.com/g/4/thumbnail.jpg",
+    "thumbnail": "/gamesImg/4.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando zombies",
     "game_url": "https://www.freetogame.com/open/crsed",
     "genre": "Disparos",
@@ -58,7 +58,7 @@
   {
     "id": 5,
     "title": "CrossOut",
-    "thumbnail": "https://www.freetogame.com/g/5/thumbnail.jpg",
+    "thumbnail": "/gamesImg/5.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando delfines asesinos",
     "game_url": "https://www.freetogame.com/open/crossout",
     "genre": "Disparos",
@@ -72,7 +72,7 @@
   {
     "id": 6,
     "title": "Blade and Soul",
-    "thumbnail": "https://www.freetogame.com/g/6/thumbnail.jpg",
+    "thumbnail": "/gamesImg/6.jpg",
     "short_description": "Excelente juego MMORPG para jugar con amigos. Caza dragones y salva al perro",
     "game_url": "https://www.freetogame.com/open/blade-and-soul",
     "genre": "MMORPG",
@@ -86,7 +86,7 @@
   {
     "id": 7,
     "title": "Armored Warfare",
-    "thumbnail": "https://www.freetogame.com/g/7/thumbnail.jpg",
+    "thumbnail": "/gamesImg/7.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando pandas",
     "game_url": "https://www.freetogame.com/open/armored-warfare",
     "genre": "Disparos",
@@ -100,7 +100,7 @@
   {
     "id": 8,
     "title": "Trove",
-    "thumbnail": "https://www.freetogame.com/g/8/thumbnail.jpg",
+    "thumbnail": "/gamesImg/8.jpg",
     "short_description": "Excelente juego MMORPG para jugar con amigos. Caza dragones y salva a motoneta de las garras de la ley",
     "game_url": "https://www.freetogame.com/open/trove",
     "genre": "MMORPG",
@@ -114,7 +114,7 @@
   {
     "id": 9,
     "title": "World of Warships",
-    "thumbnail": "https://www.freetogame.com/g/9/thumbnail.jpg",
+    "thumbnail": "/gamesImg/9.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando gallinas",
     "game_url": "https://www.freetogame.com/open/world-of-warships",
     "genre": "Disparos",
@@ -128,7 +128,7 @@
   {
     "id": 10,
     "title": "ArcheAge",
-    "thumbnail": "https://www.freetogame.com/g/10/thumbnail.jpg",
+    "thumbnail": "/gamesImg/10.jpg",
     "short_description": "Excelente juego MMORPG para jugar con amigos. Caza dragones y salva a Sandra de Lord Guido",
     "game_url": "https://www.freetogame.com/open/archeage",
     "genre": "MMORPG",
@@ -142,7 +142,7 @@
   {
     "id": 11,
     "title": "Neverwinter",
-    "thumbnail": "https://www.freetogame.com/g/11/thumbnail.jpg",
+    "thumbnail": "/gamesImg/11.jpg",
     "short_description": "Excelente juego MMORPG para jugar con amigos. Caza peluqueras de la mano del infiel Cristiano",
     "game_url": "https://www.freetogame.com/open/neverwinter",
     "genre": "MMORPG",
@@ -156,7 +156,7 @@
   {
     "id": 12,
     "title": "War Thunder",
-    "thumbnail": "https://www.freetogame.com/g/12/thumbnail.jpg",
+    "thumbnail": "/gamesImg/12.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando animales salvajes",
     "game_url": "https://www.freetogame.com/open/war-thunder",
     "genre": "Disparos",
@@ -170,7 +170,7 @@
   {
     "id": 13,
     "title": "Guild Wars 2",
-    "thumbnail": "https://www.freetogame.com/g/13/thumbnail.jpg",
+    "thumbnail": "/gamesImg/13.jpg",
     "short_description": "Excelente juego MMORPG para jugar con amigos. Caza gatitos con la ayuda de Lord Demon",
     "game_url": "https://www.freetogame.com/open/guild-wars-2",
     "genre": "MMORPG",
@@ -184,7 +184,7 @@
   {
     "id": 14,
     "title": "Star Trek Online",
-    "thumbnail": "https://www.freetogame.com/g/14/thumbnail.jpg",
+    "thumbnail": "/gamesImg/14.jpg",
     "short_description": "Disfruta del mejor juego de aventuras !",
     "game_url": "https://www.freetogame.com/open/star-trek-online",
     "genre": "Aventuras",
@@ -198,7 +198,7 @@
   {
     "id": 15,
     "title": "Crossfire",
-    "thumbnail": "https://www.freetogame.com/g/15/thumbnail.jpg",
+    "thumbnail": "/gamesImg/15.jpg",
     "short_description": "Disfruta del mejor juego de aventuras !",
     "game_url": "https://www.freetogame.com/open/crossfire",
     "genre": "Aventuras",
@@ -212,7 +212,7 @@
   {
     "id": 16,
     "title": "Roblox",
-    "thumbnail": "https://www.freetogame.com/g/16/thumbnail.jpg",
+    "thumbnail": "/gamesImg/16.jpg",
     "short_description": "Disfruta del mejor juego de aventuras !. Recorre todo este mundo esquivando las amenazas",
     "game_url": "https://www.freetogame.com/open/roblox",
     "genre": "Aventuras",
@@ -226,7 +226,7 @@
   {
     "id": 17,
     "title": "Entropia Universe",
-    "thumbnail": "https://www.freetogame.com/g/17/thumbnail.jpg",
+    "thumbnail": "/gamesImg/17.jpg",
     "short_description": "Disfruta del mejor juego de aventuras !. Recorre el viejo oeste en busca de oro",
     "game_url": "https://www.freetogame.com/open/entropia-universe",
     "genre": "Aventuras",
@@ -240,7 +240,7 @@
   {
     "id": 18,
     "title": "Second Life",
-    "thumbnail": "https://www.freetogame.com/g/18/thumbnail.jpg",
+    "thumbnail": "/gamesImg/18.jpg",
     "short_description": "Disfruta del mejor juego de aventuras !. Escapa de la isla antes que te atrapen",
     "game_url": "https://www.freetogame.com/open/second-life",
     "genre": "Aventuras",
@@ -254,7 +254,7 @@
   {
     "id": 19,
     "title": "Minion Masters",
-    "thumbnail": "https://www.freetogame.com/g/19/thumbnail.jpg",
+    "thumbnail": "/gamesImg/19.jpg",
     "short_description": "Excelente juego de accion para jugar con amigos!. Lleno de peligros y obstaculos. En esta version tambien encontraras nuevo retos",
     "game_url": "https://www.freetogame.com/open/minion-masters",
     "genre": "Accion",
@@ -268,7 +268,7 @@
   {
     "id": 20,
     "title": "Splitgate: Arena Warfare",
-    "thumbnail": "https://www.freetogame.com/g/20/thumbnail.jpg",
+    "thumbnail": "/gamesImg/20.jpg",
     "short_description": "Excelente juego de accion para jugar con amigos!",
     "game_url": "https://www.freetogame.com/open/splitgate-arena-warfare",
     "genre": "Accion",
@@ -282,7 +282,7 @@
   {
     "id": 21,
     "title": "Destiny 2",
-    "thumbnail": "https://www.freetogame.com/g/21/thumbnail.jpg",
+    "thumbnail": "/gamesImg/21.jpg",
     "short_description": "Excelente juego de accion para jugar con amigos!",
     "game_url": "https://www.freetogame.com/open/destiny-2",
     "genre": "Accion",
@@ -296,7 +296,7 @@
   {
     "id": 22,
     "title": "Wild Terra Online",
-    "thumbnail": "https://www.freetogame.com/g/22/thumbnail.jpg",
+    "thumbnail": "/gamesImg/22.jpg",
     "short_description": "Disfruta del mejor juego de Arcade !",
     "game_url": "https://www.freetogame.com/open/wild-terra-online",
     "genre": "Arcade",
@@ -310,7 +310,7 @@
   {
     "id": 23,
     "title": "Apex Legends",
-    "thumbnail": "https://www.freetogame.com/g/23/thumbnail.jpg",
+    "thumbnail": "/gamesImg/23.jpg",
     "short_description": "Disfruta del mejor juego de Arcade ! Dale duro que estos no te piden fichines",
     "game_url": "https://www.freetogame.com/open/apex-legends",
     "genre": "Arcade",
@@ -324,7 +324,7 @@
   {
     "id": 24,
     "title": "Counter-Strike: Global Offensive",
-    "thumbnail": "https://www.freetogame.com/g/24/thumbnail.jpg",
+    "thumbnail": "/gamesImg/24.jpg",
     "short_description": "Disfruta del mejor juego de Arcade !",
     "game_url": "https://www.freetogame.com/open/counter-strike-global-offensive",
     "genre": "Arcade",
@@ -338,7 +338,7 @@
   {
     "id": 25,
     "title": "Bless Online",
-    "thumbnail": "https://www.freetogame.com/g/25/thumbnail.jpg",
+    "thumbnail": "/gamesImg/25.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/bless-online",
     "genre": "Deportes",
@@ -352,7 +352,7 @@
   {
     "id": 26,
     "title": "MapleStory 2",
-    "thumbnail": "https://www.freetogame.com/g/26/thumbnail.jpg",
+    "thumbnail": "/gamesImg/26.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/maplestory-2",
     "genre": "Deportes",
@@ -366,7 +366,7 @@
   {
     "id": 28,
     "title": "Spacelords",
-    "thumbnail": "https://www.freetogame.com/g/28/thumbnail.jpg",
+    "thumbnail": "/gamesImg/28.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/spacelords",
     "genre": "Deportes",
@@ -380,7 +380,7 @@
   {
     "id": 29,
     "title": "Ring of Elysium",
-    "thumbnail": "https://www.freetogame.com/g/29/thumbnail.jpg",
+    "thumbnail": "/gamesImg/29.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/ring-of-elysium",
     "genre": "Deportes",
@@ -394,7 +394,7 @@
   {
     "id": 30,
     "title": "Quake Champions",
-    "thumbnail": "https://www.freetogame.com/g/30/thumbnail.jpg",
+    "thumbnail": "/gamesImg/30.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/quake-champions",
     "genre": "Deportes",
@@ -408,7 +408,7 @@
   {
     "id": 31,
     "title": "Cosmos Invictus",
-    "thumbnail": "https://www.freetogame.com/g/31/thumbnail.jpg",
+    "thumbnail": "/gamesImg/31.jpg",
     "short_description": "Disfruta del mejor juego de plataformas !",
     "game_url": "https://www.freetogame.com/open/cosmos-invictus",
     "genre": "Plataformas",
@@ -422,7 +422,7 @@
   {
     "id": 32,
     "title": "Champions Of Titan",
-    "thumbnail": "https://www.freetogame.com/g/32/thumbnail.jpg",
+    "thumbnail": "/gamesImg/32.jpg",
     "short_description": "Disfruta del mejor juego de plataformas !",
     "game_url": "https://www.freetogame.com/open/champions-of-titan",
     "genre": "Plataformas",
@@ -436,7 +436,7 @@
   {
     "id": 33,
     "title": "Caller’s Bane",
-    "thumbnail": "https://www.freetogame.com/g/33/thumbnail.jpg",
+    "thumbnail": "/gamesImg/33.jpg",
     "short_description": "Disfruta del mejor juego de plataformas !",
     "game_url": "https://www.freetogame.com/open/callers-bane",
     "genre": "Plataformas",
@@ -450,7 +450,7 @@
   {
     "id": 35,
     "title": "Defiance 2050",
-    "thumbnail": "https://www.freetogame.com/g/35/thumbnail.jpg",
+    "thumbnail": "/gamesImg/35.jpg",
     "short_description": "Disfruta del mejor juego de plataformas !!",
     "game_url": "https://www.freetogame.com/open/defiance-2050",
     "genre": "Plataformas",
@@ -464,7 +464,7 @@
   {
     "id": 36,
     "title": "Realm Royale",
-    "thumbnail": "https://www.freetogame.com/g/36/thumbnail.jpg",
+    "thumbnail": "/gamesImg/36.jpg",
     "short_description": "Disfruta del mejor juego de plataformas !",
     "game_url": "https://www.freetogame.com/open/realm-royale",
     "genre": "Plataformas",
@@ -478,7 +478,7 @@
   {
     "id": 37,
     "title": "Crusaders Of Light",
-    "thumbnail": "https://www.freetogame.com/g/37/thumbnail.jpg",
+    "thumbnail": "/gamesImg/37.jpg",
     "short_description": "Disfruta del mejor juego de deportes !",
     "game_url": "https://www.freetogame.com/open/crusaders-of-light",
     "genre": "Deportes",
@@ -492,7 +492,7 @@
   {
     "id": 39,
     "title": "Darwin Project",
-    "thumbnail": "https://www.freetogame.com/g/39/thumbnail.jpg",
+    "thumbnail": "/gamesImg/39.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando a los enemigos !",
     "game_url": "https://www.freetogame.com/open/darwin-project",
     "genre": "Disparos",
@@ -506,7 +506,7 @@
   {
     "id": 40,
     "title": "Spellsworn",
-    "thumbnail": "https://www.freetogame.com/g/42/thumbnail.jpg",
+    "thumbnail": "/gamesImg/40.jpg",
     "short_description": "Juego gratuito donde debes conseguir la mayor cantidad de puntos matando pollitos",
     "game_url": "https://www.freetogame.com/open/spellsworn",
     "genre": "Disparos",
