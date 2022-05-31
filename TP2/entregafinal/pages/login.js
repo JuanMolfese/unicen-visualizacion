@@ -21,7 +21,7 @@ export default function Login(){
 
     function iniciarSesion(e){
         e.preventDefault();
-        signIn('github', {callbackUrl:'https://unicen-visualizacion-juanmolfese.vercel.app'})
+        signIn('github', {callbackUrl:'https://unicen-visualizacion.vercel.app'})
       }
   
     return(

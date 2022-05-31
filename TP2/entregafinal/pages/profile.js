@@ -83,9 +83,9 @@ export default function Profile({genres, favs}){
 }
 
 export const getServerSideProps = async () => {
-    const resGenres = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/categories');
+    const resGenres = await fetch('https://unicen-visualizacion.vercel.app/api/categories');
     const genres = await resGenres.json();
-    const fav = await fetch('https://unicen-visualizacion-juanmolfese.vercel.app/api/categories/Accion');
+    const fav = await fetch('https://unicen-visualizacion.vercel.app/api/categories/Accion');
     const favs = await fav.json();
     return {
         props: {
