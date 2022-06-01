@@ -98,6 +98,8 @@
   color: #0070f3;
   border-color: #0070f3;
   cursor: pointer;
+  filter: contrast(2);
+  transition: all 1s linear;
 }
 
 .card h2 {
