@@ -10,7 +10,7 @@ export function Fondo_animado(){
             <style jsx>{`
                 .bg {
                     animation:slide 3s ease-in-out infinite alternate;
-                    background-image: linear-gradient(-25deg, var(--color-Primary) 40%, var(--color-Tertiary) 50%);
+                    background-image: linear-gradient(-25deg, var(--color-GREY) 30%, var(--color-Tertiary) 50%);
                     bottom:0;
                     left:-50%;
                     opacity:.9;

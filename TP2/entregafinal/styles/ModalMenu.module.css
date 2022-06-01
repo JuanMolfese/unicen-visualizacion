@@ -40,6 +40,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 10px 25px;
+  background-color: var(--color-Tertiary);
+  height: 70px;
 }
 
 .logo {
@@ -61,11 +63,11 @@
 }
 
 .searchContainer{
-  height: 70px;
-  padding-top: 15px;
+  height: 90px;
+  padding-top: 30px;
   padding-bottom: 20px;
   background-color: var(--color-GREY);
-  margin-top: 30px;
+  
   justify-content: center;
   align-items: center;
 }
