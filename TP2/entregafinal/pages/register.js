@@ -59,6 +59,7 @@ export default function register(){
             placeholder="Ingrese su correo electronico"
             autoComplete="off"
             maxLength={28}
+            required
           />
           <label for="pswrd" className={styles.labels}>Password:</label>
           <input
@@ -71,6 +72,8 @@ export default function register(){
             title="La contraseña puede ser números (0 to 9) o letras (a to z)."
             autoComplete="off"
             maxLength={15}
+            minlength={8}
+            required
           />
            <div className={styles.infoPass}>
               <span>Contraseña de al menos 8 numeros y letras.</span>
