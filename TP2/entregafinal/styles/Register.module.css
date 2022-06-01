@@ -110,6 +110,7 @@
 .btnSubmit {
   margin-top: 20px;
   margin-bottom: 20px;
+  color: var(--color-bg-app-LIGHT);
   width: 150px;
   height: 40px;
   background-color: var(--color-Secondary-D2);
