@@ -3,7 +3,7 @@ import { FaShareAlt, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-export default function Share_button(){
+export default function Share_button({game}){
 
     const router = useRouter();
 
@@ -23,8 +23,8 @@ export default function Share_button(){
         <>         
             <div className='iconShare'>
               <span><FaShareAlt/></span>
-              <a><FaWhatsapp/></a>
-              <a><FaFacebookF/></a>
+              <a className='whatsapp' href={`https://api.whatsapp.com/send?text= Mira que buen juego !! https://unicen-visualizacion-juanmolfese.vercel.app/games/${game.id}`} target="_blank" ><FaWhatsapp/></a>
+              <a className='facebook'><FaFacebookF/></a>
             </div>
             <style jsx>{`
               
@@ -42,7 +42,7 @@ export default function Share_button(){
                 cursor: pointer;
                 transition: .3s linear;
                 margin-right: 15px;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
               }
 
               .iconShare:hover{
@@ -55,15 +55,13 @@ export default function Share_button(){
                 height: 100%;
                 background: var(--color-bg-app-LIGHT);
                 text-align: center;
-                line-height: 40px;
                 z-index: 999;
                 transition: .6s linear;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-size: 1.5rem;
               }
-
-
 
               .iconShare:hover span{
                 transform: translateX(-100%);
@@ -77,6 +75,14 @@ export default function Share_button(){
                 transform: translateX(-100%);
                 opacity: 0;
                 transition: .3s linear;
+              }
+
+              .whatsapp{
+                color: #00bb2d;
+              }
+
+              .facebook{
+                color: #3b5998;
               }
 
               .iconShare:hover a{
