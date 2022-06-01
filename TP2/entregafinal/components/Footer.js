@@ -3,7 +3,7 @@
 export function Footer(){
   return (
     <footer>
-        <h4>Copyright CM software</h4>
+        <h5>Copyright CM software</h5>
     </footer>
   )
 }

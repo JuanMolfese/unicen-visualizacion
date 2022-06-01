@@ -16,7 +16,7 @@ export default function Like(){
     };
 
     const redirect = () => {
-        router.push('/register')
+        router.push('/login')
     };
            
 	return (       

@@ -27,7 +27,7 @@ export function Navbar(genres){
         <Link href="/profile">
           <img src={session.user.image} width={37} height={37} className={styles.imgProfile}></img>
         </Link>
-        :<Link href="/register">
+        :<Link href="/login">
           <a><FaUserAlt className={styles.navbarIcon}/>  </a>
         </Link> 
         }

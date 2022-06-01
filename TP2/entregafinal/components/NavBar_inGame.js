@@ -19,6 +19,6 @@ export function Navbar_inGame(){
         <div className={styles.div_end_navbar_transparent}>
             <FaTimes className={styles.navbarIcon} onClick={() => Router.back()}/>
         </div>   
-   </nav>
+    </nav>
     )
 }

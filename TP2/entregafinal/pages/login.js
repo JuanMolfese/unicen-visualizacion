@@ -72,24 +72,8 @@ export default function Login(){
                 />
                 <div className={styles.infoPass}>
                     <span>Contraseña de al menos 8 numeros y letras.</span>
-                </div>    
+                </div> 
 
-                {/* TODO Aca vamos al home pero con user logueado
-                Significa poner avatar del usuario (con opcion de log off)
-                Ese boton habilita nuevo menu de edicion del usuario.
-                Y debe aparecer la lista de favoritos (supongamos que es un usuario ya 
-                creado por lo que posee un par de favoritos) */}
-
-                {/* <Link href="/"> 
-                    <div className={styles.contentSubmit}>
-                        <button type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
-                    </div>
-                </Link> */}
-
-{/* 
-                {session && <a href="#" onClick={handleSignout} className="btn-signin">Sign out</a>  } 
-                {!session && <a href="#" onClick={handleSignin}  className="btn-signin">Sign in</a>  }
- */}            
                 {(session) ? (
                         (  
                         <div className={styles.contentSubmit}>
@@ -99,12 +83,22 @@ export default function Login(){
                         ) : (                        
                         (    
                         <div className={styles.contentSubmit}>
-                            <button onClick={iniciarSesion} type="submit" className={styles.btnInicioSesion}>Iniciar Sesion</button>
+                            <button onClick={iniciarSesion} type="submit" className={styles.btnSubmit}>Iniciar Sesion</button>
                         </div>
+                        
                         ))
                 }            
 
             </form>
+            <div className={styles.contentTitle}>
+                <h4 className={styles.yaRegistrado}>Aun no estas registrado ?</h4>
+                <div className={styles.contentSubmit}>
+                    <Link href="/register">
+                    <a className={styles.linkInicioSesion}> Registrame </a>
+                    </Link>
+                </div>
+            </div>
+
         </div>
     </>
     )
