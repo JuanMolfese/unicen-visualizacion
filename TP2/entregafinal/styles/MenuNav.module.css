@@ -1,6 +1,9 @@
 .listGenres{
   display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
+  padding: 0;
 }
 
 .itemGenre {
@@ -17,7 +20,9 @@
 
 /* Search */
 
-.searchContainer{
+.searchContainer {
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -30,8 +35,8 @@
 }
 
 .inputSearch{
-  height: 25px;
-  width: 60%;
+  height: 40px;
+  width: 50vh;
   border-radius: 5px;
   border-color: var(--color-Primary-D2);
   font-size: 15px;
@@ -39,17 +44,20 @@
 }
 
 .iconSearch{
- margin-left: 5px;
- color: var(--color-Primary-D2); 
- border: var(--color-Primary-D2) 1px solid;
- background-color: var(--color-bg-app-LIGHT);
- border-radius: 5px;
- width: 25px;
- height: 25px;
- padding: 5px;
+  margin-left: 5px;
+  color: var(--color-Primary-D2); 
+  border: var(--color-Primary-D2) 1px solid;
+  background-color: var(--color-bg-app-LIGHT);
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
 }
 
 .iconSearch:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-GREY);
 }
 
