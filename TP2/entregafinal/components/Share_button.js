@@ -1,105 +1,104 @@
-import {FaShareAlt, FaWhatsapp, FaRegCopy, FaTwitter} from 'react-icons/fa';
-import styles from '../styles/Game.module.css';
+import {useState} from 'react';
+import { FaShareAlt, FaWhatsapp, FaFacebookF } from "react-icons/fa";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
-export default function Share_button({game}){
+export default function Share_button(){
 
-  return (
-    <>
-    <div className="content">
-      <input type="checkbox" id="click"/>
-      <label for="click" className="share-btn">
-        <div className={styles.iconShare}>
-          <FaShareAlt/>
-        </div>
-        <a href={`https://api.whatsapp.com/send?text= Mira que buen juego !! https://unicen-visualizacion-juanmolfese.vercel.app/games/${game.id}`} target="_blank" ><span><FaWhatsapp/></span></a>
-        <a href="#"><span><FaRegCopy/></span></a>
-        {/* <a href="#"><span><FaTwitter/></span></a> */}
-      </label>
-    </div>
+    const router = useRouter();
 
-    <style jsx>{`
-      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-     .content{
-        color: #202020;
-      }
-      .text{
-        font-size: 40px;
-        font-weight: 600;
-      }
-      p{
-        font-size: 37px;
-        font-weight: 500;
-      }
-      .share-btn{
-        position: sticky;
-        bottom: 30px;
-        right: 30px;
-        z-index: 1;
-      }
-      .share-btn span{
-        height: 60px;
-        width: 60px;
-        background: #16a085;
-        line-height: 60px;
-        font-size: 25px;
-        color: #e9fcf8;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 1px solid #159d82;
-      }
-      .share-btn:hover span{
-        background: #159d82;
-        border-color: #12876f;
-      }
-      .share-btn a span{
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        height: 30px;
-        width: 30px;
-        line-height: 30px;
-        font-size: 18px;
-        border: 1px solid transparent;
-        background: #16a085;
-        z-index: -1;
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.6s;
-      }
-      #click:checked ~ .share-btn a span{
-        height: 50px;
-        width: 50px;
-        line-height: 50px;
-        font-size: 23px;
-        z-index: 1;
-        opacity: 1;
-        pointer-events: auto;
-      }
-      #click:checked ~ .share-btn a:nth-child(2) span{
-        bottom: 0px;
-        right: 80px;
-        background: #075E54;        
-      }
-      #click:checked ~ .share-btn a:nth-child(3) span{
-        bottom: 65px;
-        right: 65px;
-        background: #e1306c;        
-      }
-      .share-btn a:nth-child(3) span{
-        transition-delay: 0.2s;
-      }
-      #click:checked ~ .share-btn a:nth-child(4) span{
-        bottom: 80px;
-        right: 0px;
-        background: #1DA1F2;        
-      }
-      .share-btn a:nth-child(4) span{
-        transition-delay: 0.4s;
-      }
-      #click{
-        display: none;
-      }
-    `}</style>
-    </>
-  )
-}
+    const { data: session } = useSession();
+    
+    const [isFavorite, setIsFavorite] = useState(false);
+	
+	const presionado = () => {
+        setIsFavorite(!isFavorite);
+    };
+
+    const redirect = () => {
+        router.push('/register')
+    };
+           
+	return (       
+        <>         
+            <div className='iconShare'>
+              <span><FaShareAlt/></span>
+              <a><FaWhatsapp/></a>
+              <a><FaFacebookF/></a>
+            </div>
+            <style jsx>{`
+              
+              .iconShare{
+                width: 80px;
+                height: 40px;
+                box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+                background: #dfe6e9;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+                transition: .3s linear;
+                margin-right: 15px;
+                font-size: 1.5rem;
+              }
+
+              .iconShare:hover{
+                transform: scale(1.1);
+              }
+
+              .iconShare span{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: var(--color-bg-app-LIGHT);
+                text-align: center;
+                line-height: 40px;
+                z-index: 999;
+                transition: .6s linear;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+
+
+
+              .iconShare:hover span{
+                transform: translateX(-100%);
+                transition-delay: .3s;
+              }
+
+              .iconShare a{
+                flex: 1,
+                font-size: 1.5rem;
+                text-align: center;
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: .3s linear;
+              }
+
+              .iconShare:hover a{
+                transform: translateX(0);
+                opacity: 1;
+              }
+
+              .iconShare a:nth-of-type(1){
+                transition-delay: .1s;
+              }
+
+              .iconShare a:nth-of-type(2){
+                transition-delay: .8s;
+              } 
+            `}
+            </style>  
+
+       </> 
+    );
+};
+
+
+
+{/* <a href={`https://api.whatsapp.com/send?text= Mira que buen juego !! https://unicen-visualizacion-juanmolfese.vercel.app/games/${game.id}`} target="_blank" ><span><FaWhatsapp/></span></a> */}
+  
