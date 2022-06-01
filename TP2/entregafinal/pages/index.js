@@ -26,6 +26,7 @@ export default function Home({games, genres, promotion, favs}) {
             <div className={styles.contentGame}>
               <img src={promotion.thumbnail} width="100%vh" height="auto"/>
               <ul className={styles.contentGameText}>
+                <li className={styles.titleGame}>{promotion.title}</li>
                 <li> <span>Descripción:</span> {promotion.short_description}</li>
                 <li> <span>Categoria:</span> {promotion.genre}</li>
                 <li> <span>Fecha de creacion: </span> {promotion.release_date} </li>

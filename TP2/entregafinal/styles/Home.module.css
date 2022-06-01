@@ -160,6 +160,14 @@
   font-weight: 800;
 }
 
+.titleGame {
+  font-size: 2rem !important;
+  text-align: center;
+  color: var(--color-Primary-D2);
+  margin-bottom: 25px !important;
+}
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -187,7 +195,7 @@
   }
 
   .card {
-    margin: 10px 25px 10px 25px;
+    margin: 20px 50px 20px 50px;
   }
 
   .contentGameText {
@@ -199,7 +207,7 @@
   }
 
   .gameTitle {
-    font-size: 1.5rem;
+    display: none;
   }
 
 }
