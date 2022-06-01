@@ -56,7 +56,7 @@ export default function Share_button({game}){
                 height: 100%;
                 background: var(--color-bg-app-LIGHT);
                 text-align: center;
-                z-index: 999;
+                z-index: 9;
                 transition: .6s linear;
                 display: flex;
                 align-items: center;
