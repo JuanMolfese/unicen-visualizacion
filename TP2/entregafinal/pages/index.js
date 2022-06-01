@@ -19,7 +19,7 @@ export default function Home({games, genres, promotion, favs}) {
   return (
     <>
       <Navbar genres={genres}></Navbar>
-      <main className='main'>
+      <main className={styles.main}>
         <Link href="/games/[id]" as={`/games/${promotion.id}`}>
           <section className={styles.card}>
             <h6 className={styles.juegoPromocionado}>Juego promocionado</h6>
