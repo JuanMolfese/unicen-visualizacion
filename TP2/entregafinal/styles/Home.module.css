@@ -53,13 +53,8 @@
   font-size: 4rem;
 }
 
-.title,
 .description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
+  /* margin: 4rem 0; */
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -136,12 +131,35 @@
 
 .juegoPromocionado{
   margin: 5px;
+  margin-bottom: 10px;
   color: var(--color-Dark);
 }
 
 .gameTitle{
   margin: 5px;
 }
+
+.contentGame{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contentGameText {
+  display: none;
+  list-style: none;
+}
+
+.contentGameText li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contentGameText li span {
+  font-weight: 800;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -172,5 +190,16 @@
     margin: 10px 25px 10px 25px;
   }
 
+  .contentGameText {
+    display: block;
+  }
+
+  .juegoPromocionado {
+    font-size: 1rem;
+  }
+
+  .gameTitle {
+    font-size: 1.5rem;
+  }
 
 }

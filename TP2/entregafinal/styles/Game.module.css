@@ -56,6 +56,11 @@
   color: var(--color-Primary-D2);
   text-align: start;
   font-size: 25px;
+  display: -webkit-box;
+  max-width: 95%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .buttonsGame {
