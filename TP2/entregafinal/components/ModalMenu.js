@@ -33,7 +33,7 @@ export default function ModalMenu({genres}){
           <span className={styles.search_aclaration}> Busca por nombre o categoria</span>
         </div>
         <div className={styles.allGames}>
-          <a href="/">Todos los juegos</a>
+          <a href="/">Ver todos los juegos</a>
         </div>
         <div className={styles.genres}>
           <div className={styles.categories}>
