@@ -29,7 +29,7 @@ export default function Share_button({game}){
             <style jsx>{`
               
               .iconShare{
-                width: 80px;
+                width: 40px;
                 height: 40px;
                 box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
                 background: #dfe6e9;
@@ -47,6 +47,7 @@ export default function Share_button({game}){
 
               .iconShare:hover{
                 transform: scale(1.1);
+                width: 80px;
               }
 
               .iconShare span{
