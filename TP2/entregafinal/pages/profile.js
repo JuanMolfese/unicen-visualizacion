@@ -11,7 +11,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Spinner from "../components/spinner";
 import ModalDeleteGame from "../components/ModalDeleteGame";
-import  {Image} from 'next/image'
+import Image from 'next/image'
 
 export default function Profile({genres, favs}){
 
@@ -27,7 +27,7 @@ export default function Profile({genres, favs}){
 
     if (!session) {
         return (<Spinner></Spinner>);
-    } 
+    }  
   
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
@@ -88,8 +88,10 @@ export default function Profile({genres, favs}){
                         <div className={styles.favoritos_content}>
                         {favs.map((fav) => (
                             <div className={styles.favoritos_item}>
-                                <Image src={fav.thumbnail} width={30} height={30} className={styles.img_fav}/>
-                                <p>{fav.title}</p>
+                                <div className={styles.fav_game}>
+                                    <Image src={fav.thumbnail} width={40} height={40} className={styles.img_fav}/>
+                                    <p>{fav.title}</p>
+                                </div>
                                 {/* <BiTrash className={styles.iconTrash}/> */}
                                 <ModalDeleteGame></ModalDeleteGame>
                             </div>

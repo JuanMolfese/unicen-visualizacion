@@ -123,6 +123,15 @@
   margin: 0 10px 0 10px;
 }
 
+.fav_game {
+  display: flex;
+  align-items: center;
+}
+
+.fav_game p {
+  margin-left: 10px;
+}
+
 .img_fav {
   border-radius: 5px;
 }
