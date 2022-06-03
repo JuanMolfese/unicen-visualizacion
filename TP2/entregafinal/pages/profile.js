@@ -87,6 +87,7 @@ export default function Profile({genres, favs}){
                         <div className={styles.favoritos_content}>
                         {favs.map((fav) => (
                             <div className={styles.favoritos_item}>
+                                <Image src={fav.thumbnail} width={30} height={30} className={styles.img_fav}/>
                                 <p>{fav.title}</p>
                                 {/* <BiTrash className={styles.iconTrash}/> */}
                                 <ModalDeleteGame></ModalDeleteGame>

@@ -123,6 +123,10 @@
   margin: 0 10px 0 10px;
 }
 
+.img_fav {
+  border-radius: 5px;
+}
+
 .iconTrash {
   width: 30px;
   height: 30px;
