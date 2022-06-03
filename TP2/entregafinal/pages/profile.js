@@ -11,6 +11,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Spinner from "../components/spinner";
 import ModalDeleteGame from "../components/ModalDeleteGame";
+import  {Image} from 'next/image'
 
 export default function Profile({genres, favs}){
 
