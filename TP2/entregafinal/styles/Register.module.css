@@ -161,12 +161,17 @@
 
 
 .linkInicioSesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(-color-DARK);
   font-size: large;
   text-decoration: underline;
-  border: var(--color-DARK) solid 2px;
-  padding: 4px 10px;
+  border: var(--color-DARK) solid 1px;
+  padding: 5px;
   border-radius: 5px;
+  width: 150px;
+  height: 40px;
 }
 
 .linkInicioSesion:hover {
