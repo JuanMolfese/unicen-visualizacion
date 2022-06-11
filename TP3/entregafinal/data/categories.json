@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "MMORPG"
+  },
+  {
+    "id": 2,
+    "name": "Accion"
+  },
+  {
+    "id": 3,
+    "name": "Disparos"
+  },
+  {
+    "id": 4,
+    "name": "Aventuras"
+  },
+  {
+    "id": 5,
+    "name": "Arcade"
+  },
+  {
+    "id": 6,
+    "name": "Deportes"
+  },
+  {
+    "id": 7,
+    "name": "Plataformas"
+  }
+]
