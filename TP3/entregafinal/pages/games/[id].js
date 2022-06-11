@@ -21,7 +21,7 @@ export default function Page({game, genres}) {
 
   useEffect(() => {
     const ok = [];
-    fetch(`https://unicen-visualizacion.vercel.app/api/categories/${game.genre}`, {
+    fetch(`https://unicen-visualizacion3.vercel.app/api/categories/${game.genre}`, {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json'}),
         mode: 'no-cors',
@@ -98,9 +98,9 @@ export default function Page({game, genres}) {
 
 export async function getServerSideProps(context) {
   /* const res = await fetch(`https://www.freetogame.com/api/game?id=${context.params.id}`); */
-  const resCategories = await fetch(`https://unicen-visualizacion.vercel.app/api/categories`);
+  const resCategories = await fetch(`https://unicen-visualizacion3.vercel.app/api/categories`);
   const categories = await resCategories.json();
-  const res = await fetch(`https://unicen-visualizacion.vercel.app/api/games/${context.params.id}`)
+  const res = await fetch(`https://unicen-visualizacion3.vercel.app/api/games/${context.params.id}`)
   const game = await res.json();
   return {
     props: {
