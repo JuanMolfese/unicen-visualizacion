@@ -14,7 +14,7 @@ export function PlayGame(){
             
             <Connect4></Connect4> {/*  JUEGO */}
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </>
     )
 }
