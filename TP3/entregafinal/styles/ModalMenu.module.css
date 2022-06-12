@@ -112,7 +112,7 @@ font-size: small;
 
 .allGames{
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   font-size: large;
   margin-top: 30px;
   margin-left: 30px;  
@@ -127,7 +127,7 @@ font-size: small;
 
 .categories {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-top: 20px;  
   font-weight: bold;
   letter-spacing: 3px;

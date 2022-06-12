@@ -7,7 +7,7 @@
 
 .logout {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 25px;
   margin-top: 25px;
 }
