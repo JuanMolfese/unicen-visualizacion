@@ -73,6 +73,14 @@
     justify-content: center;
 }
 
+.canvas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+
 @keyframes headShake {
     0% {
       transform: translateX(0);
