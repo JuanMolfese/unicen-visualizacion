@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   
   return <SessionProvider>
           <Head >
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link>
+            {/* <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"></link> */}
             <meta name="mobile-web-app-capable" content="yes"></meta>
             <meta name="apple-mobile-web-app-capable" content="yes"></meta>
             <title>CM Games</title>
