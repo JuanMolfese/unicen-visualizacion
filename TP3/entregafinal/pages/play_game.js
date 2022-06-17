@@ -54,6 +54,8 @@ export function PlayGame(){
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
 
+        document.getElementById("recuerdo").innerHTML = `*Recuerda que la cantidad de fichas para ganar es: ${CANTIDADFICHAS}`;
+
         let turno = document.getElementById("turno");
         let imgTurn = document.getElementById("imgTurn");
         let canvas = document.getElementById("canvas");
@@ -404,6 +406,7 @@ export function PlayGame(){
                         <button onClick={reload}>Reset</button>
                     </div>
                     <canvas id="canvas" width="900" height="500"></canvas>
+                    <p id="recuerdo" className={styles.nota}></p>
                 </div>
             </div>
             <Footer></Footer>

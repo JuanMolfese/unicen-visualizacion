@@ -247,3 +247,10 @@
     padding: 2px;
     border-radius: 50%;
   }
+
+  .nota {
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    color: var(--color-bg-app-LIGHT);
+  }
