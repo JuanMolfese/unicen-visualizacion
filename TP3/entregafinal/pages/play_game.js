@@ -2,15 +2,14 @@ import { Navbar_inGame } from "../components/NavBar_inGame";
 import Footer from "../components/Footer";
 import styles from "../styles/playGame.module.css";
 import React, { useState} from 'react';
-import { useRouter } from "next/router";
 import { Circle } from "../components/Connect4/Circle";
+
 
 export function PlayGame(){ 
 
     const [fichas, setFichas] = useState(0);
-    const router = useRouter();
 
-
+    
     const handleChange = (event) => {
         setFichas(event.target.value);
     }
@@ -28,16 +27,18 @@ export function PlayGame(){
     }
 
     const game = (fichas) => {
+        const CANTIDADFICHAS = fichas;
+        console.log(CANTIDADFICHAS);
+        const filas = parseInt(CANTIDADFICHAS) + 2;
+        const columnas = parseInt(CANTIDADFICHAS) + 3;
+        const CANT_FIGURAS = filas * columnas / 2 + 1; 
+
         let canvas = document.getElementById("canvas");
         /** @type {CanvasRenderingContext2D} */   //agrego linea para que interprete y ayude cuando uses .ctx
         let ctx = canvas.getContext("2d");
-        let canvasWidth = canvas.width;
+        let canvasWidth = canvas.width + (50 * (parseInt(CANTIDADFICHAS) - 4));
         let canvasHeight = canvas.height;
 
-        const CANTIDADFICHAS = fichas;
-        const filas = 6;
-        const columnas = 7;
-        const CANT_FIGURAS = filas * columnas / 2 + 1;
 
         let figures = [];
         let casilleros = []; //Guarda la posicion de los casilleros donde se coloca la ficha
@@ -61,10 +62,11 @@ export function PlayGame(){
         }
 
         function drawTab(){
-        /* dibujo base tablero */
-        ctx.beginPath();
-        ctx.fillStyle = "#1E69B1";
-        ctx.fillRect(220, 75, 350, 290);
+            /* dibujo base tablero */
+            ctx.beginPath();
+            ctx.fillStyle = "#1E69B1";
+            ctx.fillRect(220, 75, 50*columnas, 49*filas);
+
         }
 
 
@@ -77,7 +79,7 @@ export function PlayGame(){
 
         /* Agrega un circulo */
         function addCircle(color, jug, active) {
-        let x = Math.floor(((jug == 1) ? 50 : 650) + Math.random() * 100);
+        let x = Math.floor(((jug == 1) ? 50 : (650 + (50 * (CANTIDADFICHAS - 4)))) + Math.random() * 100);
         let y = Math.floor(100 + Math.random() * 225);
         /* let radius = Math.floor(Math.random() * 50); */
         let fill = color;
@@ -332,6 +334,13 @@ export function PlayGame(){
 
     return(
         <>
+            <div className={styles.timeOut} id="timeOut">
+                <p>
+                    Se le ha terminado el tiempo
+                </p>
+                <button onClick={reload}>OK</button>
+            </div>
+
             <Navbar_inGame></Navbar_inGame>            
             <div className={styles.playGameContainer}>
                 <form id="form" onSubmit={gamePlay} method="post" className={styles.selectCantFichas}>
@@ -355,7 +364,12 @@ export function PlayGame(){
                 </form>
                 <div className={styles.canvas} id="game">
                     <button onClick={reload}> reset </button>
-                    <canvas id="canvas" width="800" height="400"></canvas>
+                   {/*  <div>
+                        <p>
+                            {`${mins}`}:{secs < 10 ? `0${secs}` : secs}
+                        </p>
+                    </div> */}
+                    <canvas id="canvas" width="900" height="500"></canvas>
                 </div>
             </div>
             <Footer></Footer>
