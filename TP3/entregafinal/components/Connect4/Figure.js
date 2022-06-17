@@ -1,4 +1,4 @@
-class Figure {
+export class Figure {
   
     constructor(x, y, fill, context) {
       this.x = x;

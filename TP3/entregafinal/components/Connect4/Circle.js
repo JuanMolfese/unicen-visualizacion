@@ -1,9 +1,11 @@
-class Circle extends Figure {
+import { Figure } from "./Figure";
 
-    constructor(x, y, radius, fill, context, jug) {
+export class Circle extends Figure {
+
+    constructor(x, y, radius, fill, context, jug, active) {
       super(x, y, fill, context);
       this.radius = radius;
-      this.isClickeable = true;
+      this.isClickeable = active;
       this.posXoriginal = x;
       this.posYoriginal = y;
       this.jugador = jug;
