@@ -166,7 +166,7 @@ font-size: small;
   position: absolute;
   top: 1%;
   left: 3%;
-  z-index: 1;
+  z-index: 5;
   display: none;
   animation: fadeInTop 0.5s; 
   border-radius: 10px;

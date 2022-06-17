@@ -3,12 +3,32 @@ import Footer from "../components/Footer";
 import styles from "../styles/playGame.module.css";
 import React, { useState} from 'react';
 import { Circle } from "../components/Connect4/Circle";
+import { FaInfo } from "react-icons/fa";
 
 
 export function PlayGame(){ 
 
     const [fichas, setFichas] = useState(0);
+    let secs = 59;
+    let mins = 9;
+    let stopwatchInterval;
 
+    const timerCycle = () => {
+        stopwatchInterval = setInterval( () => {
+            document.getElementById("tiempo").textContent = (secs < 10) ? `0${mins}:0${secs}` : `0${mins}:${secs}`;
+            if (secs === 0) {
+                if (mins === 0) {
+                    clearInterval(stopwatchInterval);
+                    document.getElementById("timeOut").style.display = "block";
+                } else {
+                    mins--;
+                    secs = 59;
+                }
+            } else {
+                secs--;
+            }
+        }, 1000);
+    }
     
     const handleChange = (event) => {
         setFichas(event.target.value);
@@ -20,6 +40,7 @@ export function PlayGame(){
         document.getElementById("form").style.display = "none";
         document.getElementById("game").style.display = "block";
         game(fichas);
+        timerCycle();
     };
 
     const reload = () => {
@@ -33,6 +54,8 @@ export function PlayGame(){
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
 
+        let turno = document.getElementById("numberTurn");
+        let imgTurn = document.getElementById("imgTurn");
         let canvas = document.getElementById("canvas");
         /** @type {CanvasRenderingContext2D} */   //agrego linea para que interprete y ayude cuando uses .ctx
         let ctx = canvas.getContext("2d");
@@ -119,28 +142,31 @@ export function PlayGame(){
             if (elem.x > e.offsetX - 10 && elem.x < e.offsetX + 10 && elem.y > e.offsetY - 10 && elem.y < e.offsetY + 10) {
                 let columna = casilleros.indexOf(elem);
                 for (let index = filas - 1; index >= 0; index--) {
-                let casilla = board[index][columna]; 
-                if (casilla.value == 0) {
-                    isColocado = true;
-                    board[index][columna].value = ultimaFiguraClickeada.jugador;
-                    ultimaFiguraClickeada.setPosition(board[index][columna].x, board[index][columna].y);
-                    ultimaFiguraClickeada.setIsClickable(false);
-                    ultimaFiguraClickeada.setResaltado(false);
-                    ultimaFiguraClickeada.setIsPut(true);
-                    deshabilitarFichas(ultimaFiguraClickeada.jugador);
-                    if (comprobarGanador(board, index, columna, filas, columnas)) {
-                    console.log('Ganador: ' + ultimaFiguraClickeada.jugador);
-                    deshabilitarTodasLasFichas();
+                    let casilla = board[index][columna]; 
+                    if (casilla.value == 0) {
+                        isColocado = true;
+                        board[index][columna].value = ultimaFiguraClickeada.jugador;
+                        ultimaFiguraClickeada.setPosition(board[index][columna].x, board[index][columna].y);
+                        ultimaFiguraClickeada.setIsClickable(false);
+                        ultimaFiguraClickeada.setResaltado(false);
+                        ultimaFiguraClickeada.setIsPut(true);
+                        deshabilitarFichas(ultimaFiguraClickeada.jugador);
+                        (ultimaFiguraClickeada.jugador == 1) ? turno.textContent = "2" : turno.textContent = "1";
+                        (ultimaFiguraClickeada.jugador == 1) ? imgTurn.src = "/imgGame/img11.png" : imgTurn.src = "/imgGame/img12.png";
+                        if (comprobarGanador(board, index, columna, filas, columnas)) {
+                            alert('Ganador: ' + ultimaFiguraClickeada.jugador);
+                            deshabilitarTodasLasFichas();
+                            clearInterval(stopwatchInterval);
+                        }
+                        drawFigure();
+                        break;
                     }
-                    drawFigure();
-                    break;
-                }
                 }
             }
             });
             if (!isColocado){
-            ultimaFiguraClickeada.setPosition(ultimaFiguraClickeada.getPositionOriginal().x, ultimaFiguraClickeada.getPositionOriginal().y);
-            drawFigure();
+                ultimaFiguraClickeada.setPosition(ultimaFiguraClickeada.getPositionOriginal().x, ultimaFiguraClickeada.getPositionOriginal().y);
+                drawFigure();
             }
         }
         }
@@ -335,10 +361,15 @@ export function PlayGame(){
     return(
         <>
             <div className={styles.timeOut} id="timeOut">
-                <p>
-                    Se le ha terminado el tiempo
-                </p>
-                <button onClick={reload}>OK</button>
+                <div className={styles.contentTime}>
+                    <div className={styles.timeInfo}>
+                        <FaInfo size={80} className={styles.iconInfo}/>
+                        <p>
+                            Tiempo de juego agotado
+                        </p>
+                        <button onClick={reload}>OK</button>
+                    </div>
+                </div>
             </div>
 
             <Navbar_inGame></Navbar_inGame>            
@@ -346,7 +377,7 @@ export function PlayGame(){
                 <form id="form" onSubmit={gamePlay} method="post" className={styles.selectCantFichas}>
                     <div>
                         <div><h2 className={styles.titulo}>Configuremos el tablero</h2></div>
-                        <div><h3 className={styles.subtitulo}>Cantidad de fichas para ganar ?</h3></div>
+                        <div><h3 className={styles.subtitulo}>¿Cantidad de fichas para ganar?</h3></div>
                         <div className={styles.filaFichaCant}>
                             <input type="radio" id="4" name="selectFicha" value="4" onClick={handleChange}></input>
                             <label className={styles.radiolabel} htmlFor="4">4 fichas</label>
@@ -363,12 +394,14 @@ export function PlayGame(){
                     <div className={styles.divbtn}><button className={styles.btnComenzar} type="submit">Comenzar</button></div>
                 </form>
                 <div className={styles.canvas} id="game">
-                    <button onClick={reload}> reset </button>
-                   {/*  <div>
-                        <p>
-                            {`${mins}`}:{secs < 10 ? `0${secs}` : secs}
-                        </p>
-                    </div> */}
+                    <div className={styles.headGame}>
+                        <p id="tiempo">10:00</p>
+                        <div>
+                            <p id="turno" className={styles.tiempo}>Turno jugador: <span id="numberTurn">1</span></p>
+                            <img id="imgTurn" src="/imgGame/img12.png"></img>
+                        </div>
+                        <button onClick={reload}>Reset</button>
+                    </div>
                     <canvas id="canvas" width="900" height="500"></canvas>
                 </div>
             </div>
