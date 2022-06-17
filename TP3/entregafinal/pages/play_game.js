@@ -54,7 +54,7 @@ export function PlayGame(){
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
 
-        let turno = document.getElementById("numberTurn");
+        let turno = document.getElementById("turno");
         let imgTurn = document.getElementById("imgTurn");
         let canvas = document.getElementById("canvas");
         /** @type {CanvasRenderingContext2D} */   //agrego linea para que interprete y ayude cuando uses .ctx
@@ -151,10 +151,11 @@ export function PlayGame(){
                         ultimaFiguraClickeada.setResaltado(false);
                         ultimaFiguraClickeada.setIsPut(true);
                         deshabilitarFichas(ultimaFiguraClickeada.jugador);
-                        (ultimaFiguraClickeada.jugador == 1) ? turno.textContent = "2" : turno.textContent = "1";
+                        (ultimaFiguraClickeada.jugador == 1) ? turno.textContent = "Turno jugador: 2" : turno.textContent = "Turno jugador: 1";
                         (ultimaFiguraClickeada.jugador == 1) ? imgTurn.src = "/imgGame/img11.png" : imgTurn.src = "/imgGame/img12.png";
                         if (comprobarGanador(board, index, columna, filas, columnas)) {
-                            alert('Ganador: ' + ultimaFiguraClickeada.jugador);
+                            turno.textContent = `¡¡¡El jugador ${ultimaFiguraClickeada.jugador} ha ganado!!!`;
+                            imgTurn.src = "/imgGame/img3.png";
                             deshabilitarTodasLasFichas();
                             clearInterval(stopwatchInterval);
                         }
@@ -397,7 +398,7 @@ export function PlayGame(){
                     <div className={styles.headGame}>
                         <p id="tiempo">10:00</p>
                         <div>
-                            <p id="turno" className={styles.tiempo}>Turno jugador: <span id="numberTurn">1</span></p>
+                            <p id="turno" className={styles.tiempo}>Turno jugador: 1</p>
                             <img id="imgTurn" src="/imgGame/img12.png"></img>
                         </div>
                         <button onClick={reload}>Reset</button>
