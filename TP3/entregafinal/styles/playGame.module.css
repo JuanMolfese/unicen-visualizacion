@@ -75,6 +75,13 @@
   box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
 }
 
+.btnComenzar:disabled {
+  cursor: not-allowed;
+  filter:blur(2px);
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  animation: none;
+}
+
 .filaFichaCant{
     display: flex;
     justify-content: center;

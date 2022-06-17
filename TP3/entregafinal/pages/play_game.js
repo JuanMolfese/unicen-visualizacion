@@ -32,6 +32,7 @@ export function PlayGame(){
     
     const handleChange = (event) => {
         setFichas(event.target.value);
+        document.getElementById("btnPlay").disabled = false;
     }
 
     const gamePlay = (e) => {
@@ -49,7 +50,6 @@ export function PlayGame(){
 
     const game = (fichas) => {
         const CANTIDADFICHAS = fichas;
-        console.log(CANTIDADFICHAS);
         const filas = parseInt(CANTIDADFICHAS) + 2;
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
@@ -90,7 +90,7 @@ export function PlayGame(){
             /* dibujo base tablero */
             ctx.beginPath();
             ctx.fillStyle = "#1E69B1";
-            ctx.fillRect(220, 75, 50*columnas, 49*filas);
+            ctx.fillRect((220 + ((CANTIDADFICHAS - 6) * -1 * 20)) , 75, 50*columnas, 49*filas);
 
         }
 
@@ -101,10 +101,10 @@ export function PlayGame(){
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         addTablero();
         }
-
+ 
         /* Agrega un circulo */
         function addCircle(color, jug, active) {
-        let x = Math.floor(((jug == 1) ? 50 : (650 + (50 * (CANTIDADFICHAS - 4)))) + Math.random() * 100);
+        let x = Math.floor(((jug == 1) ? 50 : 750) + Math.random() * 100);
         let y = Math.floor(100 + Math.random() * 225);
         /* let radius = Math.floor(Math.random() * 50); */
         let fill = color;
@@ -230,7 +230,7 @@ export function PlayGame(){
 
         for (let x = 0; x < columnas; x++) {
             ctx.beginPath();
-            let posx = 250 + x * 48;
+            let posx = (250 + ((CANTIDADFICHAS - 6) * -1 * 20)) + x * 48;
             ctx.arc(posx, 50, 21, Math.PI * 1, 0, true);
             /* ctx.fillStyle = "#FFF7CE"; */
             ctx.strokeStyle = "black";
@@ -249,7 +249,7 @@ export function PlayGame(){
                 ${Math.floor(255 - 42.5 * j)})`; */
                 ctx.fillStyle = "white";
                 ctx.beginPath();
-                let positionx = 250 + j * 48;
+                let positionx = (250 + ((CANTIDADFICHAS - 6) * -1 * 20))  + j * 48;
                 let positiony = 100 + i * 48;
                 ctx.arc(positionx, positiony, 21, 0, Math.PI * 2, true);
                 ctx.fill(); //agrego fondo blanco
@@ -394,7 +394,7 @@ export function PlayGame(){
                             <label className={styles.radiolabel} htmlFor="6">6 fichas</label>
                         </div>
                     </div>
-                    <div className={styles.divbtn}><button className={styles.btnComenzar} type="submit">Comenzar</button></div>
+                    <div className={styles.divbtn}><button id="btnPlay" className={styles.btnComenzar} type="submit" disabled={true}>Comenzar</button></div>
                 </form>
                 <div className={styles.canvas} id="game">
                     <div className={styles.headGame}>
