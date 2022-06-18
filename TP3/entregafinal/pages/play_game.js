@@ -379,8 +379,9 @@ export function PlayGame(){
             <div className={styles.playGameContainer}>
                 <form id="form" onSubmit={gamePlay} method="post" className={styles.selectCantFichas}>
                     <div>
-                        <div><h2 className={styles.titulo}>Configuremos el tablero</h2></div>
-                        <div><h3 className={styles.subtitulo}>¿Cantidad de fichas para ganar?</h3></div>
+                        <div><p className={styles.megatitulo}>4 en Linea</p></div>
+                        <div><p className={styles.titulo}>Configuremos el tablero</p></div>
+                        <div><p className={styles.subtitulo}>¿Cantidad de fichas para ganar?</p></div>
                         <div className={styles.filaFichaCant}>
                             <input type="radio" id="4" name="selectFicha" value="4" onClick={handleChange}></input>
                             <label className={styles.radiolabel} htmlFor="4">4 fichas</label>
