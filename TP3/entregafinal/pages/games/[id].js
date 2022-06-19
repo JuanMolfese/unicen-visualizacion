@@ -76,7 +76,7 @@ export default function Page({game, genres}) {
             {/* <BtnsLikes/> */}
           </div>
         </div>
-        <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         <p className={styles.descriptionGame}>{game.short_description}</p>
         
         <a href="/play_game"><button className={styles.btnPlay}>¡ Jugar ahora !</button></a>

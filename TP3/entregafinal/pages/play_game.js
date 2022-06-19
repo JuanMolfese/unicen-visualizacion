@@ -54,7 +54,7 @@ export function PlayGame(){
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
 
-        document.getElementById("recuerdo").innerHTML = `*Recuerda que la cantidad de fichas para ganar es: ${CANTIDADFICHAS}`;
+        document.getElementById("recuerdo").innerHTML = `Recuerda que la cantidad de fichas para ganar es: ${CANTIDADFICHAS}`;
 
         let turno = document.getElementById("turno");
         let imgTurn = document.getElementById("imgTurn");
@@ -89,7 +89,7 @@ export function PlayGame(){
         function drawTab(){
             /* dibujo base tablero */
             ctx.beginPath();
-            ctx.fillStyle = "#1E69B1";
+            ctx.fillStyle = "#DF7800";
             ctx.fillRect((220 + ((CANTIDADFICHAS - 6) * -1 * 20)) , 75, 50*columnas, 49*filas);
 
         }
@@ -97,8 +97,9 @@ export function PlayGame(){
 
         function clearCanvas() {
         //ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.fillStyle = "#FFF7CE";
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        /* ctx.fillStyle = "#BC71BC"; */
+        /* ctx.fillRect(0, 0, canvasWidth, canvasHeight); */
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight); 
         addTablero();
         }
  
@@ -156,7 +157,7 @@ export function PlayGame(){
                         (ultimaFiguraClickeada.jugador == 1) ? turno.textContent = "Turno jugador: 2" : turno.textContent = "Turno jugador: 1";
                         (ultimaFiguraClickeada.jugador == 1) ? imgTurn.src = "/imgGame/img11.png" : imgTurn.src = "/imgGame/img12.png";
                         if (comprobarGanador(board, index, columna, filas, columnas)) {
-                            turno.textContent = `¡¡¡El jugador ${ultimaFiguraClickeada.jugador} ha ganado!!!`;
+                            turno.textContent = `¡¡ El jugador ${ultimaFiguraClickeada.jugador} ha ganado !!`;
                             imgTurn.src = "/imgGame/img3.png";
                             deshabilitarTodasLasFichas();
                             clearInterval(stopwatchInterval);
@@ -384,7 +385,7 @@ export function PlayGame(){
                 <div className={styles.contentTime}>
                     <div className={styles.timeInfo}>
                         <FaInfo size={80} className={styles.iconInfo}/>
-                        <p>
+                        <p className={styles.tiempoAgotado}>
                             Tiempo de juego agotado
                         </p>
                         <button onClick={reload}>OK</button>
@@ -416,10 +417,12 @@ export function PlayGame(){
                 </form>
                 <div className={styles.canvas} id="game">
                     <div className={styles.headGame}>
-                        <p id="tiempo">10:00</p>
+                        <div className={styles.divReloj}>
+                            <p className={styles.timeCount} id="tiempo">10:00</p>
+                        </div>
                         <div>
-                            <p id="turno" className={styles.tiempo}>Turno jugador: 1</p>
-                            <img id="imgTurn" src="/imgGame/img12.png"></img>
+                            <p id="turno" className={styles.turnoJugador}>Turno jugador : 1</p>
+                            <img id="imgTurn" className={styles.imgFichaTurno} src="/imgGame/img12.png"></img>
                         </div>
                         <button onClick={reload}>Reset</button>
                     </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 .container {
   background-color: var(--color-bg-app-LIGHT);
   width: 100%;
@@ -162,10 +164,10 @@ font-size: small;
 .container_comoJugar {
   background-color: var(--color-GREY);
   width: 94%;
-  height: 45%;
+  height: 50%;
+  top: calc(50% - 30%);
+  left: calc(50% - 47%);
   position: absolute;
-  top: 1%;
-  left: 3%;
   z-index: 5;
   display: none;
   animation: fadeInTop 0.5s; 
@@ -176,14 +178,19 @@ font-size: small;
   background-color: var(--color-bg-app-LIGHT);
   width: 92%;
   margin-left: 4%;
+  margin-top: 20px;
   padding: 10px 25px;
   height: 75%;  
   border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Poppins', sans-serif;
 }
 
 .titulo_como_jugar{
   margin: 0px;
   font-weight: bolder;
+  font-family: 'Poppins', sans-serif;;
 }
 
 @keyframes fadeInLeft {
