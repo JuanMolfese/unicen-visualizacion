@@ -18,7 +18,7 @@ export default function Profile({genres, favs}){
     const [message, setMessage] = useState('');
     const router = useRouter();
     const { data: session } = useSession()
-   
+    /*
     useEffect(() => {
         if (session === null) {
         router.push("/")
@@ -28,7 +28,7 @@ export default function Profile({genres, favs}){
     if (!session) {
         return (<Spinner></Spinner>);
     }  
-  
+    */
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
         if (display == 'flex'){
@@ -70,8 +70,10 @@ export default function Profile({genres, favs}){
                 
                 <div className={styles.profile}>
                     <div className={styles.profile_image}>
+                        {/* 
                         <img width={40} height={40} src={session.user.image} alt="profile"/>
                         <p className={styles.profile_email}>{session.user.email}</p>
+                         */}
                     </div>
                     <div className={styles.passwordOption}>
                         <p onClick={mostrarFormulario}>Cambiar contraseña <span><BiDownArrow id="down"/> <BiUpArrow id="up" display="none"/></span> </p>
@@ -93,7 +95,7 @@ export default function Profile({genres, favs}){
                                     <p>{fav.title}</p>
                                 </div>
                                 {/* <BiTrash className={styles.iconTrash}/> */}
-                                <ModalDeleteGame></ModalDeleteGame>
+                                <ModalDeleteGame game={fav.title}></ModalDeleteGame>
                             </div>
                         ))}
                         </div>

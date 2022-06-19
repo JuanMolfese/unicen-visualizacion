@@ -161,6 +161,12 @@ export function PlayGame(){
                             deshabilitarTodasLasFichas();
                             clearInterval(stopwatchInterval);
                         }
+                        if (tableroLeno()) {
+                            turno.textContent = "¡¡¡El juego ha finalizado en empate!!!";
+                            imgTurn.src = "/imgGame/img13.png";
+                            deshabilitarTodasLasFichas();
+                            clearInterval(stopwatchInterval);
+                        }
                         drawFigure();
                         break;
                     }
@@ -260,6 +266,17 @@ export function PlayGame(){
                 board[i][j].y = positiony;
             }
             }    
+        }
+
+        function tableroLeno(){
+            for (let i = 0; i < filas; i++) {
+                for (let j = 0; j < columnas; j++) {
+                    if (board[i][j].value == 0) {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         canvas.addEventListener("mousedown", onMouseDown, false);
