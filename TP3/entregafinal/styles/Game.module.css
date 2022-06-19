@@ -189,4 +189,22 @@
   .buttonsGame{
     justify-content: center;
   }
+
+  .headerGame{
+    margin-left: 15%; 
+    margin-right: 15%;
   }
+
+  .path{
+    margin-left: 15%; 
+    margin-right: 15%;
+    font-size: 20px;
+  }
+
+  .titleGame{
+    font-size: 50px;
+    margin-left: 5%;
+  }
+
+
+}
