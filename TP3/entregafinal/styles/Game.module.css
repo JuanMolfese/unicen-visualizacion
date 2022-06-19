@@ -112,9 +112,9 @@
 }
 
 .carousel{
-  margin-left: 10%;
-  margin-right: 10%;
-  
+  margin-left: auto;
+  margin-right: auto;
+   
 }
 
 .similarGamesTitle{
@@ -158,3 +158,35 @@
     transform: translateX(0);
   }
 }
+
+@media only screen and (min-width: 768px) {
+
+  .carousel{
+    width: 600px;
+  }    
+  
+  .btnPlay{
+    max-width: 200px;
+  }
+  
+  .similarGamesTitle{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .imgGame{
+    max-width: 700px;
+    height: 400px;
+  }
+  
+  .descriptionGame{
+    margin-left: 20vh;
+    margin-right: 20vh;
+    text-align: center;
+  }
+
+  .buttonsGame{
+    justify-content: center;
+  }
+  }
