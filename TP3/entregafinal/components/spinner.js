@@ -17,7 +17,7 @@ export default function Spinner() {
           justify-content: center;
           align-items: center;
           text-align: center;
-          margin-top: 40%;
+          margin-top: 30%;
         }
 
         .html-spinner {
