@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import {FiLogOut} from 'react-icons/fi';
 /* import {FaPowerOffv} from 'react-icons/fa'; */
 import { BiDownArrow, BiUpArrow, BiTrash } from "react-icons/bi";
+import { FaInfoCircle } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa"
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -16,9 +17,9 @@ import Image from 'next/image'
 export default function Profile({genres, favs}){
 
     const [message, setMessage] = useState('');
-    const router = useRouter();
     const { data: session } = useSession()
-    /*
+
+
     useEffect(() => {
         if (session === null) {
         router.push("/")
@@ -28,7 +29,8 @@ export default function Profile({genres, favs}){
     if (!session) {
         return (<Spinner></Spinner>);
     }  
-    */
+    
+  
     function mostrarFormulario(){
         let display = document.getElementById("formulario").style.display;
         if (display == 'flex'){
@@ -59,6 +61,16 @@ export default function Profile({genres, favs}){
         document.querySelector("#aviso").style.display = 'none';
     }
 
+    function openModal(e){
+        e.preventDefault();
+        document.querySelector("#modalDelete").style.display = 'block';
+    }
+    
+    function closeModal(){
+        document.querySelector("#modalDelete").style.display = 'none';
+    } 
+
+
 
     return (
         <>
@@ -70,10 +82,10 @@ export default function Profile({genres, favs}){
                 
                 <div className={styles.profile}>
                     <div className={styles.profile_image}>
-                        {/* 
+                        
                         <img width={40} height={40} src={session.user.image} alt="profile"/>
                         <p className={styles.profile_email}>{session.user.email}</p>
-                         */}
+                         
                     </div>
                     <div className={styles.passwordOption}>
                         <p onClick={mostrarFormulario}>Cambiar contraseña <span><BiDownArrow id="down"/> <BiUpArrow id="up" display="none"/></span> </p>
@@ -89,16 +101,22 @@ export default function Profile({genres, favs}){
                         <h2>Tus Favoritos</h2>
                         <div className={styles.favoritos_content}>
                         {favs.map((fav) => (
-                            <div className={styles.favoritos_item}>
+                            <div className={styles.card}>
                                 <div className={styles.fav_game}>
-                                    <Image src={fav.thumbnail} width={40} height={40} className={styles.img_fav}/>
-                                    <p>{fav.title}</p>
+                                    {/* <Image src={fav.thumbnail} width={40} height={40} className={styles.img_fav}/> */}
+                                    <a href={`/games/${fav.id}`}><img src={fav.thumbnail} className={styles.img} width="150" height="100"/> 
+                                    <h4 className={styles.gameTitle}>{fav.title}</h4> </a>
+                                </div>
+                                <div className={styles.contentButton}>
+                                    <a href="" onClick={openModal}><BiTrash className={styles.iconTrash}/></a>
                                 </div>
                                 {/* <BiTrash className={styles.iconTrash}/> */}
-                                <ModalDeleteGame game={fav.title}></ModalDeleteGame>
+                                {/* <ModalDeleteGame game={fav.title}></ModalDeleteGame> */}
+                                
                             </div>
                         ))}
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -109,6 +127,15 @@ export default function Profile({genres, favs}){
                     <button className={styles.btnGenial} onClick={closeAviso}>OK</button>
                 </div>
             </div>
+            <div id="modalDelete" className={styles.containerModal}>
+                <div className={styles.contentInfoModal}>
+                    <FaInfoCircle className={styles.iconInfoModal}/>
+                    <p>¿Seguro que desea eliminar el juego <span className={styles.gameTitleModal}></span> de favoritos?</p>
+                    <button className={styles.buttonCancel} onClick={closeModal}>Cancelar</button>
+                    <button className={styles.buttonDelete} onClick={closeModal}>Eliminar</button>
+                </div>
+            </div>
+
         </>
     )
 }
