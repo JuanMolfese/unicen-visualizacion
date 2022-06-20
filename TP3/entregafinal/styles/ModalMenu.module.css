@@ -193,6 +193,10 @@ font-size: small;
   font-family: 'Poppins', sans-serif;;
 }
 
+.textoComoJugar{
+  line-height: 1.5;
+}
+
 @keyframes fadeInLeft {
   from {
     opacity: 0;
