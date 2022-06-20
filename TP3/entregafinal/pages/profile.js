@@ -17,6 +17,7 @@ import Image from 'next/image'
 export default function Profile({genres, favs}){
 
     const [message, setMessage] = useState('');
+    const router = useRouter();
     const { data: session } = useSession()
 
 
@@ -28,7 +29,7 @@ export default function Profile({genres, favs}){
 
     if (!session) {
         return (<Spinner></Spinner>);
-    }  
+    }   
     
   
     function mostrarFormulario(){
