@@ -23,8 +23,9 @@ export default function Modal_ComoJugar(){
             <br/><br/>
             <span className={styles.textoComoJugar}> El objetivo del juego es conectar cuatro fichas de un mismo color de cualquiera de las tres formas siguientes:
               Verticalmente, Horizontalmente y Diagonalmente.
-              Puedes jugar Connect 4 en diferentes variaciones. La cantidad de piezas necesarias para conectarse para ganar puede variar. Algunas versiones requieren una rejilla más grande, lo que permite la conexión de cinco o incluso seis piezas.
-              Existe la posibilidad de que no todos los juegos terminen con una victoria para uno de los jugadores. Si se llenan todas las celdas de la cuadrícula y no hay cuatro discos conectados, se anuncia un sorteo sin ganadores.
+              Puedes jugar 4 en linea en diferentes variaciones. La cantidad de piezas necesarias para ganar puede variar. Algunas versiones requieren un tablero más grande, lo que permite juagr con cinco o incluso seis piezas.
+              Existe la posibilidad de que no todos los juegos terminen con una victoria para uno de los jugadores. Si se llenan todas las celdas del tablero y no estan la cantidad de fichas necesarias para ganar, se anuncia el empate.
+              El tiempo total de juego es de 10 minutos.              
             </span>
             
         </div> 
