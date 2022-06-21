@@ -54,8 +54,7 @@ export function PlayGame(){
         const columnas = parseInt(CANTIDADFICHAS) + 3;
         const CANT_FIGURAS = filas * columnas / 2 + 1; 
 
-        document.getElementById("recuerdo").innerHTML = `Recuerda que la cantidad de fichas para ganar es: ${CANTIDADFICHAS}`;
-
+        document.getElementById("recuerdo").innerHTML = `Recuerda que la cantidad de fichas para ganar es: ${CANTIDADFICHAS}`;        
         let turno = document.getElementById("turno");
         let imgTurn = document.getElementById("imgTurn");
         let canvas = document.getElementById("canvas");
@@ -123,6 +122,7 @@ export function PlayGame(){
         let FigClickeada = buscarFiguraClickeada(event.offsetX, event.offsetY);
         if (FigClickeada != null) {
             FigClickeada.setResaltado(true);
+            FigClickeada.setPosition(event.offsetX,event.offsetY);
             ultimaFiguraClickeada = FigClickeada;
         }  
         drawFigure();
