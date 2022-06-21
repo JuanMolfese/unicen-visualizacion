@@ -1,0 +1,65 @@
+html {
+  padding: 0;
+  min-height: 100%;
+  position: relative;
+  font-family: Roboto;
+  background:var(--color-bg-app-LIGHT); 
+}
+  body{
+  margin: 0;
+  margin-bottom: 50px ;  
+}
+
+footer {
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-Tertiary);
+  width: 100%;  
+  height: 50px;
+  margin-top: auto;
+  align-items: center;
+  color: var(--color-DARK);
+  }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*****************COLORS*************/ 
+
+:root{
+  --color-Primary-D2: #7C007C;
+  --color-Primary-D1: #9A009A;
+  --color-Primary:#C900C9;
+  --color-Primary-L1: #CA1BCA;
+  --color-Primary-L2: #CF40CF;
+  --color-Secondary-D2: #4DA900;
+  --color-Secondary-D1: #60D300;
+  --color-Secondary: #6CEE00;
+  --color-Secondary-L1:#7DEE20;
+  --color-Secondary-L2:#95F04A;
+  --color-Tertiary-D2:#BEAD00;
+  --color-Tertiary-D1:#EDD800;
+  --color-Tertiary:#FFE800;
+  --color-Tertiary-L1:#FFEB23;
+  --color-Tertiary-L2: #FFEF4F;
+  --color-bg-app-LIGHT: #F5F5F5;
+  --color-GREY: #E3E3E3;
+  --color-RED:#DA0000;
+  --color-DARK: #333233;
+  --color-Tertiary-D2: #BEAD00;
+}

@@ -1,0 +1,259 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.capaBlur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  filter: blur(10px);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.logo {
+  grid-column: 2/3;
+  margin: auto;
+}
+
+.btnClose {
+  grid-column: 3/3;  
+}
+
+.iconClose{  
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 0px;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.70);
+  margin: auto;
+  margin-right: 25px;
+  color: var(--color-Primary-D2)
+}
+
+.iconClose:hover {
+  cursor: pointer;
+  background-color: var(--color-Tertiary-D2);
+}
+
+.titulo{
+  margin-bottom: 0px;
+  color: var(--color-DARK)
+}
+.contentTitle {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;  
+}
+
+.formRegister {
+  margin-top: 0px;
+  display: flex;
+  /* margin-left: 25px; */
+  flex-direction: column;  
+}
+
+.labels{
+  margin-left: 10%;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  color: var(--color-DARK);
+  font-weight: bold;
+}
+
+.inputEmail{
+  width: 80%;
+  margin-left: 10%;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  height: 35px;
+  border-color: transparent;
+  padding-left: 15px;
+}
+
+.inputPass {
+  margin-left: 10%;
+  width: 70%;
+  font-size: 15px;
+  border-radius: 5px;
+  height: 35px;
+  border-color: transparent;
+  padding-left: 15px;
+  
+}
+
+.contentSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btnSubmit {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--color-bg-app-LIGHT);
+  width: 150px;
+  height: 40px;
+  background-color: var(--color-Secondary-D2);
+  border: 0;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  font-family: Roboto;
+  font-size: large;
+  font-weight: bold;
+  animation: headShake 1s infinite;
+}
+
+.btnSubmit:hover {
+  cursor: pointer;
+  background-color: var(--color-Tertiary-D2);
+}
+
+.btnInicioSesion {
+  margin-top: 40px;
+  width: 150px;
+  height: 40px;
+  color: var(--color-bg-app-LIGHT);
+  background-color: var(--color-Secondary-D2);
+  border: 0;
+  padding: 5px;
+  font-family: Roboto;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  animation: headShake 1s infinite;
+}
+
+.btnInicioSesion:hover {
+  cursor: pointer;
+}
+
+
+.yaRegistrado{
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: var(--color-DARK);
+  margin-bottom: 5px;
+}
+
+
+.linkInicioSesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(-color-DARK);
+  font-size: large;
+  text-decoration: underline;
+  border: var(--color-DARK) solid 1px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.linkInicioSesion:hover {
+  cursor: pointer;
+  color: var(--color-Primary);
+}
+
+.subtitle {
+  color: var(--color-Primary-D2);
+  width: 250px;
+}
+
+.tres_d{
+  display: flex;
+  position: absolute;
+  margin-top: 10%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.btnInicioGit {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  color: #FFF;
+  background-color: var(--color-DARK);
+  border: 0;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  font-size: medium;
+  font-weight: bold;
+}
+
+.infoPass{
+  margin-left: 11%;
+  margin-right: 10%;
+  margin-top: 2px;
+  width: 70%;
+  font-size: small;
+}
+
+.congratzTitle{
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;  
+  color: var(--color-Primary-D2);
+  font-weight: bolder;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.congratzSubtitle{
+  color: var(--color-Primary-D2);
+  margin-bottom: 50px;
+  font-size: large;
+}
+
+@keyframes headShake {
+  0% {
+    transform: translateX(0);
+  }
+  6.5% {
+    transform: translateX(-4px) rotateY(-7deg);
+  }
+  18.5% {
+    transform: translateX(3px) rotateY(5deg);
+  }
+  31.5% {
+    transform: translateX(-2px) rotateY(-5deg);
+  }
+  43.5% {
+    transform: translateX(1px) rotateY(1deg);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}

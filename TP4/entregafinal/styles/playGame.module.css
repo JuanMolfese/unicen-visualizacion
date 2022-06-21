@@ -1,0 +1,364 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.playGameContainer{
+    top: 0;
+    left: 0;
+    /* background-image: url(../public/backgrounds/1.jpg);
+    background-repeat: no-repeat; */
+    /* background: rgb(1,16,136);
+    background: linear-gradient(90deg, rgba(0,24,213,1) 0%, rgba(9,121,115,1) 52%, rgba(1,124,0,1) 100%); */
+    /* background: rgb(255,58,42);
+    background: linear-gradient(90deg, rgba(255,58,42,1) 0%, rgba(35,215,66,1) 100%); */
+    background: rgb(90,90,214);
+    background: linear-gradient(90deg, rgba(90,90,214,1) 0%, rgba(35,215,66,1) 100%);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    width: 100%;
+    height: 88vh;    
+    overflow: hidden;   
+}
+
+.megatitulo{
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+  color: var(--color-bg-app-LIGHT);
+  font-weight: bolder;
+  /* font-family: 'Permanent Marker', cursive; */
+  /* font-family: 'Odibee Sans', cursive; */
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+.titulo{
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: var(--color-bg-app-LIGHT);
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.subtitulo{
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--color-bg-app-LIGHT);
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+
+.selectCantFichas{
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  border: 5px solid rgb(64, 29, 131);
+  border-radius: 8px;
+  padding: 20px;
+  background: rgb(136,1,1);
+  background: linear-gradient(50deg, rgba(136,1,1,1) 0%, rgba(121,9,62,1) 36%, rgb(0, 4, 116) 100%);
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.radiolabel{
+    color: var(--color-bg-app-LIGHT);
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.radiolabel:hover{
+  cursor: pointer;
+  color: var(--color-bg-app-LIGHT);
+}
+
+.btnComenzar{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--color-bg-app-LIGHT);
+  width: 150px;
+  height: 40px;
+  letter-spacing: 2px;
+  background-color: RGB(64, 29, 131);
+  border: 0;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  font-family: 'Poppins', sans-serif;
+  font-size: large;
+  font-weight: bold;
+ /*  animation: headShake 1s infinite; */
+}
+
+.btnComenzar:hover{
+  cursor: pointer;
+  background-color: rgb(17, 43, 77);
+  color: var(--color-bg-app-LIGHT);
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+}
+
+.btnComenzar:disabled {
+  cursor: not-allowed;
+  filter:blur(3px);
+  box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+  animation: none;
+}
+
+.filaFichaCant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filaFichaCant input:hover {
+  cursor: pointer;
+}
+
+.divbtn{
+    display: flex;
+    justify-content: center;
+}
+
+.canvas{ 
+  margin-top: 10vh;
+  position: absolute;
+  top: 0;
+  left: auto;
+  text-align: center;
+  background-color: rgba(235, 79, 52, 0.3);
+  border-radius: 10px;
+}
+
+
+@keyframes headShake {
+    0% {
+      transform: translateX(0);
+    }
+    6.5% {
+      transform: translateX(-4px) rotateY(-7deg);
+    }
+    18.5% {
+      transform: translateX(3px) rotateY(5deg);
+    }
+    31.5% {
+      transform: translateX(-2px) rotateY(-5deg);
+    }
+    43.5% {
+      transform: translateX(1px) rotateY(1deg);
+    }
+    50% {
+      transform: translateX(0);
+    }
+  }
+
+
+  /* Game */
+
+  .canvas {
+    display: none;
+  }
+
+  .timeOut {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .contentTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .timeInfo {
+   /*  background-color: var(--color-bg-app-LIGHT); */
+    background: rgb(136,1,1);
+    background: linear-gradient(50deg, rgba(136,1,1,1) 0%, rgba(121,9,62,1) 36%, rgb(0, 4, 116) 100%);
+    border-radius: 15px;
+    padding: 100px;
+    margin: auto;
+    color: var(--color-DARK);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: 4px solid rgb(136,1,1);
+  }
+
+  .tiempoAgotado{
+    color: var(--color-bg-app-LIGHT);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+
+  .iconInfo {
+    margin-right: 10px;
+    background-color: var(--color-bg-app-LIGHT);
+    border-radius: 50%;
+    padding: 10px;
+    color: var(--color-RED);
+  }
+
+  .timeInfo button {
+    background-color: var(--color-Secondary-D2);
+    padding: 5px;
+    border:0 ;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+    color: var(--color-bg-app-LIGHT);
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    width: 150px;
+    letter-spacing: 2px;
+  }
+
+  .timeInfo button:hover {
+    cursor: pointer;
+    background-color: var(--color-Secondary-D1);
+  }
+
+  .headGame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:15px;
+    background-color: rgba(100, 183, 255, 0.3);
+  }
+
+  .divReloj{
+    margin-left: 30px;
+  }
+
+  .timeCount{
+    margin: 0;  
+    font-family: 'Poppins', sans-serif;
+    width: 100px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    
+  }
+
+  .turnoJugador{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;       
+  }
+
+  .imgFichaTurno{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+
+  .headGame p {
+    /* background-color: var(--color-bg-app-LIGHT); */
+    border-radius: 5px;
+    color: var(--color-bg-app-LIGHT);
+    font-size: 30px;
+    margin-left: 5px;
+    padding: 5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headGame span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headGame span img {
+    margin-left: 10px;
+  }
+
+  .headGame button{
+    background-color: var(--color-RED);
+    color: var(--color-bg-app-LIGHT);
+    border: 0;
+    padding: 5px;
+    margin-right: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 7px 5px 10px 1px rgba(0,0,0,0.70);
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+
+  .headGame button:hover{
+    cursor: pointer;
+    filter: blur(1px);
+    transform: scale(0.92);
+  }
+
+  .headGame div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headGame div img {
+    margin-left: 10px;
+    background-color: var(--color-bg-app-LIGHT);
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  .nota {
+    display: flex;
+    justify-content: center;
+    color: var(--color-bg-app-LIGHT);
+    font-family: 'Poppins', sans-serif;
+  }
