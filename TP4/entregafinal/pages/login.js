@@ -19,10 +19,11 @@ export default function Login(){
         }
     }, [session])
 
-   /*  function iniciarSesionGH(e){
+    /* function iniciarSesionGH(e){
         e.preventDefault();
-        signIn('github', {callbackUrl:'https://unicen-visualizacion4.vercel.app'})
-    } */
+        signIn('github', {callbackUrl:'https://unicen-visualizacion4.vercel.app'}) 
+    }*/
+    
     function iniciarSesionGoo(e){
         e.preventDefault();
         signIn('google', {callbackUrl:'https://unicen-visualizacion4.vercel.app'})
@@ -81,15 +82,15 @@ export default function Login(){
                 {(session) ? (
                         (  
                         <div className={styles.contentSubmit}>
-                            <button onClick={() => signOut('github')} type="submit" className={styles.btnInicioSesion}>Cerrar Sesion</button>
+                            {/* <button onClick={() => signOut('github')} type="submit" className={styles.btnInicioSesion}>Cerrar Sesion</button> */}
                             <button onClick={() => signOut('google')} type="submit" className={styles.btnInicioSesion}>Cerrar Sesion Google</button>
                         </div>
                         )
                         ) : (                        
                         (    
                         <div className={styles.contentSubmit}>
-                           {/*  <button onClick={iniciarSesionGH} type="submit" className={styles.btnSubmit}>Iniciar Sesion</button> */}
-                            <button onClick={iniciarSesionGoo} type="submit" className={styles.btnSubmit} >Sign in with Google</button>
+                           {/* <button onClick={iniciarSesionGH} type="submit" className={styles.btnSubmit}>Iniciar Sesion</button> */}
+                           <button onClick={iniciarSesionGoo} type="submit" className={styles.btnSubmit}>Iniciar Sesion</button>
                         </div>
                         
                         ))
