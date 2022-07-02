@@ -628,5 +628,19 @@
     "release_date": "2018-03-13",
     "video_url": "https://www.youtube.com/embed/fVkFAG_Ysc8?controls=0&amp;start=12",
     "subcategory": ""
+  },
+  {
+    "id": 49,
+    "title": "Forest Runner",
+    "thumbnail": "/gamesImg/49.jpg",
+    "short_description": "Lanzamiento ! Nuevo juego para desafiar a los mejores runners del mundo ! Recorre el bosque evitando enemigos y recolectando monedas para ganar el juego !",
+    "game_url": "https://www.freetogame.com/open/spellsworn",
+    "genre": "Arcade",
+    "platform": "PC (Windows)",
+    "publisher": "Frogsong Studios AB",
+    "developer": "Frogsong Studios AB",
+    "release_date": "2018-03-13",
+    "video_url": "https://www.youtube.com/embed/HgImEFyiwyw?start=14",
+    "subcategory": ""
   }  
 ]
