@@ -21,7 +21,7 @@ export default function Page({game, genres}) {
 
   useEffect(() => {
     const ok = [];
-    fetch(`https://unicen-visualizacion3.vercel.app/api/categories/${game.genre}`, {
+    fetch(`https://unicen-visualizacion4.vercel.app/api/categories/${game.genre}`, {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json'}),
         mode: 'no-cors',
@@ -78,8 +78,8 @@ export default function Page({game, genres}) {
         </div>
         <iframe className={styles.imgGame} width="100%" height="250" src={`${game.video_url}?autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         <p className={styles.descriptionGame}>{game.short_description}</p>
-        
-        <a href="/play_game"><button className={styles.btnPlay}>¡ Jugar ahora !</button></a>
+        {(game.id == 49) ? <a href="/play_game"><button className={styles.btnPlay}>¡ Jugar ahora !</button></a> : <a href="/play_game"><button className={styles.btnPlay}>¡ Jugar ahora !</button></a>}
+        {/* <a href="/play_game"><button className={styles.btnPlay}>¡ Jugar ahora !</button></a> */}
           {/* <a className={styles.buttonPlay}><ButtonPlay/></a> */}
         
       </div>
@@ -98,9 +98,9 @@ export default function Page({game, genres}) {
 
 export async function getServerSideProps(context) {
   /* const res = await fetch(`https://www.freetogame.com/api/game?id=${context.params.id}`); */
-  const resCategories = await fetch(`https://unicen-visualizacion3.vercel.app/api/categories`);
+  const resCategories = await fetch(`https://unicen-visualizacion4.vercel.app/api/categories`);
   const categories = await resCategories.json();
-  const res = await fetch(`https://unicen-visualizacion3.vercel.app/api/games/${context.params.id}`)
+  const res = await fetch(`https://unicen-visualizacion4.vercel.app/api/games/${context.params.id}`)
   const game = await res.json();
   return {
     props: {
