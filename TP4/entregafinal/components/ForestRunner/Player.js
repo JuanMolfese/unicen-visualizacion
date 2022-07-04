@@ -7,8 +7,5 @@ export class Player extends Char {
         this.char_coins = 0;
         this.char_onJump = false;
     }
-   
-
-
-
+    
 }
