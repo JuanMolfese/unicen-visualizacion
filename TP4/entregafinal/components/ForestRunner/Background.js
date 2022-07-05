@@ -1,14 +1,35 @@
-export default function Background(){
+import React, { useEffect } from 'react';
+
+export default function Background({gameOver}){
+
+    if (gameOver) { 
+        layer1.style.animation="pause";
+        layer2.style.animation="pause";
+        layer3.style.animation="pause";
+        layer4.style.animation="pause";
+        layer5.style.animation="pause";
+        layer6.style.animation="pause";
+    }
+
+    useEffect(() => {
+        const layer1 = document.getElementById("layer1");
+        const layer2 = document.getElementById("layer2");
+        const layer3 = document.getElementById("layer3");
+        const layer4 = document.getElementById("layer4");
+        const layer5 = document.getElementById("layer5");
+        const layer6 = document.getElementById("layer6");
+    })
+
     
     return(
             <>
                 <div className="fondo">
-                    <div className="layer layer-6"></div>
-                    <div className="layer layer-5"></div>
-                    <div className="layer layer-4"></div>
-                    <div className="layer layer-3"></div>
-                    <div className="layer layer-2"></div>
-                    <div className="layer layer-1"></div>
+                    <div id="layer1" className="layer layer-6"></div>
+                    <div id="layer2" className="layer layer-5"></div>
+                    <div id="layer3" className="layer layer-4"></div>
+                    <div id="layer4" className="layer layer-3"></div>
+                    <div id="layer5" className="layer layer-2"></div>
+                    <div id="layer6" className="layer layer-1"></div>
                 </div>
 
                 <style jsx>{`

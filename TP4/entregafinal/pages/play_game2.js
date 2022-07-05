@@ -39,7 +39,8 @@ export default function Play_Game2(){
     }; */
     
     
-    const char = new Player(true, 1, 100, 400, 0, false);
+   // const char = new Player(true, 1, 100, 400, 0, false);
+    
         
     function jump(){
         char.classList.remove("char_jump"); 
@@ -63,30 +64,33 @@ export default function Play_Game2(){
         layer6.style.animation="pause";
     }
 
+    useEffect(() => {
+        const char = document.getElementById("char"); 
+         //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
+        window.addEventListener("keydown", function (event) {     
+            
+            if (event.key == " ") {
+                char.classList.add("char_jump");
+                char.classList.remove("char_run");
+                char.classList.remove("char_death");
+                this.setTimeout(jump, 1300);
+            }
+            else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+                char.classList.remove("char_run");
+                char.classList.add("char_death");
+                setGameOver(true);
+                this.setTimeout(detener_fondo, 1200);
+                this.setTimeout(mostrar_cartel_loose,1200);            
+            }
+            else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
+                
+                this.setTimeout(mostrar_cartel_win,1200);            
+            }       
+            }
+        ); 
+    })
 
-     //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
-    /*  window.addEventListener("keydown", function (event) {     
-        
-        if (event.key == " ") {
-            char.classList.remove("char_run");
-            char.classList.remove("char_death");
-            char.classList.add("char_jump");
-            setTimeout(jump,1300);
-        }
-        else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
-             
-            char.classList.add("char_death");
-            gameOver = true;            
-            this.setTimeout(detener_fondo, 1200);
-            this.setTimeout(mostrar_cartel_loose,1200);            
-        }
-        else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
-             
-            this.setTimeout(mostrar_cartel_win,1200);            
-        }       
-        }
-    ); */
-
+    
 
 return(
     <>
@@ -94,13 +98,13 @@ return(
 
         <div className="container">
             
-            <Background></Background>
+            <Background gameOver={gameOver}></Background>
 
             <a href=""><div id="go_back"></div></a>
 
             <div id="coins_counter"></div>
             
-            <div id="char" className="char_run"></div>
+            <div id="char" className="char char_run"></div>
             
             <div id="mob1_despl_X">
                 <div id="mob1" className="mob1_run"></div>
@@ -134,47 +138,37 @@ return(
         top: 20px;
         bottom: 0;  
     }
-    .char_run{
+
+    .char {
         width: 128px;
         height: 128px;
-        background: url('/ForestRunner/char/char_mage_run.png');
-        animation: char_run 0.7s steps(8) infinite;
-        MozAnimation: char_run 0.7s steps(8) infinite;
-        WebkitAnimation: char_run 0.7s  steps(8) infinite;
-        zIndex: 2;
+        z-index: 2;
         transform : scale(2);
         position: absolute;
         left: 100px;
         top: 400px;
     }
+
+    .char_run{
+        background: url('/ForestRunner/char/char_mage_run.png');
+        animation: char_run 0.7s steps(8) infinite;
+        MozAnimation: char_run 0.7s steps(8) infinite;
+        WebkitAnimation: char_run 0.7s  steps(8) infinite;
+    }
     
     .char_death{
-        width: 128px;
-        height: 128px;
+       
         background: url('/ForestRunner/char/char_mage_death.png');
         animation: char_death 1.3s steps(11) 1 normal forwards;    
         MozAnimation: char_death 1.3s steps(11) 1 forwards;
         WebkitAnimation: char_death 1.3s steps(11) 1 forwards;
-        zIndex: 2;
-        transform : scale(2);
-        position: absolute;
-        left: 100px;
-        top: 400px;       
-       
     }
     
-    .char_jump{
-        width: 128px;
-        height: 128px;
+    .char_jump{ 
         background: url('/ForestRunner/char/char_mage_jump.png');
         animation: char_jump 1.3s steps(12) 1;
         MozAnimation: char_jump 1.3s steps(12) 1;
-        WebkitAnimation: char_jump 1.3s steps(12) 1;
-        zIndex: 2;
-        transform : scale(2);
-        position: absolute;
-        left: 100px;
-        top: 400px;   
+        WebkitAnimation: char_jump 1.3s steps(12) 1;  
     }
     
     .mob1_run{
@@ -184,7 +178,7 @@ return(
         animation: mob1_run 2s steps(12) infinite;
         MozAnimation: mob1_run 2s steps(12) infinite;
         WebkitAnimation: mob1_run 2s steps(12) infinite;
-        zIndex: 2;
+        z-index: 2;
         transform : scale(1.5);
         position: absolute;
         top: 440px;    
@@ -201,7 +195,7 @@ return(
         animation: coin2 0.8s steps(6) infinite;  
         MozAnimation: coin2 0.8s steps(6) infinite;
         WebkitAnimation: coin2 0.8s steps(6) infinite;
-        zIndex: 2;    
+        z-index: 2;    
         position: absolute;        
         top: 240px;
     }
@@ -223,7 +217,7 @@ return(
         margin-bottom: auto;
         top: 0;
         bottom: 0;
-        zIndex: 11;
+        z-index: 11;
         visibility: hidden;
     }
     
@@ -240,7 +234,7 @@ return(
         margin-bottom: auto;
         top: 0;
         bottom: 0;
-        zIndex: 11;
+        z-index: 11;
         visibility: hidden;
     }
     
@@ -250,7 +244,7 @@ return(
         height: 85px;
         background: url('/ForestRunner/carteles/coin_count.png');
         position: absolute;    
-        zIndex: 12;
+        z-index: 12;
         left: 620px;
         top: 20px;
     }
@@ -267,7 +261,7 @@ return(
         width: 70px;
         height: 70px;
         position: absolute;    
-        zIndex: 13;
+        z-index: 13;
         left: 700px;
         top: 35px;
         font-family: Arial, Helvetica, sans-serif;
@@ -279,7 +273,7 @@ return(
         height: 78px;
         background: url('/ForestRunner/carteles/btn_back.png');
         position: absolute;    
-        zIndex: 12;
+        z-index: 12;
         left: 20px;
         top: 20px;
     }
