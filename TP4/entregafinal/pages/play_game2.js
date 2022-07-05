@@ -1,13 +1,91 @@
 import { Navbar_inGame } from "../components/NavBar_inGame";
 import Footer from "../components/Footer";
-import styles from "../styles/playGame.module.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Background from "../components/ForestRunner/Background";
+import { Player } from "../components/ForestRunner/player";
 
 export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
+    
+    /* const InputListener = ()=>{        
+        useEffect(() => {
+            window.addEventListener("keydown", e => {     
+                if (e.key === " ")  
+                    return () => {
+                        char.classList.remove("char_run");
+                        char.classList.remove("char_death");
+                        char.classList.add("char_jump");
+                        setTimeout(jump,1300);
+                    }
+                });
+            
+            window.addEventListener("keydown", e => {     
+                if (e.key === "d")             
+                    return () => {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+                        char.classList.add("char_death");
+                        gameOver = true;            
+                        this.setTimeout(detener_fondo, 1200);
+                        this.setTimeout(mostrar_cartel_loose,1200);            
+                    }
+                });
+            window.addEventListener("keydown", e => {     
+                if (e.key === "w")  
+                    return () => {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
+                        this.setTimeout(mostrar_cartel_win,1200);            
+                    }           
+            });
+        });
+    }; */
+    
+    
+    const char = new Player(true, 1, 100, 400, 0, false);
+        
+    function jump(){
+        char.classList.remove("char_jump"); 
+        char.classList.add("char_run");        
+    }
 
+    function mostrar_cartel_loose(){
+        cartel_loose.style.visibility='visible';
+    }
+
+    function mostrar_cartel_win(){
+        cartel_win.style.visibility='visible';
+    }
+
+    function detener_fondo(){
+        layer1.style.animation="pause";
+        layer2.style.animation="pause";
+        layer3.style.animation="pause";
+        layer4.style.animation="pause";
+        layer5.style.animation="pause";
+        layer6.style.animation="pause";
+    }
+
+
+     //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
+    /*  window.addEventListener("keydown", function (event) {     
+        
+        if (event.key == " ") {
+            char.classList.remove("char_run");
+            char.classList.remove("char_death");
+            char.classList.add("char_jump");
+            setTimeout(jump,1300);
+        }
+        else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+             
+            char.classList.add("char_death");
+            gameOver = true;            
+            this.setTimeout(detener_fondo, 1200);
+            this.setTimeout(mostrar_cartel_loose,1200);            
+        }
+        else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
+             
+            this.setTimeout(mostrar_cartel_win,1200);            
+        }       
+        }
+    ); */
 
 
 return(
