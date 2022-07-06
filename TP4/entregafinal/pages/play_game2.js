@@ -38,7 +38,10 @@ export default function Play_Game2(){
 
     useEffect(() => {
         const char = document.getElementById("char"); 
+        /* const mob1 = document.getElementById("mob1"); */
+        
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
+   
         if (personaje != null) {
             window.addEventListener("keydown", function (event) {     
             
@@ -61,6 +64,7 @@ export default function Play_Game2(){
                 }       
             }); 
             char.classList.add(`char${personaje}_run`);
+            /* mob1.style.right = '200px'; */
         }
     })
 
@@ -68,7 +72,18 @@ export default function Play_Game2(){
         setPersonaje(event.target.value);
     }
 
-    
+    /*
+    if (personaje != null) {
+        setInterval(() => {
+            mob1.style.right = (parseInt(mob1.style.right) + 1) + 'px';
+            console.log(mob1.offsetLeft - mob1.clientWidth - 4);
+            if (char.offsetLeft == mob1.offsetLeft - mob1.clientWidth - 4) {
+                console.log("choque");
+            }
+        }, 50);
+    }
+    //para que esto funcione, hay que sacar la animacion a #mob1_despl_X
+    */
 
 return(
     <>
@@ -174,6 +189,7 @@ return(
         position: absolute;
         left: 100px;
         top: 435px;
+    
     }
 
     .char1_run{
@@ -230,13 +246,14 @@ return(
         WebkitAnimation: mob1_run 1s steps(5) infinite;
         z-index: 2;        
         position: absolute;
-        top: 430px;    
+        top: 430px;   
+  
     }   
     
     #mob1_despl_X{
         animation: mob1_desplace 3.5s linear infinite;  
     }
-    
+
     .coin{
         width: 50px;
         height: 50px;
