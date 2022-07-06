@@ -6,10 +6,11 @@ import Background from "../components/ForestRunner/Background";
 export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
+    const [personaje, setPersonaje] = useState(null);
 
     function jump(){
-        char.classList.remove("char_jump"); 
-        char.classList.add("char_run");        
+        char.classList.remove(`char${personaje}_jump`); 
+        char.classList.add(`char${personaje}_run`);        
     }
 
     function mostrar_cartel_loose(){
@@ -38,35 +39,51 @@ export default function Play_Game2(){
     useEffect(() => {
         const char = document.getElementById("char"); 
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
-        window.addEventListener("keydown", function (event) {     
+        if (personaje != null) {
+            window.addEventListener("keydown", function (event) {     
             
-            if (event.key == " ") {
-                char.classList.add("char_jump");
-                char.classList.remove("char_run");
-                char.classList.remove("char_death");
-                this.setTimeout(jump, 1300);
-            }
-            else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
-                char.classList.remove("char_run");
-                char.classList.add("char_death");
-                setGameOver(true);
-                this.setTimeout(detener_fondo, 1200);
-                this.setTimeout(mostrar_cartel_loose,1200);            
-            }
-            else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
-                
-                this.setTimeout(mostrar_cartel_win,1200);            
-            }       
-            }
-        ); 
+                if (event.key == " ") {
+                    char.classList.add(`char${personaje}_jump`);
+                    char.classList.remove(`char${personaje}_run`);
+                    char.classList.remove(`char${personaje}_death`);
+                    this.setTimeout(jump, 1300);
+                }
+                else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+                    char.classList.remove(`char${personaje}_run`);
+                    char.classList.add(`char${personaje}_death`);
+                    setGameOver(true);
+                    this.setTimeout(detener_fondo, 1200);
+                    this.setTimeout(mostrar_cartel_loose,1200);            
+                }
+                else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
+                    
+                    this.setTimeout(mostrar_cartel_win,1200);            
+                }       
+            }); 
+            char.classList.add(`char${personaje}_run`);
+        }
     })
+
+    function handleChange(event){
+        setPersonaje(event.target.value);
+    }
 
     
 
 return(
     <>
         <Navbar_inGame></Navbar_inGame>
-
+        {(personaje == null) ? 
+        <>
+            <h2 className="titleSelect">Seleccione un personaje para comenzar:</h2>
+            <div className="contentSelect">
+                <input id="pers1" type="radio" name="selectPers" onChange={handleChange} value="1"/>
+                <label for="pers1" className="itemPers"><img src="/ForestRunner/char/char.png"></img></label>
+                <input id="pers2" type="radio" name="selectPers" onChange={handleChange} value="2"></input> 
+                <label for="pers2" className="itemPers"><img src="/ForestRunner/char/char2.png"></img></label>
+            </div> 
+        </>
+        :
         <div className="container">
             
             <Background gameOver={gameOver}></Background>
@@ -75,7 +92,7 @@ return(
 
             <div id="coins_counter"></div>
             
-            <div id="char" className="char char_run"></div>
+            <div id="char" className="char"></div>
             
             <div id="mob1_despl_X">
                 <div id="mob1" className="mob1_run"></div>
@@ -89,9 +106,49 @@ return(
             <div id="cartel_loose"></div>
                         
         </div>
-
+        }
         <Footer></Footer>
 <style jsx>{`
+
+    .titleSelect {
+        text-align: center;
+    }
+
+    .contentSelect {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .contentSelect input {
+        display: none;
+    }
+
+    .itemPers {
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+    }
+
+    input[type="radio"]:checked + label{
+        cursor: pointer;
+        transform: scale(1.1);
+        filter: brightness(150%);
+    }
+
+    .itemPers img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .itemPers:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        filter: brightness(150%);
+    }
 
     .container{
         width: 800px;
@@ -119,8 +176,15 @@ return(
         top: 435px;
     }
 
-    .char_run{
+    .char1_run{
         background: url('/ForestRunner/char/char_run.png');
+        animation: char_run 0.7s steps(8) infinite;
+        MozAnimation: char_run 1s steps(8) infinite;
+        WebkitAnimation: char_run 1s  steps(8) infinite;
+    }
+
+    .char2_run{
+        background: url('/ForestRunner/char/char2_run.png');
         animation: char_run 0.7s steps(8) infinite;
         MozAnimation: char_run 1s steps(8) infinite;
         WebkitAnimation: char_run 1s  steps(8) infinite;
@@ -131,7 +195,7 @@ return(
         100%{background-position: -960px;}   
     }
     
-    .char_death{       
+    .char1_death{       
         background: url('/ForestRunner/char/char_death.png');
         animation: char_death 1.3s steps(11) 1 normal forwards;    
         MozAnimation: char_death 1.3s steps(11) 1 forwards;
@@ -144,7 +208,7 @@ return(
         100%{background-position: -1320px;opacity: 0;}   
     }
 
-    .char_jump{ 
+    .char1_jump{ 
         background: url('/ForestRunner/char/char_jump.png');
         animation: char_jump 1.3s steps(12) 1;
         MozAnimation: char_jump 1.3s steps(12) 1;
