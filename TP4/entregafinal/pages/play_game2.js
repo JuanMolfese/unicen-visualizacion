@@ -38,7 +38,8 @@ export default function Play_Game2(){
 
     useEffect(() => {
         const char = document.getElementById("char"); 
-        /* const mob1 = document.getElementById("mob1"); */
+        const mob1 = document.getElementById("mob1");
+        const coin = document.getElementById("coin");
         
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
@@ -46,25 +47,29 @@ export default function Play_Game2(){
             window.addEventListener("keydown", function (event) {     
             
                 if (event.key == " ") {
+    
                     char.classList.add(`char${personaje}_jump`);
                     char.classList.remove(`char${personaje}_run`);
                     char.classList.remove(`char${personaje}_death`);
                     this.setTimeout(jump, 1300);
                 }
-                else if (event.key == "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+                else if (event.key === "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
                     char.classList.remove(`char${personaje}_run`);
                     char.classList.add(`char${personaje}_death`);
                     setGameOver(true);
                     this.setTimeout(detener_fondo, 1200);
                     this.setTimeout(mostrar_cartel_loose,1200);            
                 }
-                else if (event.key == "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
+                else if (event.key === "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
                     
                     this.setTimeout(mostrar_cartel_win,1200);            
                 }       
+                else if (event.key ===  "Escape"){
+                    window.location.href = " ";
+                }
             }); 
             char.classList.add(`char${personaje}_run`);
-            /* mob1.style.right = '200px'; */
+            mob1.style.left = '800px';
         }
     })
 
@@ -72,18 +77,25 @@ export default function Play_Game2(){
         setPersonaje(event.target.value);
     }
 
-    /*
+
     if (personaje != null) {
-        setInterval(() => {
-            mob1.style.right = (parseInt(mob1.style.right) + 1) + 'px';
-            console.log(mob1.offsetLeft - mob1.clientWidth - 4);
-            if (char.offsetLeft == mob1.offsetLeft - mob1.clientWidth - 4) {
-                console.log("choque");
+        let interval = setInterval(() => {
+            mob1.style.left = (parseInt(mob1.style.left) - 5) + 'px';
+            /* console.log(mob1.offsetLeft - mob1.clientWidth - 4); */
+            if ((mob1.offsetLeft == char.offsetLeft + char.clientWidth)) {
+                char.classList.remove(`char${personaje}_run`);
+                char.classList.add(`char${personaje}_death`);
+                clearInterval(interval);
+                setGameOver(true);
+                setTimeout(detener_fondo, 1200);
+                setTimeout(mostrar_cartel_loose,1200);  
             }
         }, 50);
+
     }
+
     //para que esto funcione, hay que sacar la animacion a #mob1_despl_X
-    */
+    
 
 return(
     <>
@@ -103,15 +115,15 @@ return(
             
             <Background gameOver={gameOver}></Background>
 
-            <a href=""><div id="go_back"></div></a>
+            {/* <a href=""><div id="go_back"></div></a> */}
 
             <div id="coins_counter"></div>
             
             <div id="char" className="char"></div>
             
-            <div id="mob1_despl_X">
-                <div id="mob1" className="mob1_run"></div>
-            </div>
+            
+            <div id="mob1" className="mob1_run"></div>
+            
             
             <div id="coin_despl_X">
                 <div id="coin" className="coin"></div>
@@ -189,7 +201,7 @@ return(
         position: absolute;
         left: 100px;
         top: 435px;
-    
+        
     }
 
     .char1_run{
@@ -218,6 +230,13 @@ return(
         MozAnimation: char_death 1.3s steps(11) 1 forwards;
         WebkitAnimation: char_death 1.3s steps(11) 1 forwards;
     }
+
+    .char2_death{       
+        background: url('/ForestRunner/char/char2_death.png');
+        animation: char_death 1.3s steps(11) 1 normal forwards;    
+        MozAnimation: char_death 1.3s steps(11) 1 forwards;
+        WebkitAnimation: char_death 1.3s steps(11) 1 forwards;
+    }
     
     @keyframes char_death{
         0%{background-position: 0px; opacity: 1;}
@@ -227,6 +246,13 @@ return(
 
     .char1_jump{ 
         background: url('/ForestRunner/char/char_jump.png');
+        animation: char_jump 1.3s steps(12) 1;
+        MozAnimation: char_jump 1.3s steps(12) 1;
+        WebkitAnimation: char_jump 1.3s steps(12) 1;  
+    }
+
+    .char2_jump{ 
+        background: url('/ForestRunner/char/char2_jump.png');
         animation: char_jump 1.3s steps(12) 1;
         MozAnimation: char_jump 1.3s steps(12) 1;
         WebkitAnimation: char_jump 1.3s steps(12) 1;  
@@ -242,18 +268,19 @@ return(
         width: 120px;
         height: 120px;
         background: url('/ForestRunner/char/mob.png');
-        animation: mob1_run 1s steps(5) infinite;
-        MozAnimation: mob1_run 1s steps(5) infinite;
-        WebkitAnimation: mob1_run 1s steps(5) infinite;
+        animation: mob1_run 0.5s steps(5) infinite;
+        MozAnimation: mob1_run 0.5s steps(5) infinite;
+        WebkitAnimation: mob1_run 0.5s steps(5) infinite;
         z-index: 2;        
         position: absolute;
-        top: 430px;   
-  
+        top: 430px;
+        left: 0;
+        
     }   
     
-    #mob1_despl_X{
+    {/* #mob1_despl_X{
         animation: mob1_desplace 3.5s linear infinite;  
-    }
+    } */}
 
     .coin{
         width: 50px;
