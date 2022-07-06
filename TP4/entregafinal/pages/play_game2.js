@@ -2,46 +2,11 @@ import { Navbar_inGame } from "../components/NavBar_inGame";
 import Footer from "../components/Footer";
 import React, { useState, useEffect } from 'react';
 import Background from "../components/ForestRunner/Background";
-import { Player } from "../components/ForestRunner/player";
 
 export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
-    
-    /* const InputListener = ()=>{        
-        useEffect(() => {
-            window.addEventListener("keydown", e => {     
-                if (e.key === " ")  
-                    return () => {
-                        char.classList.remove("char_run");
-                        char.classList.remove("char_death");
-                        char.classList.add("char_jump");
-                        setTimeout(jump,1300);
-                    }
-                });
-            
-            window.addEventListener("keydown", e => {     
-                if (e.key === "d")             
-                    return () => {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
-                        char.classList.add("char_death");
-                        gameOver = true;            
-                        this.setTimeout(detener_fondo, 1200);
-                        this.setTimeout(mostrar_cartel_loose,1200);            
-                    }
-                });
-            window.addEventListener("keydown", e => {     
-                if (e.key === "w")  
-                    return () => {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
-                        this.setTimeout(mostrar_cartel_win,1200);            
-                    }           
-            });
-        });
-    }; */
-    
-    
-   // const char = new Player(true, 1, 100, 400, 0, false);
-    
-        
+
     function jump(){
         char.classList.remove("char_jump"); 
         char.classList.add("char_run");        
@@ -56,12 +21,18 @@ export default function Play_Game2(){
     }
 
     function detener_fondo(){
-        layer1.style.animation="pause";
-        layer2.style.animation="pause";
-        layer3.style.animation="pause";
-        layer4.style.animation="pause";
-        layer5.style.animation="pause";
-        layer6.style.animation="pause";
+
+        /*   backgroundAnimation.forEach(animation =>{
+            const running = animation.style.animationPlayState || 'running';
+            animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+        }) */
+
+        layer1.style.animationPlayState='paused';
+        layer2.style.animationPlayState='paused';
+        layer3.style.animationPlayState='paused';
+        layer4.style.animationPlayState='paused';
+        layer5.style.animationPlayState='paused';
+        layer6.style.animationPlayState='paused';
     }
 
     useEffect(() => {
@@ -140,48 +111,62 @@ return(
     }
 
     .char {
-        width: 128px;
-        height: 128px;
-        z-index: 2;
-        transform : scale(2);
+        width: 120px;
+        height: 120px;
+        z-index: 2;        
         position: absolute;
         left: 100px;
-        top: 400px;
+        top: 435px;
     }
 
     .char_run{
-        background: url('/ForestRunner/char/char_mage_run.png');
+        background: url('/ForestRunner/char/char_run.png');
         animation: char_run 0.7s steps(8) infinite;
-        MozAnimation: char_run 0.7s steps(8) infinite;
-        WebkitAnimation: char_run 0.7s  steps(8) infinite;
+        MozAnimation: char_run 1s steps(8) infinite;
+        WebkitAnimation: char_run 1s  steps(8) infinite;
+    }
+
+    @keyframes char_run{
+        0%{background-position: 0px;}
+        100%{background-position: -960px;}   
     }
     
-    .char_death{
-       
-        background: url('/ForestRunner/char/char_mage_death.png');
+    .char_death{       
+        background: url('/ForestRunner/char/char_death.png');
         animation: char_death 1.3s steps(11) 1 normal forwards;    
         MozAnimation: char_death 1.3s steps(11) 1 forwards;
         WebkitAnimation: char_death 1.3s steps(11) 1 forwards;
     }
     
+    @keyframes char_death{
+        0%{background-position: 0px; opacity: 1;}
+        99%{opacity: .8;}
+        100%{background-position: -1320px;opacity: 0;}   
+    }
+
     .char_jump{ 
-        background: url('/ForestRunner/char/char_mage_jump.png');
+        background: url('/ForestRunner/char/char_jump.png');
         animation: char_jump 1.3s steps(12) 1;
         MozAnimation: char_jump 1.3s steps(12) 1;
         WebkitAnimation: char_jump 1.3s steps(12) 1;  
     }
+
+    @keyframes char_jump{
+        0%{background-position: 0px; top: 390px;}
+        50%{top: 150px;}
+        100%{background-position: -1440px; top: 390px;}       
+    }
     
     .mob1_run{
-        width: 128px;
-        height: 128px;
-        background: url('/ForestRunner/char/mob1_run.png');
-        animation: mob1_run 2s steps(12) infinite;
-        MozAnimation: mob1_run 2s steps(12) infinite;
-        WebkitAnimation: mob1_run 2s steps(12) infinite;
-        z-index: 2;
-        transform : scale(1.5);
+        width: 120px;
+        height: 120px;
+        background: url('/ForestRunner/char/mob.png');
+        animation: mob1_run 1s steps(5) infinite;
+        MozAnimation: mob1_run 1s steps(5) infinite;
+        WebkitAnimation: mob1_run 1s steps(5) infinite;
+        z-index: 2;        
         position: absolute;
-        top: 440px;    
+        top: 430px;    
     }   
     
     #mob1_despl_X{
@@ -189,9 +174,9 @@ return(
     }
     
     .coin{
-        width: 70px;
-        height: 70px;
-        background: url('/ForestRunner/coins/coin_70_70.png');
+        width: 50px;
+        height: 50px;
+        background: url('/ForestRunner/coins/coin_50.png');
         animation: coin2 0.8s steps(6) infinite;  
         MozAnimation: coin2 0.8s steps(6) infinite;
         WebkitAnimation: coin2 0.8s steps(6) infinite;
@@ -278,30 +263,9 @@ return(
         top: 20px;
     }
 
-    /* Animacion Correr del personaje */
-
-    @keyframes char_run{
-        0%{background-position: 0px;}
-        100%{background-position: -1024px;}   
-    }
-
-    /* Animacion Morir del personaje */
-    @keyframes char_death{
-        0%{background-position: 0px; opacity: 1;}
-        99%{opacity: .8;}
-        100%{background-position: -1408px;opacity: 0;}   
-    }
-
-    /* Animacion Saltar del personaje */
-    @keyframes char_jump{
-        0%{background-position: 0px; margin-top: 390px;}
-        50%{margin-top: 150px;}
-        100%{background-position: -1536px; margin-top: 390px;}       
-    }
-
     @keyframes mob1_run{
         0%{background-position: 0px;}
-        100%{background-position: -1538px;}
+        100%{background-position: -600px;}
     }
 
     @keyframes mob1_desplace{
@@ -311,7 +275,7 @@ return(
     
     @keyframes coin2{
         0%{background-position: 0px;}
-        100%{background-position: -420px;}
+        100%{background-position: -300px;}
     }
 
     @keyframes coin1{
