@@ -102,7 +102,7 @@ return(
         <Navbar_inGame></Navbar_inGame>
         {(personaje == null) ? 
         <>
-            <h2 className="titleSelect">Seleccione un personaje para comenzar:</h2>
+            {/* <h2 className="titleSelect">Seleccione un personaje para comenzar:</h2> */}
             <div className="contentSelect">
                 <input id="pers1" type="radio" name="selectPers" onChange={handleChange} value="1"/>
                 <label for="pers1" className="itemPers"><img src="/ForestRunner/char/char.png"></img></label>
@@ -137,16 +137,24 @@ return(
         <Footer></Footer>
 <style jsx>{`
 
-    .titleSelect {
+   /*  .titleSelect {
         text-align: center;
-    }
+    } */
 
     .contentSelect {
-        width: 100%;
-        display: flex;
-        align-items: center;
+        background: url('/ForestRunner/carteles/main_screen.jpg');
+        width: 800px;
+        height: 600px;
+        display: flex;        
         justify-content: center;
-        margin-top: 50px;
+        position: relative;
+        overflow: hidden;  
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;        
+        right: 0;       
+        top: 20px;
+        bottom: 0;          
     }
 
     .contentSelect input {
@@ -156,24 +164,23 @@ return(
     .itemPers {
         width: 100px;
         height: 100px;
-        margin-left: 20px;
+        margin: auto;
     }
 
     input[type="radio"]:checked + label{
         cursor: pointer;
-        transform: scale(1.1);
+        transform: scale(1.3);
         filter: brightness(150%);
     }
 
     .itemPers img{
         width: 100px;
-        height: 100px;
-        border-radius: 50%;
+        height: 100px;        
     }
 
     .itemPers:hover {
         cursor: pointer;
-        transform: scale(1.1);
+        transform: scale(1.3);
         filter: brightness(150%);
     }
 
