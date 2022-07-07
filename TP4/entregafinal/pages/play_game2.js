@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import React, { useState, useEffect } from 'react';
 import Background from "../components/ForestRunner/Background";
 
+let fin = false;
+
 export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
@@ -45,34 +47,36 @@ export default function Play_Game2(){
         
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
-        if (personaje != null) {
+        if (personaje != null && fin == false) {
             jump();
             window.addEventListener("keydown", function (event) {     
             
-                if (event.key == " ") {
+                if (event.key == " " && fin == false) {
                     salto = true;
                     char.classList.add(`char${personaje}_jump`);
                     char.classList.remove(`char${personaje}_run`);
                     char.classList.remove(`char${personaje}_death`);
                     this.setTimeout(jump, 1300);
                 }
-                else if (event.key === "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
+                /* else if (event.key === "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
                     char.classList.remove(`char${personaje}_run`);
                     char.classList.add(`char${personaje}_death`);
                     setGameOver(true);
                     this.setTimeout(detener_fondo, 1200);
                     this.setTimeout(mostrar_cartel_loose,1200);            
-                }
+                } */
                 else if (event.key === "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
                     
                     this.setTimeout(mostrar_cartel_win,1200);            
                 }       
-                else if (event.key ===  "Escape"){
-                    window.location.href = " ";
+                else if (event.key === "Escape"){
+                    //window.location.href = " ";
+                    location.reload();
                 }
             }); 
             char.classList.add(`char${personaje}_run`);
             mob1.style.left = '800px';
+
         }
     })
 
@@ -80,22 +84,23 @@ export default function Play_Game2(){
         setPersonaje(event.target.value);
     }
 
-
     if (personaje != null) {
         let interval = setInterval(() => {
-            mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
+            if (fin == false) {
+                mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
+            } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
-            let char_bottom = char.clientHeight + char.offsetTop;
+            //let char_bottom = char.clientHeight + char.offsetTop;
             let mob_right = mob1.offsetLeft + mob1.clientWidth;
             //if ( (mob1.offsetLeft == char_right && !salto) || (salto && (char_bottom >= mob1.offsetTop && char.offsetLeft < mob_right) ) ) { 
-            if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft) ){
+            if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft + 20) ){
                 char.classList.remove(`char${personaje}_run`);
                 char.classList.add(`char${personaje}_death`);
-                clearInterval(interval);
-                //mob1.style.left = '800px';
                 setGameOver(true);
+                fin = true;
                 setTimeout(detener_fondo, 1200);
                 setTimeout(mostrar_cartel_loose,1200);  
+                clearInterval(interval);
             } 
             if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
@@ -131,7 +136,6 @@ return(
             <div id="coins_counter"></div>
             
             <div id="char" className="char"></div>
-            
             
             <div id="mob1" className="mob1_run"></div>
             
