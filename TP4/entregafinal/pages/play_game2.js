@@ -11,7 +11,7 @@ export default function Play_Game2(){
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
 /*     const [points, setPoints] = useState(0); */
-
+    const pointsToWin = 10;
     let salto;
 
     function jump(){
@@ -26,6 +26,11 @@ export default function Play_Game2(){
 
     function mostrar_cartel_win(){
         cartel_win.style.visibility='visible';
+    }
+
+    function mostrar_botones(){
+        boton_home.style.visibility='visible';
+        boton_reload.style.visibility='visible';
     }
 
     function detener_fondo(){
@@ -52,7 +57,7 @@ export default function Play_Game2(){
         let timeInterval = setInterval(() => {
             if (point_counter != null && fin == false)
                 point_counter.innerHTML = `${points}`;
-            }, 800);
+            }, 100);
             
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
@@ -110,7 +115,8 @@ export default function Play_Game2(){
                 setGameOver(true);
                 fin = true;
                 setTimeout(detener_fondo, 1200);
-                setTimeout(mostrar_cartel_loose,1200);  
+                setTimeout(mostrar_cartel_loose,1200); 
+                setTimeout(mostrar_botones, 1200); 
                 clearInterval(interval);
                 
             } 
@@ -119,10 +125,11 @@ export default function Play_Game2(){
                 /* setPoints(points+1); */
                 points ++;
                 
-                if (points == 10) {
+                if (points == pointsToWin) {
                     fin=true;
                     setTimeout(mostrar_cartel_win,800);
                     setTimeout(detener_fondo, 800);
+                    setTimeout(mostrar_botones, 800);
                     clearInterval(interval);                    
                     mob1.style.left = '800px';
                 }
@@ -138,9 +145,6 @@ export default function Play_Game2(){
         }, 50);
 
     }
-
-    //para que esto funcione, hay que sacar la animacion a #mob1_despl_X
-    
 
 return(
     <>
@@ -173,6 +177,8 @@ return(
 
             <div id="cartel_win"></div>
             <div id="cartel_loose"></div>
+            <a href="/" id="boton_home"></a>
+            <a href="" id="boton_reload"></a>
                         
         </div>
         }
@@ -396,6 +402,28 @@ return(
         justify-content : center;
         align-items: center;              
     }  
+
+    #boton_home{
+        width: 57px;
+        height: 62px;
+        background: url('/ForestRunner/carteles/home.png');
+        position: absolute;
+        left: 320px;
+        top: 280px;
+        z-index: 15;
+        visibility: hidden;
+    }
+
+    #boton_reload{
+        width: 56px;
+        height: 61px;
+        background: url('/ForestRunner/carteles/btn_re_play.png');
+        position: absolute;
+        left: 420px;
+        top: 280px;
+        z-index: 15;
+        visibility: hidden;
+    }
 
     #go_back{    
         width: 71px;
