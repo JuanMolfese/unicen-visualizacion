@@ -76,7 +76,7 @@ export default function Play_Game2(){
             }); 
             char.classList.add(`char${personaje}_run`);
             mob1.style.left = '800px';
-
+            coin.style.left = '800px';
         }
     })
 
@@ -88,10 +88,12 @@ export default function Play_Game2(){
         let interval = setInterval(() => {
             if (fin == false) {
                 mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
+                coin.style.left = (parseInt(coin.style.left) - 8) + 'px';
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
             let mob_right = mob1.offsetLeft + mob1.clientWidth;
+            let coin_bottom = coin.clientHeight + coin.offsetTop;
             //if ( (mob1.offsetLeft == char_right && !salto) || (salto && (char_bottom >= mob1.offsetTop && char.offsetLeft < mob_right) ) ) { 
             if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft + 20) ){
                 char.classList.remove(`char${personaje}_run`);
@@ -102,10 +104,17 @@ export default function Play_Game2(){
                 setTimeout(mostrar_cartel_loose,1200);  
                 clearInterval(interval);
             } 
+            if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
+                coin.style.left = '800px';
+                console.log("agarro");
+            }
             if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
                 mob1.style.left = '800px';
             }  
+            if (parseInt(coin.style.left) + coin.clientWidth <= 0) {
+                coin.style.left = '800px';
+            }
         }, 50);
 
     }
@@ -140,9 +149,10 @@ return(
             <div id="mob1" className="mob1_run"></div>
             
             
-            <div id="coin_despl_X">
+            {/* <div id="coin_despl_X">
                 <div id="coin" className="coin"></div>
-            </div>
+            </div> */}
+            <div id="coin" className="coin"></div>
 
             <div id="cartel_win"></div>
             <div id="cartel_loose"></div>
