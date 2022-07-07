@@ -7,10 +7,12 @@ export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
+    let salto;
 
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
-        char.classList.add(`char${personaje}_run`);        
+        char.classList.add(`char${personaje}_run`); 
+        salto = false;       
     }
 
     function mostrar_cartel_loose(){
@@ -44,10 +46,11 @@ export default function Play_Game2(){
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null) {
+            jump();
             window.addEventListener("keydown", function (event) {     
             
                 if (event.key == " ") {
-    
+                    salto = true;
                     char.classList.add(`char${personaje}_jump`);
                     char.classList.remove(`char${personaje}_run`);
                     char.classList.remove(`char${personaje}_death`);
@@ -80,16 +83,24 @@ export default function Play_Game2(){
 
     if (personaje != null) {
         let interval = setInterval(() => {
-            mob1.style.left = (parseInt(mob1.style.left) - 5) + 'px';
-            /* console.log(mob1.offsetLeft - mob1.clientWidth - 4); */
-            if ((mob1.offsetLeft == char.offsetLeft + char.clientWidth)) {
+            mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
+            let char_right = char.offsetLeft + char.clientWidth;
+            let char_bottom = char.clientHeight + char.offsetTop;
+            let mob_right = mob1.offsetLeft + mob1.clientWidth;
+            //if ( (mob1.offsetLeft == char_right && !salto) || (salto && (char_bottom >= mob1.offsetTop && char.offsetLeft < mob_right) ) ) { 
+            if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft) ){
                 char.classList.remove(`char${personaje}_run`);
                 char.classList.add(`char${personaje}_death`);
                 clearInterval(interval);
+                //mob1.style.left = '800px';
                 setGameOver(true);
                 setTimeout(detener_fondo, 1200);
                 setTimeout(mostrar_cartel_loose,1200);  
-            }
+            } 
+            if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
+                //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
+                mob1.style.left = '800px';
+            }  
         }, 50);
 
     }
@@ -181,6 +192,7 @@ return(
     .itemPers:hover {
         cursor: pointer;
         transform: scale(1.3);
+        transition-duration: 1s;
         filter: brightness(150%);
     }
 
@@ -208,7 +220,7 @@ return(
         position: absolute;
         left: 100px;
         top: 435px;
-        
+        border: 1px solid;
     }
 
     .char1_run{
@@ -282,7 +294,7 @@ return(
         position: absolute;
         top: 430px;
         left: 0;
-        
+        border: 1px solid black;
     }   
     
     {/* #mob1_despl_X{
