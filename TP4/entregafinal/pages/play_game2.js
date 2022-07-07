@@ -220,7 +220,6 @@ return(
         position: absolute;
         left: 100px;
         top: 435px;
-        border: 1px solid;
     }
 
     .char1_run{
@@ -294,7 +293,6 @@ return(
         position: absolute;
         top: 430px;
         left: 0;
-        border: 1px solid black;
     }   
     
     {/* #mob1_despl_X{
