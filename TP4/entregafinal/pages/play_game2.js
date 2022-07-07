@@ -10,6 +10,8 @@ export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
+/*     const [points, setPoints] = useState(0); */
+
     let salto;
 
     function jump(){
@@ -45,7 +47,13 @@ export default function Play_Game2(){
         const char = document.getElementById("char"); 
         const mob1 = document.getElementById("mob1");
         const coin = document.getElementById("coin");
+        const point_counter  = document.getElementById("coins_counter");
         
+        let timeInterval = setInterval(() => {
+            if (point_counter != null && fin == false)
+                point_counter.innerHTML = `${points}`;
+            }, 800);
+            
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null && fin == false) {
@@ -104,18 +112,21 @@ export default function Play_Game2(){
                 setTimeout(detener_fondo, 1200);
                 setTimeout(mostrar_cartel_loose,1200);  
                 clearInterval(interval);
+                
             } 
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
                 coin.style.left = '800px';
-                points++;
+                /* setPoints(points+1); */
+                points ++;
+                
                 if (points == 10) {
                     fin=true;
                     setTimeout(mostrar_cartel_win,800);
                     setTimeout(detener_fondo, 800);
-                    clearInterval(interval);
+                    clearInterval(interval);                    
                     mob1.style.left = '800px';
                 }
-                console.log(points);
+                
             }
             if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
@@ -151,12 +162,9 @@ return(
 
             {/* <a href=""><div id="go_back"></div></a> */}
 
-            <div id="coins_counter"></div>
-            
-            <div id="char" className="char"></div>
-            
-            <div id="mob1" className="mob1_run"></div>
-            
+            <div id="coins_counter">0</div>            
+            <div id="char" className="char"></div>            
+            <div id="mob1" className="mob1_run"></div>         
             
             {/* <div id="coin_despl_X">
                 <div id="coin" className="coin"></div>
@@ -381,27 +389,14 @@ return(
         z-index: 12;
         left: 620px;
         top: 20px;
-    }
-    
-    p{
-        margin: 0;
-    }
-    /*contador numerico creado desde JS*/
-    
-    #coin_counter{   
         color: #fff; 
         font-size: 35px;   
-        textAlign: center; 
-        width: 70px;
-        height: 70px;
-        position: absolute;    
-        z-index: 13;
-        left: 700px;
-        top: 35px;
         font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    
+        display: flex;
+        justify-content : center;
+        align-items: center;              
+    }  
+
     #go_back{    
         width: 71px;
         height: 78px;
