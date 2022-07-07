@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Background from "../components/ForestRunner/Background";
 
 let fin = false;
+let points = 0;
 
 export default function Play_Game2(){
 
@@ -106,7 +107,15 @@ export default function Play_Game2(){
             } 
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
                 coin.style.left = '800px';
-                console.log("agarro");
+                points++;
+                if (points == 10) {
+                    fin=true;
+                    setTimeout(mostrar_cartel_win,800);
+                    setTimeout(detener_fondo, 800);
+                    clearInterval(interval);
+                    mob1.style.left = '800px';
+                }
+                console.log(points);
             }
             if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
