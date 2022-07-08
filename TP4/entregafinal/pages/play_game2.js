@@ -95,8 +95,8 @@ export default function Play_Game2(){
     if (personaje != null) {
         let interval = setInterval(() => {
             if (fin == false) {
-                mob1.style.left = (parseInt(mob1.style.left) - 8) + 'px';
-                coin.style.left = (parseInt(coin.style.left) - 10) + 'px';
+                mob1.style.left = (parseInt(mob1.style.left) - 9) + 'px';
+                coin.style.left = (parseInt(coin.style.left) - 11) + 'px';
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
