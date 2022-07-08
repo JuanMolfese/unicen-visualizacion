@@ -77,17 +77,6 @@ export default function Play_Game2(){
                     char.classList.remove(`char${personaje}_death`);
                     this.setTimeout(jump, 1300);
                 }
-                /* else if (event.key === "d") {  //EN CASO DE MORIR, ahora prueb ocon la tecla D
-                    char.classList.remove(`char${personaje}_run`);
-                    char.classList.add(`char${personaje}_death`);
-                    setGameOver(true);
-                    this.setTimeout(detener_fondo, 1200);
-                    this.setTimeout(mostrar_cartel_loose,1200);            
-                } */
-                else if (event.key === "w") {  //EN CASO DE GANAR, ahora prueb ocon la tecla W
-                    
-                    this.setTimeout(mostrar_cartel_win,1200);            
-                }       
                 else if (event.key === "Escape"){
                     //window.location.href = " ";
                     location.reload();
