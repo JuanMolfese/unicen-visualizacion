@@ -11,13 +11,18 @@ export default function Play_Game2(){
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
 /*     const [points, setPoints] = useState(0); */
-    const pointsToWin = 10;
+    const pointsToWin = 2;
     let salto;
 
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
         char.classList.add(`char${personaje}_run`); 
         salto = false;       
+      /*   if (fin == true && points == pointsToWin){
+            char.classList.add(`char${personaje}_jump`);
+            char.classList.remove(`char${personaje}_run`);
+            char.style.animationIterationCount = 'infinite';
+        } */
     }
 
     function mostrar_cartel_loose(){
@@ -52,13 +57,13 @@ export default function Play_Game2(){
         const char = document.getElementById("char"); 
         const mob1 = document.getElementById("mob1");
         const coin = document.getElementById("coin");
-        const point_counter  = document.getElementById("coins_counter");
+        /* const point_counter = document.getElementById("coins_counter"); */
         
-        let timeInterval = setInterval(() => {
+    /*     let timeInterval = setInterval(() => {
             if (point_counter != null && fin == false)
                 point_counter.innerHTML = `${points}`;
             }, 100);
-            
+             */
          //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null && fin == false) {
@@ -92,7 +97,7 @@ export default function Play_Game2(){
             mob1.style.left = '800px';
             coin.style.left = '800px';
         }
-    })
+    });
 
     function handleChange(event){
         setPersonaje(event.target.value);
@@ -124,7 +129,7 @@ export default function Play_Game2(){
                 coin.style.left = '800px';
                 /* setPoints(points+1); */
                 points ++;
-                
+                document.getElementById("coins_counter").innerHTML = `${points}`;
                 if (points == pointsToWin) {
                     fin=true;
                     setTimeout(mostrar_cartel_win,800);
@@ -314,9 +319,9 @@ return(
     }
 
     @keyframes char_jump{
-        0%{background-position: 0px; top: 390px;}
+        0%{background-position: 0px; top: 390px;} 
         50%{top: 150px;}
-        100%{background-position: -1440px; top: 390px;}       
+        100%{background-position: -1440px; top: 390px;}    
     }
     
     .mob1_run{

@@ -168,7 +168,7 @@ font-size: small;
   top: calc(50% - 30%);
   left: calc(50% - 47%);
   position: absolute;
-  z-index: 5;
+  z-index: 9999;
   display: none;
   animation: fadeInTop 0.5s; 
   border-radius: 10px;
