@@ -10,8 +10,7 @@ export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
-/*     const [points, setPoints] = useState(0); */
-    const pointsToWin = 1;
+    const pointsToWin = 10;
     let salto;
 
     function jump(){
@@ -46,12 +45,6 @@ export default function Play_Game2(){
     }
 
     function detener_fondo(){
-
-        /*   backgroundAnimation.forEach(animation =>{
-            const running = animation.style.animationPlayState || 'running';
-            animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
-        }) */
-
         layer1.style.animationPlayState='paused';
         layer2.style.animationPlayState='paused';
         layer3.style.animationPlayState='paused';
@@ -64,14 +57,8 @@ export default function Play_Game2(){
         const char = document.getElementById("char"); 
         const mob1 = document.getElementById("mob1");
         const coin = document.getElementById("coin");
-        /* const point_counter = document.getElementById("coins_counter"); */
-        
-    /*     let timeInterval = setInterval(() => {
-            if (point_counter != null && fin == false)
-                point_counter.innerHTML = `${points}`;
-            }, 100);
-             */
-         //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
+   
+        //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null && fin == false) {
             jump();
@@ -123,7 +110,6 @@ export default function Play_Game2(){
             } 
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
                 coin.style.left = '800px';
-                /* setPoints(points+1); */
                 points ++;
                 document.getElementById("coins_counter").innerHTML = `${points}`;
                 if (points == pointsToWin) {
@@ -152,8 +138,7 @@ return(
     <>
         <Navbar_inGame></Navbar_inGame>
         {(personaje == null) ? 
-        <>
-            {/* <h2 className="titleSelect">Seleccione un personaje para comenzar:</h2> */}
+        <>            
             <div className="contentSelect">
                 <input id="pers1" type="radio" name="selectPers" onChange={handleChange} value="1"/>
                 <label for="pers1" className="itemPers"><img src="/ForestRunner/char/char.png"></img></label>
@@ -165,18 +150,11 @@ return(
         <div className="container">
             
             <Background gameOver={gameOver}></Background>
-
             {/* <a href=""><div id="go_back"></div></a> */}
-
             <div id="coins_counter">0</div>            
             <div id="char" className="char"></div>            
             <div id="mob1" className="mob1_run"></div>         
-            
-            {/* <div id="coin_despl_X">
-                <div id="coin" className="coin"></div>
-            </div> */}
             <div id="coin" className="coin"></div>
-
             <div id="cartel_win"></div>
             <div id="cartel_loose"></div>
             <a href="/" id="boton_home"></a>
