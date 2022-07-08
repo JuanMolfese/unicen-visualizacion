@@ -11,7 +11,7 @@ export default function Play_Game2(){
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
 /*     const [points, setPoints] = useState(0); */
-    const pointsToWin = 10;
+    const pointsToWin = 1;
     let salto;
 
     function jump(){
@@ -36,6 +36,13 @@ export default function Play_Game2(){
     function mostrar_botones(){
         boton_home.style.visibility='visible';
         boton_reload.style.visibility='visible';
+    }
+
+    function mostrar_char_win(){
+        char.classList.add(`char${personaje}_win`);
+        char.classList.remove(`char${personaje}_run`);
+        char.classList.remove(`char${personaje}_death`);
+        char.classList.remove(`char${personaje}_jump`);
     }
 
     function detener_fondo(){
@@ -122,6 +129,7 @@ export default function Play_Game2(){
                 if (points == pointsToWin) {
                     fin=true;
                     setTimeout(mostrar_cartel_win,800);
+                    setTimeout(mostrar_char_win,1000);
                     setTimeout(detener_fondo, 800);
                     setTimeout(mostrar_botones, 800);
                     clearInterval(interval);                    
@@ -173,7 +181,9 @@ return(
             <div id="cartel_loose"></div>
             <a href="/" id="boton_home"></a>
             <a href="" id="boton_reload"></a>
-                        
+            <div className="char1_win"></div>
+            <div className="char2_win"></div>     
+
         </div>
         }
         <Footer></Footer>
@@ -313,6 +323,25 @@ return(
         100%{background-position: -1440px; top: 390px;}    
     }
     
+    .char1_win{
+        background: url('/ForestRunner/char/char1_win.png');
+        animation: char_win 1.3s steps(12) infinite;
+        MozAnimation: char_win 1.3s steps(12) infinite;
+        WebkitAnimation: char_win 1.3s steps(12) infinite; 
+    }
+
+    .char2_win{
+        background: url('/ForestRunner/char/char2_win.png');
+        animation: char_win 1.3s steps(12) infinite;
+        MozAnimation: char_win 1.3s steps(12) infinite;
+        WebkitAnimation: char_win 1.3s steps(12) infinite; 
+    }
+
+    @keyframes char_win{
+        0%{background-position: 0px; top: 435px;} 
+        100%{background-position: -1440px; top: 435px;}
+    }
+
     .mob1_run{
         width: 120px;
         height: 120px;
