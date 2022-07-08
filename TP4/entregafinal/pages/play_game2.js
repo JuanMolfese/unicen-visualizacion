@@ -11,7 +11,7 @@ export default function Play_Game2(){
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
 /*     const [points, setPoints] = useState(0); */
-    const pointsToWin = 2;
+    const pointsToWin = 10;
     let salto;
 
     function jump(){
@@ -95,8 +95,8 @@ export default function Play_Game2(){
     if (personaje != null) {
         let interval = setInterval(() => {
             if (fin == false) {
-                mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
-                coin.style.left = (parseInt(coin.style.left) - 8) + 'px';
+                mob1.style.left = (parseInt(mob1.style.left) - 8) + 'px';
+                coin.style.left = (parseInt(coin.style.left) - 10) + 'px';
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
