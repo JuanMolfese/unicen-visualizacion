@@ -12,7 +12,8 @@ export default function Play_Game2(){
     const [personaje, setPersonaje] = useState(null);
     const pointsToWin = 10;
     let salto;
-
+    
+    
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
         char.classList.add(`char${personaje}_run`); 
@@ -51,6 +52,21 @@ export default function Play_Game2(){
         layer4.style.animationPlayState='paused';
         layer5.style.animationPlayState='paused';
         layer6.style.animationPlayState='paused';
+    }
+
+    function detener_musica(){
+        let audioGame = document.getElementById("audioGame");      
+        audioGame.pause();
+    }
+
+    function coinSound(){
+        let audioCoin = document.getElementById("audioCoin");      
+        audioCoin.play();
+    }
+
+    function sonido_muerte(){
+        let audioDeath = document.getElementById("audioDeath");
+        audioDeath.play();
     }
 
     useEffect(() => {
@@ -102,7 +118,9 @@ export default function Play_Game2(){
                 char.classList.add(`char${personaje}_death`);
                 setGameOver(true);
                 fin = true;
+                setTimeout(sonido_muerte,100);
                 setTimeout(detener_fondo, 1200);
+                setTimeout(detener_musica, 1200);
                 setTimeout(mostrar_cartel_loose,1200); 
                 setTimeout(mostrar_botones, 1200); 
                 clearInterval(interval);
@@ -111,6 +129,7 @@ export default function Play_Game2(){
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
                 coin.style.left = '800px';
                 points ++;
+                coinSound();
                 document.getElementById("coins_counter").innerHTML = `${points}`;
                 if (points == pointsToWin) {
                     fin=true;
@@ -160,8 +179,10 @@ return(
             <a href="/" id="boton_home"></a>
             <a href="" id="boton_reload"></a>
             <div className="char1_win"></div>
-            <div className="char2_win"></div>     
-
+            <div className="char2_win"></div>   
+            <audio id="audioGame" src="/ForestRunner/music/BosquesProfundos.mp3" type="audio/mp3" autoPlay></audio>
+            <audio id="audioCoin" src="/ForestRunner/music/coin.wav" type="audio/mp3"></audio>
+            <audio id="audioDeath" src="/ForestRunner/music/deathSound.mp3" type="audio/mp3"></audio>
         </div>
         }
         <Footer></Footer>
