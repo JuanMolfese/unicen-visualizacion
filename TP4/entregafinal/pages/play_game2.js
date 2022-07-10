@@ -163,6 +163,7 @@ return(
                 <label for="pers1" className="itemPers"><img src="/ForestRunner/char/char.png"></img></label>
                 <input id="pers2" type="radio" name="selectPers" onChange={handleChange} value="2"></input> 
                 <label for="pers2" className="itemPers"><img src="/ForestRunner/char/char2.png"></img></label>
+                <audio id="select_char" src="/ForestRunner/music/select_char.mp3" type="audio/mp3" autoPlay></audio>
             </div> 
         </>
         :
