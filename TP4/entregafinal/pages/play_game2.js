@@ -60,7 +60,7 @@ export default function Play_Game2(){
     }
 
     function coinSound(){
-        let audioCoin = document.getElementById("audioCoin");      
+        const audioCoin = document.getElementById("audioCoin");      
         audioCoin.play();
     }
 
@@ -182,7 +182,7 @@ return(
             <div className="char1_win"></div>
             <div className="char2_win"></div>   
             <audio id="audioGame" src="/ForestRunner/music/BosquesProfundos.mp3" type="audio/mp3" autoPlay></audio>
-            <audio id="audioCoin" src="/ForestRunner/music/coin.wav" type="audio/mp3"></audio>
+            <audio id="audioCoin" src="/ForestRunner/music/coin.mp3" type="audio/mp3"></audio>
             <audio id="audioDeath" src="/ForestRunner/music/deathSound.mp3" type="audio/mp3"></audio>
         </div>
         }
