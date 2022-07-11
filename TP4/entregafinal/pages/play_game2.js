@@ -14,6 +14,8 @@ export default function Play_Game2(){
     const randomMin = 800;
     const randomMax = 1500;
     let salto;
+    let mob1_pos;
+    let mob2_pos;
     
 
     
@@ -77,7 +79,9 @@ export default function Play_Game2(){
     useEffect(() => {
         const char = document.getElementById("char"); 
         const mob1 = document.getElementById("mob1");
+        const mob2 = document.getElementById("mob2");
         const coin = document.getElementById("coin");
+        
    
         //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
@@ -98,7 +102,14 @@ export default function Play_Game2(){
                 }
             }); 
             char.classList.add(`char${personaje}_run`);
-            mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+            mob1_pos = getRandomIntInclusive(randomMin,randomMax);
+            mob2_pos = getRandomIntInclusive(randomMin,randomMax);
+            if (diferencia(mob1_pos, mob2_pos) > 300) {
+                mob2.style.left = mob2_pos + "px";
+            } else mob2.style.left = `-120px`;
+            mob1.style.left = mob1_pos + "px";
+            /* mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+            mob2.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`; */
             coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
         }
     });
@@ -113,18 +124,41 @@ export default function Play_Game2(){
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    const diferencia = (num1, num2) => {
+        if (num1 >= num2) {
+            return num1 - num2;
+        } else {
+            return num2 - num1;
+        }
+    }
+
     if (personaje != null) {
         let interval = setInterval(() => {
             if (fin == false) {
-                mob1.style.left = (parseInt(mob1.style.left) - 10) + 'px';
-                coin.style.left = (parseInt(coin.style.left) - 12) + 'px';
+                mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
+                mob2.style.left = (parseInt(mob2.style.left) - 6) + 'px';
+                coin.style.left = (parseInt(coin.style.left) - 8) + 'px';
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
             let mob_right = mob1.offsetLeft + mob1.clientWidth;
+            let mob2_right = mob2.offsetLeft + mob2.clientWidth;
             let coin_bottom = coin.clientHeight + coin.offsetTop;
             //if ( (mob1.offsetLeft == char_right && !salto) || (salto && (char_bottom >= mob1.offsetTop && char.offsetLeft < mob_right) ) ) { 
             if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft + 20) ){
+                char.classList.remove(`char${personaje}_run`);
+                char.classList.add(`char${personaje}_death`);
+                setGameOver(true);
+                fin = true;
+                setTimeout(sonido_muerte,100);
+                setTimeout(detener_fondo, 1200);
+                setTimeout(detener_musica, 1200);
+                setTimeout(mostrar_cartel_loose,1200); 
+                setTimeout(mostrar_botones, 1200); 
+                clearInterval(interval);
+                
+            }
+            if ((mob2.offsetLeft <= char_right && salto == false && mob2_right > char.offsetLeft + 20 && mob2.offsetLeft > 120) ){
                 char.classList.remove(`char${personaje}_run`);
                 char.classList.add(`char${personaje}_death`);
                 setGameOver(true);
@@ -150,13 +184,26 @@ export default function Play_Game2(){
                     setTimeout(detener_fondo, 800);
                     setTimeout(mostrar_botones, 800);
                     clearInterval(interval);                    
-                    mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                    mob1_pos = getRandomIntInclusive(randomMin,randomMax);
+                    mob2_pos = getRandomIntInclusive(randomMin,randomMax);
+                    if (diferencia(mob1_pos, mob2_pos) > 300) {
+                        mob2.style.left = mob2_pos + "px";
+                    } else mob2.style.left = `-120px`;
+                    mob1.style.left = mob1_pos + "px";
                 }
                 
             }
-            if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
+            if (parseInt(mob1.style.left) + mob1.clientWidth <= -200) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
-                mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                //mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                mob1_pos = getRandomIntInclusive(randomMin,randomMax);
+                mob2_pos = getRandomIntInclusive(randomMin,randomMax);
+                if (diferencia(mob1_pos, mob2_pos) > 300) {
+                    mob2.style.left = mob2_pos + "px";
+                } else mob2.style.left = `-120px`;
+                mob1.style.left = mob1_pos + "px";
+                console.log("mob1 " + mob1_pos + " - " + mob1.style.left);
+                console.log("mob2 " + mob2_pos + " - " + mob2.style.left);
             }  
             if (parseInt(coin.style.left) + coin.clientWidth <= 0) {
                 coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
@@ -185,7 +232,8 @@ return(
             {/* <a href=""><div id="go_back"></div></a> */}
             <div id="coins_counter">0</div>            
             <div id="char" className="char"></div>            
-            <div id="mob1" className="mob1_run"></div>         
+            <div id="mob1" className="mob1_run"></div>
+            <div id="mob2" className="mob2_run"></div>         
             <div id="coin" className="coin"></div>
             <div id="cartel_win"></div>
             <div id="cartel_loose"></div>
@@ -365,7 +413,20 @@ return(
         position: absolute;
         top: 430px;
         left: 0;
-    }   
+    } 
+
+    .mob2_run{
+        width: 120px;
+        height: 120px;
+        background: url('/ForestRunner/char/mob2.png');
+        animation: mob1_run 0.5s steps(5) infinite;
+        MozAnimation: mob1_run 0.5s steps(5) infinite;
+        WebkitAnimation: mob1_run 0.5s steps(5) infinite;
+        z-index: 2;        
+        position: absolute;
+        top: 430px;
+        left: 0;
+    }  
     
     {/* #mob1_despl_X{
         animation: mob1_desplace 3.5s linear infinite;  
