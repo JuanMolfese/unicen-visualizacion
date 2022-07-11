@@ -13,6 +13,7 @@ export default function Play_Game2(){
     const pointsToWin = 10;
     let salto;
     
+
     
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
@@ -44,6 +45,8 @@ export default function Play_Game2(){
         char.classList.remove(`char${personaje}_death`);
         char.classList.remove(`char${personaje}_jump`);
     }
+
+    const iniciar = () => {salto = false}
 
     function detener_fondo(){
         layer1.style.animationPlayState='paused';
@@ -77,7 +80,7 @@ export default function Play_Game2(){
         //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null && fin == false) {
-            jump();
+            iniciar();
             window.addEventListener("keydown", function (event) {     
             
                 if (event.key == " " && fin == false) {
