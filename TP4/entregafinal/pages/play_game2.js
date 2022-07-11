@@ -11,8 +11,11 @@ export default function Play_Game2(){
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
     const pointsToWin = 10;
+    const randomMin = 800;
+    const randomMax = 1500;
     let salto;
     
+
     
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
@@ -44,6 +47,8 @@ export default function Play_Game2(){
         char.classList.remove(`char${personaje}_death`);
         char.classList.remove(`char${personaje}_jump`);
     }
+
+    const iniciar = () => {salto = false}
 
     function detener_fondo(){
         layer1.style.animationPlayState='paused';
@@ -77,7 +82,7 @@ export default function Play_Game2(){
         //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
    
         if (personaje != null && fin == false) {
-            jump();
+            iniciar();
             window.addEventListener("keydown", function (event) {     
             
                 if (event.key == " " && fin == false) {
@@ -93,13 +98,19 @@ export default function Play_Game2(){
                 }
             }); 
             char.classList.add(`char${personaje}_run`);
-            mob1.style.left = '800px';
-            coin.style.left = '800px';
+            mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+            coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
         }
     });
 
     function handleChange(event){
         setPersonaje(event.target.value);
+    }
+
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     if (personaje != null) {
@@ -127,7 +138,8 @@ export default function Play_Game2(){
                 
             } 
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
-                coin.style.left = '800px';
+                //coin.style.left = '800px';
+                coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
                 points ++;
                 coinSound();
                 document.getElementById("coins_counter").innerHTML = `${points}`;
@@ -138,16 +150,16 @@ export default function Play_Game2(){
                     setTimeout(detener_fondo, 800);
                     setTimeout(mostrar_botones, 800);
                     clearInterval(interval);                    
-                    mob1.style.left = '800px';
+                    mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
                 }
                 
             }
             if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
-                mob1.style.left = '800px';
+                mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
             }  
             if (parseInt(coin.style.left) + coin.clientWidth <= 0) {
-                coin.style.left = '800px';
+                coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
             }
         }, 50);
 
