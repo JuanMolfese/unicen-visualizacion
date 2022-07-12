@@ -12,13 +12,13 @@ export default function Play_Game2(){
     const [personaje, setPersonaje] = useState(null);
     const pointsToWin = 10;
     const randomMin = 800;
-    const randomMax = 1500;
+    const randomMax = 1700;
     let salto;
     let mob1_pos;
     let mob2_pos;
     
 
-    
+    /* Funcion que es llamada luego de saltar y retorna a su estado RUN al personaje */
     function jump(){
         char.classList.remove(`char${personaje}_jump`); 
         char.classList.add(`char${personaje}_run`); 
@@ -30,19 +30,23 @@ export default function Play_Game2(){
         } */
     }
 
+    /* Al perder la vida muestra un cartel que te permite volver a jugar o salir al menu del juego */
     function mostrar_cartel_loose(){
         cartel_loose.style.visibility='visible';
     }
 
+    /* Al ganar muestra un cartel que te permite volver a jugar o salir al menu del juego */
     function mostrar_cartel_win(){
         cartel_win.style.visibility='visible';
     }
 
+    /* Al perder o ganar se muestra un cartel, esta funcion carga los botones para acceder al menu del juego o a volver a jugar*/
     function mostrar_botones(){
         boton_home.style.visibility='visible';
         boton_reload.style.visibility='visible';
     }
 
+    /* Al ganar el personaje muestra una animacion de victoria */
     function mostrar_char_win(){
         char.classList.add(`char${personaje}_win`);
         char.classList.remove(`char${personaje}_run`);
@@ -50,8 +54,11 @@ export default function Play_Game2(){
         char.classList.remove(`char${personaje}_jump`);
     }
 
+    /* Inicia el JUEGO */
     const iniciar = () => {salto = false}
 
+
+    /* Al perder o ganar el juego se detiene el fondo que esta en movimiento */
     function detener_fondo(){
         layer1.style.animationPlayState='paused';
         layer2.style.animationPlayState='paused';
@@ -61,16 +68,19 @@ export default function Play_Game2(){
         layer6.style.animationPlayState='paused';
     }
 
+    /* Al perder la vida detiene la musica para dar lugar al sonido de muerte */
     function detener_musica(){
         let audioGame = document.getElementById("audioGame");      
         audioGame.pause();
     }
 
+    /* Al recoger una moneda se ejecuta esta funcion que reproduce el sonido correspondiente */
     function coinSound(){
         const audioCoin = document.getElementById("audioCoin");      
         audioCoin.play();
     }
 
+    /* Al morir se ejecuta esta funcion que reproduce el sonido correspondiente */
     function sonido_muerte(){
         let audioDeath = document.getElementById("audioDeath");
         audioDeath.play();
@@ -83,8 +93,9 @@ export default function Play_Game2(){
         const coin = document.getElementById("coin");
         
    
-        //EVENTOS DE TECLA --  por ej BARRA ESPACIADORA PARA SALTAR// 
-   
+        //EVENTOS DE TECLA --  El presionar la barra espaciadora el personaje SALTA / JUMP 
+        //EVENTOS DE TECLA --  El presionar escape vuelve el juego a la pantalla de seleccion de personajes.
+        //Inicia el juego si el personaje fue seleccionado en la pantalla de seleccion de personajes.
         if (personaje != null && fin == false) {
             iniciar();
             window.addEventListener("keydown", function (event) {     
@@ -100,7 +111,9 @@ export default function Play_Game2(){
                     //window.location.href = " ";
                     location.reload();
                 }
-            }); 
+            });
+            
+            //Inicializa personaje, mobs y moneda. 
             char.classList.add(`char${personaje}_run`);
             mob1_pos = getRandomIntInclusive(randomMin,randomMax);
             mob2_pos = getRandomIntInclusive(randomMin,randomMax);
@@ -114,16 +127,19 @@ export default function Play_Game2(){
         }
     });
 
+    //Utilizamos el hook para disponer el tipo de jugador seleccionado (1 maga, 2 guerrero)
     function handleChange(event){
         setPersonaje(event.target.value);
     }
 
+    //Funcion que retorna una valor aleatorio entre un minimo y un maximo dado. Es utilizada para posicionar elementos en el juego.
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    //Devuelve diferencia entre dos valores enteros
     const diferencia = (num1, num2) => {
         if (num1 >= num2) {
             return num1 - num2;
@@ -132,6 +148,7 @@ export default function Play_Game2(){
         }
     }
 
+    //Core del Juego - Efectua los controles cada 50 mlsec, en base a las posiciones del personaje y el resto de los items en pantalla.
     if (personaje != null) {
         let interval = setInterval(() => {
             if (fin == false) {
@@ -141,11 +158,11 @@ export default function Play_Game2(){
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
-            let mob_right = mob1.offsetLeft + mob1.clientWidth;
+            let mob1_right = mob1.offsetLeft + mob1.clientWidth;
             let mob2_right = mob2.offsetLeft + mob2.clientWidth;
             let coin_bottom = coin.clientHeight + coin.offsetTop;
             //if ( (mob1.offsetLeft == char_right && !salto) || (salto && (char_bottom >= mob1.offsetTop && char.offsetLeft < mob_right) ) ) { 
-            if ((mob1.offsetLeft <= char_right && salto == false && mob_right > char.offsetLeft + 20) ){
+            if ((mob1.offsetLeft <= char_right && salto == false && mob1_right > char.offsetLeft + 20) ){
                 char.classList.remove(`char${personaje}_run`);
                 char.classList.add(`char${personaje}_death`);
                 setGameOver(true);
@@ -158,7 +175,7 @@ export default function Play_Game2(){
                 clearInterval(interval);
                 
             }
-            if ((mob2.offsetLeft <= char_right && salto == false && mob2_right > char.offsetLeft + 20 && mob2.offsetLeft > 120) ){
+            if ((mob2.offsetLeft <= char_right && salto == false && mob2_right > char.offsetLeft + 20) ){
                 char.classList.remove(`char${personaje}_run`);
                 char.classList.add(`char${personaje}_death`);
                 setGameOver(true);
@@ -193,7 +210,7 @@ export default function Play_Game2(){
                 }
                 
             }
-            if (parseInt(mob1.style.left) + mob1.clientWidth <= -200) {
+            if (parseInt(mob1.style.left) + mob1.clientWidth <= -300) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
                 //mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
                 mob1_pos = getRandomIntInclusive(randomMin,randomMax);
@@ -215,6 +232,8 @@ export default function Play_Game2(){
 return(
     <>
         <Navbar_inGame></Navbar_inGame>
+
+        {/* Si no hay un personaje seleccionado, se muestra la pantalla de seleccion de personajes, caso contrario comienza el juego */}
         {(personaje == null) ? 
         <>            
             <div className="contentSelect">
