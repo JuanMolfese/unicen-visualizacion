@@ -191,7 +191,16 @@ export default function Play_Game2(){
             } 
             if (coin.offsetLeft <= char_right && coin.offsetLeft >= char.offsetLeft && salto == true && coin_bottom > char.offsetTop){
                 //coin.style.left = '800px';
-                coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                coin.style.transform = 'scale(2)';
+                /* process.nextTick(() => {
+                    coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                    coin.style.transform = 'scale(1)';
+                }) */
+                setTimeout(() => {
+                    coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
+                    coin.style.transform = 'scale(1)';
+                }, 30);
+                
                 points ++;
                 coinSound();
                 document.getElementById("coins_counter").innerHTML = `${points}`;
