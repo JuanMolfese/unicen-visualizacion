@@ -13,6 +13,7 @@ export default function Play_Game2(){
     const pointsToWin = 10;
     const randomMin = 800;
     const randomMax = 1700;
+    const distance = 350;
     let salto;
     let mob1_pos;
     let mob2_pos;
@@ -117,7 +118,7 @@ export default function Play_Game2(){
             char.classList.add(`char${personaje}_run`);
             mob1_pos = getRandomIntInclusive(randomMin,randomMax);
             mob2_pos = getRandomIntInclusive(randomMin,randomMax);
-            if (diferencia(mob1_pos, mob2_pos) > 300) {
+            if (diferencia(mob1_pos, mob2_pos) > distance) {
                 mob2.style.left = mob2_pos + "px";
             } else mob2.style.left = `-120px`;
             mob1.style.left = mob1_pos + "px";
@@ -152,9 +153,9 @@ export default function Play_Game2(){
     if (personaje != null) {
         let interval = setInterval(() => {
             if (fin == false) {
-                mob1.style.left = (parseInt(mob1.style.left) - 6) + 'px';
-                mob2.style.left = (parseInt(mob2.style.left) - 6) + 'px';
-                coin.style.left = (parseInt(coin.style.left) - 8) + 'px';
+                mob1.style.left = (parseInt(mob1.style.left) - 10) + 'px';
+                mob2.style.left = (parseInt(mob2.style.left) - 10) + 'px';
+                coin.style.left = (parseInt(coin.style.left) - 12) + 'px';
             } else clearInterval(interval);
             let char_right = char.offsetLeft + char.clientWidth;
             //let char_bottom = char.clientHeight + char.offsetTop;
@@ -203,14 +204,15 @@ export default function Play_Game2(){
                     clearInterval(interval);                    
                     mob1_pos = getRandomIntInclusive(randomMin,randomMax);
                     mob2_pos = getRandomIntInclusive(randomMin,randomMax);
-                    if (diferencia(mob1_pos, mob2_pos) > 300) {
+                    if (diferencia(mob1_pos, mob2_pos) > distance) {
                         mob2.style.left = mob2_pos + "px";
                     } else mob2.style.left = `-120px`;
                     mob1.style.left = mob1_pos + "px";
                 }
                 
             }
-            if (parseInt(mob1.style.left) + mob1.clientWidth <= -300) {
+
+           /*  if (parseInt(mob1.style.left) + mob1.clientWidth <= -300) {
                 //mob1.style.left = (parseInt(Math.random() * 100) + 800) + 'px';
                 //mob1.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
                 mob1_pos = getRandomIntInclusive(randomMin,randomMax);
@@ -221,7 +223,38 @@ export default function Play_Game2(){
                 mob1.style.left = mob1_pos + "px";
                 console.log("mob1 " + mob1_pos + " - " + mob1.style.left);
                 console.log("mob2 " + mob2_pos + " - " + mob2.style.left);
-            }  
+            } */   
+
+            /* if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
+                mob1_pos = getRandomIntInclusive(randomMin,randomMax);
+                if (diferencia(mob1_pos, mob2_pos) > distance) {
+                    mob1.style.left = mob1_pos + 'px';
+                } else mob1.style.left = '-120px';
+                console.log("mob1 " + mob1_pos + " - " + mob2_pos);
+            }
+
+            if (parseInt(mob2.style.left) + mob2.clientWidth <= 0) {
+                mob2_pos = getRandomIntInclusive(randomMin,randomMax);
+                if (diferencia(mob1_pos, mob2_pos) > distance) {
+                    mob2.style.left = mob2_pos + 'px';
+                } else mob2.style.left = '-120px';
+                console.log("mob2 " + mob2_pos + " - " + mob1_pos);
+            } */
+
+            if ( (parseInt(mob2.style.left) + mob2.clientWidth <= 0) || (parseInt(mob1.style.left) + mob1.clientWidth <= 0) ) {
+                if (parseInt(mob1.style.left) + mob1.clientWidth <= 0) {
+                    mob1_pos = getRandomIntInclusive(randomMin,randomMax);
+                    mob1.style.left = mob1_pos + 'px';
+                }
+                if (parseInt(mob2.style.left) + mob2.clientWidth <= 0) {
+                    mob2_pos = getRandomIntInclusive(randomMin,randomMax);
+                    mob2.style.left = mob2_pos + 'px';
+                }
+                if (diferencia(parseInt(mob1.style.left), parseInt(mob2.style.left)) < 250) {
+                    mob1.style.left = '-120px';
+                }
+            }
+
             if (parseInt(coin.style.left) + coin.clientWidth <= 0) {
                 coin.style.left = `${getRandomIntInclusive(randomMin,randomMax)}px`;
             }
