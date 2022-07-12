@@ -10,7 +10,7 @@ export default function Play_Game2(){
 
     const [gameOver, setGameOver] = useState(false); 
     const [personaje, setPersonaje] = useState(null);
-    const pointsToWin = 10;
+    const pointsToWin = 5;
     const randomMin = 800;
     const randomMax = 1700;
     const distance = 350;
